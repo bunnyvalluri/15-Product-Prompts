@@ -1,0 +1,15 @@
+{
+  "short_name": "PromptForge",
+  "name": "PromptForge AI – Modern AI System Prompt Library",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#090d16",
+  "theme_color": "#06b6d4",
+  "display": "standalone"
+}

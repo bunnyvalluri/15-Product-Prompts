@@ -1,0 +1,41 @@
+[
+  {
+    "id": "blog-1",
+    "slug": "mastering-chain-of-thought-prompting",
+    "title": "Mastering Chain-of-Thought Prompting for Complex Reasoning",
+    "excerpt": "Learn how breaking down multi-step logic into explicit reasoning chains improves LLM accuracy by over 40% on coding and math tasks.",
+    "author": "Dr. Elena Vance",
+    "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250",
+    "date": "July 24, 2026",
+    "readTime": "6 min read",
+    "category": "Prompt Engineering",
+    "tags": ["Reasoning", "Chain of Thought", "LLM", "GPT-4o"],
+    "content": "Chain-of-Thought (CoT) prompting is one of the most powerful techniques in modern AI engineering. By instructing the model to think step-by-step before delivering its final answer, we significantly reduce hallucination rates and improve logical consistency.\n\n### Why CoT Works\nTraditional zero-shot prompting forces the language model to calculate the entire sequence of probabilities in a single forward pass. When faced with complex multi-step logic, this often leads to superficial answers or errors.\n\n```json\n{\n  \"technique\": \"Chain of Thought\",\n  \"accuracy_boost\": \"35-45%\",\n  \"recommended_models\": [\"Claude 3.5 Sonnet\", \"GPT-4o\", \"Gemini 1.5 Pro\"]\n}\n```\n\n### Practical Structure\nTo implement CoT effectively in your prompts, append explicit reasoning instructions:\n\n> 'Before providing the final solution, systematically analyze the problem in `<thinking>` tags. Step 1: Identify inputs. Step 2: Validate constraints. Step 3: Execute step-by-step logic.'"
+  },
+  {
+    "id": "blog-2",
+    "slug": "the-art-of-vibe-coding-with-antigravity",
+    "title": "The Art of Vibe Coding: Autonomous Development with Antigravity",
+    "excerpt": "Discover how senior engineers leverage natural language directives to orchestrate full-stack web apps effortlessly.",
+    "author": "Marcus Sterling",
+    "authorAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250",
+    "date": "July 28, 2026",
+    "readTime": "8 min read",
+    "category": "Vibe Coding",
+    "tags": ["Antigravity", "Agentic AI", "Vibe Coding", "Frontend"],
+    "content": "Vibe Coding represents a fundamental shift in software craftsmanship. Rather than writing every syntax character by hand, engineers act as high-level directors guiding autonomous AI agents like Google Antigravity.\n\n### Key Principles of Effective Vibe Coding\n1. **Provide Clear Architectural Guardrails**: Define design aesthetics, color palettes, and component boundaries up front.\n2. **Iterative Verification**: Run live local preview servers and verify UI components visually.\n3. **Deconstruct Large Requirements**: Break complex apps into modular phases."
+  },
+  {
+    "id": "blog-3",
+    "slug": "system-prompt-hardening-security-guide",
+    "title": "System Prompt Hardening: Preventing Injection & Extraction",
+    "excerpt": "A deep dive into defending your AI applications against prompt injection attacks, jailbreaks, and sensitive context leakage.",
+    "author": "Sarah Lin",
+    "authorAvatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=250",
+    "date": "July 15, 2026",
+    "readTime": "7 min read",
+    "category": "Security",
+    "tags": ["Security", "Prompt Injection", "System Rules", "Defense"],
+    "content": "As LLM integration expands across SaaS products, prompt injection has emerged as a top OWASP AI security threat. Protect your application using defensive delimiter techniques and boundary isolation."
+  }
+]

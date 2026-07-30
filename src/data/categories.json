@@ -1,0 +1,182 @@
+[
+  {
+    "id": "chatgpt",
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "description": "Optimized prompts for OpenAI GPT-4o, o1, and ChatGPT custom GPTs.",
+    "icon": "Bot",
+    "gradient": "from-emerald-500 to-teal-700",
+    "promptCount": 42
+  },
+  {
+    "id": "claude",
+    "slug": "claude",
+    "name": "Claude",
+    "description": "Deep reasoning, analysis, long-form content, and coding prompts for Anthropic Claude 3.5 Sonnet.",
+    "icon": "Cpu",
+    "gradient": "from-amber-500 to-orange-700",
+    "promptCount": 38
+  },
+  {
+    "id": "gemini",
+    "slug": "gemini",
+    "name": "Gemini",
+    "description": "Multimodal, massive context window, and research prompts for Google Gemini 1.5 Pro.",
+    "icon": "Sparkles",
+    "gradient": "from-blue-500 to-indigo-700",
+    "promptCount": 29
+  },
+  {
+    "id": "cursor",
+    "slug": "cursor",
+    "name": "Cursor",
+    "description": "System rules, .cursorrules configurations, and pair-programming prompts for Cursor IDE.",
+    "icon": "Code2",
+    "gradient": "from-purple-500 to-violet-700",
+    "promptCount": 31
+  },
+  {
+    "id": "copilot",
+    "slug": "copilot",
+    "name": "GitHub Copilot",
+    "description": "Inline autocomplete steering, docstring generators, and automated test suite prompts.",
+    "icon": "GitBranch",
+    "gradient": "from-slate-600 to-zinc-900",
+    "promptCount": 24
+  },
+  {
+    "id": "antigravity",
+    "slug": "antigravity",
+    "name": "Antigravity",
+    "description": "Vibe coding, autonomous agentic workflow, and architecture design prompts for Google Antigravity.",
+    "icon": "Zap",
+    "gradient": "from-cyan-400 to-blue-600",
+    "promptCount": 35
+  },
+  {
+    "id": "windsurf",
+    "slug": "windsurf",
+    "name": "Windsurf",
+    "description": "Cascade flow, rule file setups, and multi-file refactoring prompts for Windsurf AI.",
+    "icon": "Wind",
+    "gradient": "from-sky-400 to-indigo-600",
+    "promptCount": 19
+  },
+  {
+    "id": "lovable",
+    "slug": "lovable",
+    "name": "Lovable",
+    "description": "Full-stack web application generation and UI/UX design specification prompts.",
+    "icon": "Heart",
+    "gradient": "from-pink-500 to-rose-600",
+    "promptCount": 22
+  },
+  {
+    "id": "replit-ai",
+    "slug": "replit-ai",
+    "name": "Replit AI",
+    "description": "Cloud app deployment, agent setup, and microservices scaffolding prompts.",
+    "icon": "Terminal",
+    "gradient": "from-orange-500 to-red-600",
+    "promptCount": 16
+  },
+  {
+    "id": "midjourney",
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "description": "Photorealistic images, 3D renders, architectural concepts, and art direction parameter strings.",
+    "icon": "Image",
+    "gradient": "from-fuchsia-500 to-purple-800",
+    "promptCount": 45
+  },
+  {
+    "id": "stable-diffusion",
+    "slug": "stable-diffusion",
+    "name": "Stable Diffusion",
+    "description": "SDXL positive & negative prompts, ControlNet parameters, and LoRA steering.",
+    "icon": "Layers",
+    "gradient": "from-violet-500 to-purple-900",
+    "promptCount": 27
+  },
+  {
+    "id": "dalle",
+    "slug": "dalle",
+    "name": "DALL·E",
+    "description": "Vivid graphic design, vector illustrations, logo mark, and conceptual art prompts.",
+    "icon": "Palette",
+    "gradient": "from-yellow-400 to-amber-600",
+    "promptCount": 20
+  },
+  {
+    "id": "programming",
+    "slug": "programming",
+    "name": "Programming",
+    "description": "Full-stack development, refactoring, security audits, algorithm design, and unit testing.",
+    "icon": "Binary",
+    "gradient": "from-emerald-400 to-cyan-700",
+    "promptCount": 64
+  },
+  {
+    "id": "marketing",
+    "slug": "marketing",
+    "name": "Marketing",
+    "description": "High-converting ad copy, email drip sequences, SEO content strategy, and landing page wireframes.",
+    "icon": "TrendingUp",
+    "gradient": "from-red-500 to-amber-600",
+    "promptCount": 36
+  },
+  {
+    "id": "business",
+    "slug": "business",
+    "name": "Business & Strategy",
+    "description": "SaaS pitch decks, competitor teardowns, executive summaries, and market sizing estimation.",
+    "icon": "Briefcase",
+    "gradient": "from-blue-600 to-slate-800",
+    "promptCount": 28
+  },
+  {
+    "id": "writing",
+    "slug": "writing",
+    "name": "Writing & Content",
+    "description": "Long-form blog posts, storytelling frameworks, book outlines, and persuasive essay structures.",
+    "icon": "PenTool",
+    "gradient": "from-teal-400 to-emerald-600",
+    "promptCount": 41
+  },
+  {
+    "id": "automation",
+    "slug": "automation",
+    "name": "Automation & Scripts",
+    "description": "Make.com scenarios, Zapier custom scripts, Python scraping, and cron automation.",
+    "icon": "Workflow",
+    "gradient": "from-indigo-500 to-purple-700",
+    "promptCount": 23
+  },
+  {
+    "id": "design",
+    "slug": "design",
+    "name": "UI/UX Design",
+    "description": "Design system tokens, user persona generation, wireframe specifications, and accessibility checklists.",
+    "icon": "Layout",
+    "gradient": "from-rose-400 to-pink-600",
+    "promptCount": 30
+  },
+  {
+    "id": "education",
+    "slug": "education",
+    "name": "Education & Learning",
+    "description": "Socratic tutor prompts, flashcard generators, complex concept simplification (Feynman method).",
+    "icon": "GraduationCap",
+    "gradient": "from-lime-500 to-green-700",
+    "promptCount": 25
+  },
+  {
+    "id": "productivity",
+    "slug": "productivity",
+    "name": "Productivity",
+    "description": "Task prioritization matrices, daily schedule planning, meeting summarization, and email triage.",
+    "icon": "CheckCircle2",
+    "gradient": "from-amber-400 to-yellow-600",
+    "promptCount": 33
+  }
+]

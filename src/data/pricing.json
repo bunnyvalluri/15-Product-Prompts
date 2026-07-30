@@ -1,0 +1,60 @@
+[
+  {
+    "id": "tier-free",
+    "name": "Free Community",
+    "slug": "free",
+    "priceMonthly": "$0",
+    "priceYearly": "$0",
+    "period": "forever",
+    "description": "Essential prompt library access for developers, creators, and AI enthusiasts.",
+    "popular": false,
+    "ctaText": "Start Exploring Free",
+    "features": [
+      "Access 500+ curated AI prompts",
+      "Unlimited prompt copy & TXT downloads",
+      "Interactive parameter filler tool",
+      "Basic search & category filtering",
+      "Save up to 3 custom collections (LocalStorage)",
+      "Standard community support"
+    ]
+  },
+  {
+    "id": "tier-pro",
+    "name": "Pro Creator",
+    "slug": "pro",
+    "priceMonthly": "$19",
+    "priceYearly": "$14",
+    "period": "per month",
+    "description": "Power tools for prompt engineers, developers, and autonomous vibe coders.",
+    "popular": true,
+    "ctaText": "Upgrade to Pro",
+    "features": [
+      "Access all 2,500+ premium prompt recipes",
+      "Unlimited custom LocalStorage collections",
+      "Advanced Markdown Prompt Editor with live preview",
+      "JSON collection export & import tools",
+      "Full .cursorrules & Antigravity template library",
+      "Early access to new model prompts (GPT-4o, Claude 3.5)",
+      "Priority email & community support"
+    ]
+  },
+  {
+    "id": "tier-enterprise",
+    "name": "Enterprise Team",
+    "slug": "enterprise",
+    "priceMonthly": "$49",
+    "priceYearly": "$39",
+    "period": "per user / month",
+    "description": "Custom prompt standards, brand safety rules, and team workflow templates.",
+    "popular": false,
+    "ctaText": "Contact Sales",
+    "features": [
+      "Everything in Pro Tier",
+      "Custom team brand & security rule packs",
+      "System prompt hardening & injection audit tools",
+      "Dedicated account manager & setup consultation",
+      "99.9% SLA uptime guarantee",
+      "Custom training webinars & prompt engineering workshops"
+    ]
+  }
+]

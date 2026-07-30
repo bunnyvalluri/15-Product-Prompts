@@ -1,0 +1,32 @@
+[
+  {
+    "id": "faq-1",
+    "category": "General",
+    "question": "What is PromptForge AI?",
+    "answer": "PromptForge AI is a premium, open-access library of battle-tested AI prompts, system instructions, and vibe-coding templates designed for models like ChatGPT, Claude 3.5 Sonnet, Gemini 1.5, Cursor, Antigravity, and Midjourney."
+  },
+  {
+    "id": "faq-2",
+    "category": "General",
+    "question": "Does PromptForge AI require a backend, server, or paid account?",
+    "answer": "No! PromptForge AI is a 100% client-side application. All your custom saved collections, bookmarks, theme settings, and prompt history are persisted securely in your browser's local storage."
+  },
+  {
+    "id": "faq-3",
+    "category": "Usage",
+    "question": "How do the prompt parameter variables work?",
+    "answer": "Prompts containing placeholders like {{role}} or {{tech_stack}} can be filled dynamically directly on the Prompt Detail page or in our live Prompt Editor before copying or downloading as TXT / Markdown."
+  },
+  {
+    "id": "faq-4",
+    "category": "Collections",
+    "question": "Can I export and import my custom prompt collections?",
+    "answer": "Yes! The Collections page includes full JSON export and import capabilities so you can backup your prompts or share them across browsers."
+  },
+  {
+    "id": "faq-5",
+    "category": "Models",
+    "question": "Are these prompts updated for newer models like Claude 3.5 Sonnet and Antigravity?",
+    "answer": "Absolutely. All prompts are continuously benchmarked and optimized for state-of-the-art models including Claude 3.5 Sonnet, GPT-4o, Gemini 1.5 Pro, and Google Antigravity agentic workflows."
+  }
+]

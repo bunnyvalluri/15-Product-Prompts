@@ -1,0 +1,62 @@
+[
+  {
+    "id": "gpt-4o",
+    "name": "OpenAI GPT-4o",
+    "provider": "OpenAI",
+    "category": "ChatGPT",
+    "contextWindow": "128k tokens",
+    "description": "Flagship multimodal model powering ChatGPT. Exceptional at coding, structured output, and reasoning.",
+    "badge": "Popular",
+    "color": "emerald"
+  },
+  {
+    "id": "claude-3-5-sonnet",
+    "name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic",
+    "category": "Claude",
+    "contextWindow": "200k tokens",
+    "description": "Industry leader for software engineering, deep analytical writing, nuanced prompt execution, and code generation.",
+    "badge": "Top Rated",
+    "color": "amber"
+  },
+  {
+    "id": "gemini-1-5-pro",
+    "name": "Gemini 1.5 Pro",
+    "provider": "Google",
+    "category": "Gemini",
+    "contextWindow": "2M tokens",
+    "description": "Unrivaled long-context understanding across text, audio, video, and massive repositories.",
+    "badge": "2M Context",
+    "color": "blue"
+  },
+  {
+    "id": "cursor-ai",
+    "name": "Cursor AI",
+    "provider": "Anysphere",
+    "category": "Cursor",
+    "contextWindow": "Dynamic",
+    "description": "AI-first code editor designed for codebase-aware inline editing, multi-file refactoring, and agentic edits.",
+    "badge": "Dev Tool",
+    "color": "purple"
+  },
+  {
+    "id": "antigravity",
+    "name": "Google Antigravity",
+    "provider": "Google DeepMind",
+    "category": "Antigravity",
+    "contextWindow": "Agentic Workspace",
+    "description": "Next-generation autonomous agentic pair programming platform designed for full-stack software development.",
+    "badge": "Agentic AI",
+    "color": "cyan"
+  },
+  {
+    "id": "midjourney-v6",
+    "name": "Midjourney v6",
+    "provider": "Midjourney",
+    "category": "Midjourney",
+    "contextWindow": "Prompt Text",
+    "description": "State-of-the-art image generation engine with photorealism, typography rendering, and cinematic lighting controls.",
+    "badge": "Creative",
+    "color": "fuchsia"
+  }
+]

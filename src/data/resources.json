@@ -1,0 +1,50 @@
+[
+  {
+    "id": "res-1",
+    "title": "Ultimate Prompt Engineering Cheat Sheet 2026",
+    "type": "PDF Guide",
+    "category": "Cheat Sheets",
+    "description": "A 10-page quick reference guide covering zero-shot, few-shot, CoT, role-prompting, and output formatting triggers.",
+    "icon": "FileText",
+    "fileSize": "2.4 MB",
+    "downloadUrl": "#",
+    "featured": true,
+    "tags": ["Cheat Sheet", "PDF", "Prompting", "Reference"]
+  },
+  {
+    "id": "res-2",
+    "title": "Cursor .cursorrules Configuration Starter Kit",
+    "type": "Code Template",
+    "category": "Templates",
+    "description": "Pre-built .cursorrules templates for React, Next.js, Python FastAPI, Express, and Tailwind CSS projects.",
+    "icon": "Code",
+    "fileSize": "120 KB",
+    "downloadUrl": "#",
+    "featured": true,
+    "tags": ["Cursor", "Templates", "DX", "Config"]
+  },
+  {
+    "id": "res-3",
+    "title": "Midjourney v6 Keyword & Style Parameter Matrix",
+    "type": "Interactive Matrix",
+    "category": "Cheat Sheets",
+    "description": "Comprehensive reference table for camera lenses, lighting setups, aspect ratios, and art styles.",
+    "icon": "Grid",
+    "fileSize": "Interactive",
+    "downloadUrl": "#",
+    "featured": false,
+    "tags": ["Midjourney", "Art", "Parameters", "Visual"]
+  },
+  {
+    "id": "res-4",
+    "title": "AI Agent System Architecture Whitepaper",
+    "type": "PDF Guide",
+    "category": "Articles",
+    "description": "In-depth guide on constructing multi-agent orchestrations with memory, tools, and reflection loops.",
+    "icon": "BookOpen",
+    "fileSize": "4.1 MB",
+    "downloadUrl": "#",
+    "featured": false,
+    "tags": ["Agents", "Architecture", "Whitepaper"]
+  }
+]

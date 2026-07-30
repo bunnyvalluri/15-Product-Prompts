@@ -119,9 +119,9 @@ export function PromptCard({ prompt, onQuickView, onOpenSaveCollection }) {
         </p>
 
         {/* Prompt Content Preview Box */}
-        <div className="relative mb-4 p-3 rounded-xl bg-slate-950/80 text-slate-300 font-mono text-[11px] leading-relaxed border border-slate-800 overflow-hidden max-h-24">
+        <div className="relative mb-4 p-3 rounded-xl bg-slate-100 dark:bg-slate-950/80 text-slate-800 dark:text-slate-300 font-mono text-[11px] leading-relaxed border border-slate-200 dark:border-slate-800 overflow-hidden max-h-24">
           <p className="line-clamp-3 opacity-90">{prompt.content}</p>
-          <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-slate-100 dark:from-slate-950 to-transparent pointer-events-none" />
         </div>
       </div>
 

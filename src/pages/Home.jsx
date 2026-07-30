@@ -168,7 +168,7 @@ export function Home({ onOpenSearch }) {
               <h4 className="font-bold text-sm text-slate-900 dark:text-slate-100 mb-2">
                 {card.title}
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-mono bg-slate-950/80 text-slate-300 p-2.5 rounded-xl border border-slate-800 line-clamp-3">
+              <p className="text-xs font-mono bg-slate-100 dark:bg-slate-950/80 text-slate-800 dark:text-slate-300 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 line-clamp-3">
                 {card.preview}
               </p>
             </div>

@@ -7,16 +7,12 @@ import {
   ArrowRight,
   Zap,
   Shield,
-  Layers,
   Code2,
-  Terminal,
   Cpu,
   Bookmark,
-  CheckCircle2,
   TrendingUp,
-  Star,
-  Users,
   Database,
+  Users,
   Sliders,
   ChevronDown
 } from 'lucide-react';
@@ -48,55 +44,56 @@ export function Home({ onOpenSearch }) {
   };
 
   return (
-    <div className="relative overflow-hidden space-y-24 pb-20">
+    <div className="relative overflow-hidden space-y-16 sm:space-y-24 pb-16 sm:pb-20">
       {/* Background Ambient Mesh Gradients */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none -z-10 opacity-40 dark:opacity-30">
-        <div className="absolute top-10 left-1/4 w-96 h-96 bg-cyan-500/30 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute top-32 right-1/4 w-[450px] h-[450px] bg-purple-500/25 rounded-full blur-[140px]" />
-        <div className="absolute top-60 left-1/3 w-80 h-80 bg-blue-600/30 rounded-full blur-[100px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none -z-10 opacity-30 dark:opacity-20">
+        <div className="absolute top-10 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-cyan-500/30 rounded-full blur-[100px] sm:blur-[120px] animate-pulse" />
+        <div className="absolute top-32 right-1/4 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-purple-500/25 rounded-full blur-[110px] sm:blur-[140px]" />
       </div>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 text-center relative">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-16 lg:pt-20 text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-6 max-w-4xl mx-auto"
+          className="space-y-4 sm:space-y-6 max-w-4xl mx-auto"
         >
           {/* Top Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-xs font-semibold text-cyan-600 dark:text-cyan-400 shadow-md">
-            <Sparkles className="w-4 h-4 text-cyan-500 animate-spin" style={{ animationDuration: '4s' }} />
-            <span>Introducing PromptForge AI 2.0 • 100% Client-Side Prompt Suite</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass-panel border border-cyan-500/30 text-[11px] sm:text-xs font-semibold text-cyan-600 dark:text-cyan-400 shadow-sm max-w-full">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-500 shrink-0" />
+            <span className="truncate">Introducing PromptForge AI 2.0 • Client-Side Suite</span>
           </div>
 
           {/* Hero Heading */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-            Craft, Test & Vibe-Code With <br />
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] px-2">
+            Craft, Test & Vibe-Code With <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
               Precision AI System Prompts
             </span>
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            The open-access library of battle-tested system instructions, dynamic parameter filler tools, and custom LocalStorage collections for ChatGPT, Claude 3.5, Gemini, Cursor, and Antigravity.
+          <p className="text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
+            The open-access library of battle-tested system instructions, parameter fillers, and LocalStorage collections for ChatGPT, Claude 3.5, Gemini, Cursor, and Antigravity.
           </p>
 
           {/* Hero Search Bar */}
-          <form onSubmit={handleHeroSearch} className="max-w-2xl mx-auto pt-2">
-            <div className="relative flex items-center glass-panel rounded-2xl border border-slate-300 dark:border-slate-800 p-2 shadow-2xl">
-              <Search className="w-5 h-5 text-cyan-500 ml-3 shrink-0" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search prompts by keyword, model (e.g. Claude 3.5, Cursor, Antigravity)..."
-                className="w-full bg-transparent px-3 py-2 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none"
-              />
+          <form onSubmit={handleHeroSearch} className="max-w-2xl mx-auto pt-2 px-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center glass-panel rounded-2xl border border-slate-300 dark:border-slate-800 p-2 gap-2 shadow-xl">
+              <div className="flex items-center gap-2 px-2 py-1.5 flex-1">
+                <Search className="w-4 h-4 text-cyan-500 shrink-0" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search prompts by model or keyword..."
+                  className="w-full bg-transparent text-slate-900 dark:text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none"
+                />
+              </div>
               <button
                 type="submit"
-                className="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 shrink-0 transition-all"
+                className="w-full sm:w-auto px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-bold shadow-md shadow-cyan-500/25 shrink-0 transition-all text-center"
               >
                 Search
               </button>
@@ -104,9 +101,10 @@ export function Home({ onOpenSearch }) {
           </form>
 
           {/* CTA Buttons */}
-          <div className="flex items-center justify-center gap-4 pt-4 flex-wrap">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 px-2 max-w-md sm:max-w-none mx-auto">
             <Button
               size="lg"
+              className="w-full sm:w-auto"
               onClick={() => navigate('/explore')}
               icon={ArrowRight}
               iconPosition="right"
@@ -116,6 +114,7 @@ export function Home({ onOpenSearch }) {
             <Button
               size="lg"
               variant="outline"
+              className="w-full sm:w-auto"
               onClick={() => navigate('/editor')}
               icon={Code2}
             >
@@ -124,12 +123,12 @@ export function Home({ onOpenSearch }) {
           </div>
         </motion.div>
 
-        {/* Hero Floating Cards Preview Display */}
+        {/* Floating Preview Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left"
+          className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto text-left"
         >
           {[
             {
@@ -156,16 +155,16 @@ export function Home({ onOpenSearch }) {
           ].map((card, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800/80 shadow-xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group"
+              className="glass-card rounded-2xl p-4 sm:p-5 border border-slate-200/80 dark:border-slate-800/80 shadow-lg hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
             >
               <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${card.color}`} />
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-cyan-500">
+              <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-cyan-600 dark:text-cyan-400 truncate">
                   {card.model}
                 </span>
                 <Badge variant="cyan" size="sm">{card.badge}</Badge>
               </div>
-              <h4 className="font-bold text-sm text-slate-900 dark:text-slate-100 mb-2">
+              <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-slate-100 mb-2 line-clamp-1">
                 {card.title}
               </h4>
               <p className="text-xs font-mono bg-slate-100 dark:bg-slate-950/80 text-slate-800 dark:text-slate-300 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 line-clamp-3">
@@ -176,21 +175,21 @@ export function Home({ onOpenSearch }) {
         </motion.div>
 
         {/* Hero Stats */}
-        <div className="mt-16 pt-10 border-t border-slate-200/60 dark:border-slate-800/60 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/60 dark:border-slate-800/60 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
           {[
-            { label: 'Curated AI Prompts', value: '2,500+', icon: Database },
+            { label: 'Curated Prompts', value: '2,500+', icon: Database },
             { label: 'Supported Models', value: '12+', icon: Cpu },
             { label: 'Active Developers', value: '45,000+', icon: Users },
             { label: 'Client-Side Reliance', value: '100%', icon: Shield }
           ].map((stat, idx) => {
             const Icon = stat.icon;
             return (
-              <div key={idx} className="space-y-1">
-                <div className="flex items-center justify-center gap-1.5 text-cyan-500 font-bold text-2xl sm:text-3xl">
-                  <Icon className="w-5 h-5 inline" />
+              <div key={idx} className="space-y-1 p-2">
+                <div className="flex items-center justify-center gap-1.5 text-cyan-500 font-bold text-xl sm:text-3xl">
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5 inline" />
                   {stat.value}
                 </div>
-                <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">{stat.label}</p>
+                <p className="text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">{stat.label}</p>
               </div>
             );
           })}
@@ -199,46 +198,50 @@ export function Home({ onOpenSearch }) {
 
       {/* Trusted Models Bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel rounded-2xl p-6 border border-slate-200 dark:border-slate-800 text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6">
+        <div className="glass-panel rounded-2xl p-4 sm:p-6 border border-slate-200 dark:border-slate-800 text-center">
+          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4 sm:mb-6">
             Optimized for Next-Generation AI Engines
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-center opacity-80 dark:opacity-90">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-6 items-center justify-center">
             {modelsData.map((m) => (
-              <div key={m.id} className="flex flex-col items-center gap-1.5 group cursor-pointer" onClick={() => navigate(`/explore?model=${m.id}`)}>
-                <span className="text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-cyan-500 transition-colors">
+              <div
+                key={m.id}
+                className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 cursor-pointer transition-colors"
+                onClick={() => navigate(`/explore?model=${m.id}`)}
+              >
+                <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
                   {m.name}
                 </span>
-                <span className="text-[10px] text-slate-400">{m.badge}</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-400">{m.badge}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Key Feature Highlights */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <Badge variant="cyan">Built For Speed & Customization</Badge>
-          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">
+      {/* Feature Highlights */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
+        <div className="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
+          <Badge variant="cyan">Built For Speed & Privacy</Badge>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Everything You Need To Master Prompt Engineering
           </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            No registration, no tokens, no backend servers. Complete privacy with browser-native LocalStorage.
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            No tokens, no servers, no forced accounts. Complete privacy stored inside browser LocalStorage.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
               title: "Interactive Parameter Fillers",
-              desc: "Prompts contain placeholders like {{role}} or {{tech_stack}}. Dynamically tweak variable inputs to generate customized prompt text on the fly.",
+              desc: "Prompts contain placeholders like {{role}} or {{tech_stack}}. Dynamically tweak inputs to generate customized prompt text instantly.",
               icon: Sliders,
               color: "from-cyan-500 to-blue-500"
             },
             {
               title: "Dual-Pane Live Prompt Editor",
-              desc: "Full markdown support, syntax highlighting, template selectors, and live syntax validation to construct your own custom prompt library.",
+              desc: "Markdown support, syntax highlighting, template selectors, and live variable detection to build custom templates.",
               icon: Code2,
               color: "from-purple-500 to-pink-500"
             },
@@ -253,12 +256,12 @@ export function Home({ onOpenSearch }) {
             return (
               <div
                 key={idx}
-                className="glass-panel p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 space-y-4 hover:border-cyan-500/40 transition-colors"
+                className="glass-panel p-5 sm:p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 space-y-3 sm:space-y-4 hover:border-cyan-500/40 transition-colors"
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${feat.color} flex items-center justify-center text-white shadow-lg`}>
-                  <Icon className="w-6 h-6" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr ${feat.color} flex items-center justify-center text-white shadow-md`}>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">{feat.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">{feat.title}</h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{feat.desc}</p>
               </div>
             );
@@ -267,10 +270,10 @@ export function Home({ onOpenSearch }) {
       </section>
 
       {/* Featured Categories Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex items-center justify-between flex-wrap gap-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">Explore Categories</h2>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Explore Categories</h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">Discover top prompts across 20 tailored categories</p>
           </div>
           <Link to="/categories" className="text-xs font-bold text-cyan-500 hover:text-cyan-400 flex items-center gap-1">
@@ -278,25 +281,25 @@ export function Home({ onOpenSearch }) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {categoriesData.slice(0, 10).map((cat) => (
             <Link
               key={cat.id}
               to={`/explore?category=${cat.id}`}
-              className="glass-panel p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-lg transition-all group"
+              className="glass-panel p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-md transition-all group"
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 flex items-center justify-center text-cyan-500 group-hover:scale-110 transition-transform">
-                  <Zap className="w-4 h-4" />
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500">
+                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </span>
-                <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
                   {cat.promptCount}
                 </span>
               </div>
-              <h4 className="font-bold text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+              <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
                 {cat.name}
               </h4>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-1">
+              <p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-1">
                 {cat.description}
               </p>
             </Link>
@@ -305,18 +308,18 @@ export function Home({ onOpenSearch }) {
       </section>
 
       {/* Featured Prompts Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex items-center justify-between flex-wrap gap-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
-            <Badge variant="emerald" className="mb-2">Staff Picks</Badge>
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">Featured AI Prompts</h2>
+            <Badge variant="emerald" className="mb-1 sm:mb-2">Staff Picks</Badge>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Featured AI Prompts</h2>
           </div>
           <Link to="/explore" className="text-xs font-bold text-cyan-500 hover:text-cyan-400 flex items-center gap-1">
-            Browse All Prompts <ArrowRight className="w-3.5 h-3.5" />
+            Browse All <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {featuredPrompts.map((prompt) => (
             <PromptCard
               key={prompt.id}
@@ -329,18 +332,18 @@ export function Home({ onOpenSearch }) {
       </section>
 
       {/* Trending Prompts */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex items-center justify-between flex-wrap gap-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
+        <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
-            <Badge variant="amber" className="mb-2">
+            <Badge variant="amber" className="mb-1 sm:mb-2">
               <TrendingUp className="w-3 h-3" />
-              High Conversion & Popularity
+              Popular
             </Badge>
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">Trending Prompts</h2>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Trending Prompts</h2>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {trendingPrompts.map((prompt) => (
             <PromptCard
               key={prompt.id}
@@ -353,11 +356,10 @@ export function Home({ onOpenSearch }) {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         <div className="text-center space-y-2">
           <Badge variant="purple">FAQ</Badge>
-          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">Everything you need to know about PromptForge AI</p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
         </div>
 
         <div className="space-y-3">
@@ -370,13 +372,13 @@ export function Home({ onOpenSearch }) {
               >
                 <button
                   onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                  className="w-full flex items-center justify-between p-5 text-left font-bold text-sm text-slate-900 dark:text-white hover:text-cyan-500 transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-xs sm:text-sm text-slate-900 dark:text-white hover:text-cyan-500 transition-colors gap-3"
                 >
                   <span>{faq.question}</span>
-                  <ChevronDown className={`w-4 h-4 text-cyan-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-cyan-500 shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
                     {faq.answer}
                   </div>
                 )}

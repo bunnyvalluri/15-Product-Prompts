@@ -62,7 +62,7 @@ export function Navbar({ onOpenSearch }) {
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 font-bold" />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-base sm:text-xl tracking-tight text-slate-900 dark:text-white">
+            <span className="font-extrabold text-sm sm:text-xl tracking-tight text-slate-900 dark:text-white shrink-0">
               15 Product<span className="text-emerald-400"> Prompts</span>
             </span>
             <span className="hidden sm:block text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-emerald-500 dark:text-emerald-400 -mt-1">
@@ -101,11 +101,11 @@ export function Navbar({ onOpenSearch }) {
         </nav>
 
         {/* Actions (Search, Bookmarks, Theme, Mobile Toggle) */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          {/* Quick Search Button */}
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          {/* Quick Search Button (Hidden on small mobile, visible on sm+) */}
           <button
             onClick={onOpenSearch}
-            className="p-2 sm:px-3.5 sm:py-2 rounded-xl text-xs font-medium bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-cyan-500 hover:border-cyan-500/50 transition-all flex items-center gap-2 shadow-xs group"
+            className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-cyan-500 hover:border-cyan-500/50 transition-all shadow-xs group"
             title="Search prompts (⌘K)"
           >
             <Search className="w-4 h-4 text-cyan-500 group-hover:scale-110 transition-transform shrink-0" />
@@ -115,15 +115,25 @@ export function Navbar({ onOpenSearch }) {
             </kbd>
           </button>
 
+          {/* Mobile Search Icon Button (Visible only on < sm) */}
+          <button
+            onClick={onOpenSearch}
+            className="sm:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            title="Search Prompts"
+            aria-label="Search Prompts"
+          >
+            <Search className="w-4 h-4 text-cyan-500" />
+          </button>
+
           {/* Bookmarks Counter */}
           <Link
             to="/blog/15vibecodingprompts"
-            className="relative p-2 sm:p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+            className="relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors"
             title="Bookmarked Prompts"
           >
-            <Bookmark className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />
+            <Bookmark className="w-4 h-4 text-amber-500" />
             {bookmarkCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4.5 h-4.5 rounded-full bg-cyan-500 text-white text-[10px] font-extrabold flex items-center justify-center shadow-md shadow-cyan-500/40 animate-pulse">
+              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-cyan-500 text-white text-[9px] font-extrabold flex items-center justify-center shadow-md shadow-cyan-500/40 animate-pulse">
                 {bookmarkCount}
               </span>
             )}
@@ -132,10 +142,10 @@ export function Navbar({ onOpenSearch }) {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 sm:p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors"
             aria-label="Toggle Theme"
           >
-            {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700" />}
+            {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
           </button>
 
           {/* Mobile Menu Toggle Button */}

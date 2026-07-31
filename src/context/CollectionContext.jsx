@@ -6,6 +6,18 @@ const CollectionContext = createContext();
 
 const initialCollections = [
   {
+    id: 'col-microsaas-15',
+    name: '15 Micro-SaaS Idea Prompts',
+    description: 'Flagship collection: pitch deck audit, cold email, database schema, OWASP scanner, Antigravity rules',
+    color: 'from-cyan-400 via-blue-500 to-purple-600',
+    promptIds: [
+      'prompt-saas-1', 'prompt-saas-2', 'prompt-saas-3', 'prompt-saas-4', 'prompt-saas-5',
+      'prompt-saas-6', 'prompt-saas-7', 'prompt-saas-8', 'prompt-saas-9', 'prompt-saas-10',
+      'prompt-saas-11', 'prompt-saas-12', 'prompt-saas-13', 'prompt-saas-14', 'prompt-saas-15'
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'col-1',
     name: 'Frontend Workflows',
     description: 'Prompts for React, Vite, Tailwind CSS, and UI components',

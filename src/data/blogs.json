@@ -1,5 +1,19 @@
 [
   {
+    "id": "blog-saas-15",
+    "slug": "15-micro-saas-idea-prompts",
+    "title": "15 Micro-SaaS Idea Prompts: The Ultimate AI Prompt Blueprint for Solopreneurs",
+    "excerpt": "A curated collection of 15 battle-tested, high-converting Micro-SaaS prompts to generate startup ideas, database schemas, cold outreach campaigns, security audits, and Antigravity system rules.",
+    "author": "Alex Rivera",
+    "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250",
+    "date": "July 31, 2026",
+    "readTime": "12 min read",
+    "category": "Micro-SaaS & Prompts",
+    "tags": ["Micro-SaaS", "System Prompts", "Claude 3.5", "Antigravity", "Solopreneur", "Vibe Coding"],
+    "isFeatured": true,
+    "content": "Building a profitable Micro-SaaS in 2026 is no longer about writing thousands of boilerplate lines of code by hand. With modern AI models like **Claude 3.5 Sonnet**, **ChatGPT (GPT-4o)**, **Gemini 1.5 Pro**, and **Google Antigravity**, solopreneurs can orchestrate end-to-end applications in days.\n\nThis curated blueprint contains **15 specialized Micro-SaaS system prompts** designed for founders, vibe coders, and product builders. Each prompt can be copied, configured with custom parameters, or loaded directly into the PromptForge Editor.\n\n---\n\n### Overview Summary Table\n\n| # | Micro-SaaS Idea | Target Audience | Primary Focus | Best LLM Model |\n|---|---|---|---|---|\n| 1 | AI Pitch Deck Analyzer | Startup Founders | VC Pitch & TAM Audit | Claude 3.5 Sonnet |\n| 2 | B2B Cold Outreach Engine | Sales Reps & Agencies | Personalized Drip Sequence | ChatGPT (GPT-4o) |\n| 3 | Database & API Architect | Vibe Coders | Supabase/Prisma Migrations | Claude 3.5 Sonnet |\n| 4 | SaaS Micro-Copy Writer | UI/UX Designers | High-Converting UI Copy | ChatGPT (GPT-4o) |\n| 5 | AI Security Code Reviewer | Software Engineers | OWASP Vulnerability Audit | Claude 3.5 Sonnet |\n| 6 | SEO Programmatic Clusters | Content Marketers | Keyword Pillar Architecture | Gemini 1.5 Pro |\n| 7 | Churn Risk Intelligence Bot | Customer Success | Sentiment & Retention Offers | Claude 3.5 Sonnet |\n| 8 | Competitor Pricing Agent | Product Strategists | Feature Matrix & Gap Analysis | Gemini 1.5 Pro |\n| 9 | Content Recycler Bot | Creators & Founders | X Thread & LinkedIn Carousels | ChatGPT (GPT-4o) |\n| 10 | SaaS Terms & Privacy Drafter | Indie Hackers | Legal Compliance & GDPR | Claude 3.5 Sonnet |\n| 11 | API Docs & SDK Generator | Developer Tool Creators | cURL / JS / Python SDKs | Claude 3.5 Sonnet |\n| 12 | MVP Feature RICE Scorer | Product Owners | Scope Prioritization | ChatGPT (GPT-4o) |\n| 13 | Support FAQ Troubleshooter | Support Teams | Tier-1 Customer Support Bot | ChatGPT (GPT-4o) |\n| 14 | Newsletter Hook Copywriter | Substack Writers | High-CTR Email Hooks | ChatGPT (GPT-4o) |\n| 15 | Antigravity Rules Architect | AI Developers | `.cursorrules` & System Rules | Google Antigravity |\n\n---\n\n### Detailed Micro-SaaS Prompts\n\nExplore all 15 prompts below. Click **Copy Prompt** or **Open in Editor** on any prompt to start tweaking parameters immediately."
+  },
+  {
     "id": "blog-1",
     "slug": "mastering-chain-of-thought-prompting",
     "title": "Mastering Chain-of-Thought Prompting for Complex Reasoning",

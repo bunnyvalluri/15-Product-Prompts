@@ -307,6 +307,56 @@ export function Home({ onOpenSearch }) {
         </div>
       </section>
 
+      {/* Flagship Feature Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="glass-panel p-6 sm:p-10 rounded-3xl border-2 border-cyan-500/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-purple-950/40 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-4 max-w-2xl text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5" /> Featured Flagship Blueprint
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+              15 Micro-SaaS Idea Prompts
+            </h2>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              A curated collection of 15 battle-tested, high-converting Micro-SaaS prompts to generate startup ideas, database migrations, cold outreach campaigns, security audits, and Antigravity system rules.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <Link
+                to="/blog/15-micro-saas-idea-prompts"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/25"
+              >
+                View Full 15 Prompts Guide <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/explore?search=Micro-SaaS"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 hover:border-cyan-500/40 transition-all"
+              >
+                Explore in Library
+              </Link>
+            </div>
+          </div>
+
+          <div className="w-full md:w-auto grid grid-cols-2 gap-3 font-mono text-xs">
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-cyan-400 text-center">
+              <div className="text-xl font-bold">15</div>
+              <div className="text-[10px] text-slate-400 uppercase font-sans">Copyable Prompts</div>
+            </div>
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-purple-400 text-center">
+              <div className="text-xl font-bold">4</div>
+              <div className="text-[10px] text-slate-400 uppercase font-sans">Top LLMs</div>
+            </div>
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-emerald-400 text-center">
+              <div className="text-xl font-bold">100%</div>
+              <div className="text-[10px] text-slate-400 uppercase font-sans">Vibe-Coding Ready</div>
+            </div>
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-amber-400 text-center">
+              <div className="text-xl font-bold">Free</div>
+              <div className="text-[10px] text-slate-400 uppercase font-sans">Open Access</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Prompts Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         <div className="flex items-center justify-between flex-wrap gap-2">

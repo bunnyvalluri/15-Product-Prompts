@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   FileCode2,
   Copy,
@@ -32,13 +33,23 @@ const templates = [
 ];
 
 export function PromptEditor() {
+  const location = useLocation();
   const { addToast } = useToast();
-  const [content, setContent] = useState(templates[0].content);
-  const [history, setHistory] = useState([templates[0].content]);
+  const initialContent = location.state?.content || templates[0].content;
+  const [content, setContent] = useState(initialContent);
+  const [history, setHistory] = useState([initialContent]);
   const [historyIndex, setHistoryIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState('split'); // 'split', 'editor', 'preview'
   const [saveModalOpen, setSaveModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (location.state?.content) {
+      setContent(location.state.content);
+      setHistory([location.state.content]);
+      setHistoryIndex(0);
+    }
+  }, [location.state?.content]);
 
   // Parse placeholders
   const detectedVariables = Array.from(content.matchAll(/{{\s*([a-zA-Z0-9_]+)\s*}}/g)).map(m => m[1]);

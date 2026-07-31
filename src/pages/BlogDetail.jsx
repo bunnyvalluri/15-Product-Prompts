@@ -137,8 +137,8 @@ export function BlogDetail() {
               <span className="text-xs text-slate-400 font-mono">15 Prompts</span>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
+            <div className="overflow-x-auto touch-scroll">
+              <table className="w-full text-left text-xs min-w-[600px]">
                 <thead>
                   <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
                     <th className="py-3 px-3">#</th>
@@ -253,7 +253,7 @@ export function BlogDetail() {
                       </div>
                     </div>
 
-                    <pre className="p-4 sm:p-6 text-xs sm:text-sm font-mono text-slate-200 leading-relaxed overflow-x-auto whitespace-pre-wrap">
+                    <pre className="p-4 sm:p-6 text-xs sm:text-sm font-mono text-slate-200 leading-relaxed overflow-x-auto touch-scroll whitespace-pre-wrap break-words">
                       {prompt.content}
                     </pre>
                   </div>

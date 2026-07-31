@@ -9,34 +9,33 @@ export function PromptDetailModal({ prompt, isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={prompt.title} maxWidth="max-w-3xl">
-      <div className="space-y-6">
+      <div className="space-y-4">
         {/* Meta Bar */}
-        <div className="flex items-center justify-between flex-wrap gap-2 text-xs">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-2 text-xs">
+          <div className="flex items-center flex-wrap gap-2">
             <Badge variant="cyan">
               <Sparkles className="w-3 h-3" />
-              {prompt.categoryName}
+              <span className="truncate max-w-[120px] sm:max-w-none">{prompt.categoryName}</span>
             </Badge>
             <Badge variant="purple">{prompt.difficulty}</Badge>
-            <span className="font-semibold text-slate-700 dark:text-slate-300">
+            <span className="font-semibold text-slate-700 dark:text-slate-300 text-[11px] sm:text-xs truncate">
               {prompt.aiModel}
             </span>
-          </div>
-
-          <div className="flex items-center gap-3 text-slate-400">
-            <span className="flex items-center gap-1">
-              <Clock className="w-3 h-3" />
-              {prompt.readingTime}
-            </span>
-            <span className="flex items-center gap-1 text-amber-500 font-semibold">
-              <Star className="w-3 h-3 fill-amber-500" />
-              {prompt.rating}
-            </span>
+            <div className="flex items-center gap-2 text-slate-400 ml-auto">
+              <span className="flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                {prompt.readingTime}
+              </span>
+              <span className="flex items-center gap-1 text-amber-500 font-semibold">
+                <Star className="w-3 h-3 fill-amber-500" />
+                {prompt.rating}
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
           {prompt.description}
         </p>
 

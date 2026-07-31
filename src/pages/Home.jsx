@@ -60,22 +60,22 @@ export function Home({ onOpenSearch }) {
           className="space-y-4 sm:space-y-6 max-w-4xl mx-auto"
         >
           {/* Top Pill */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass-panel border border-cyan-500/30 text-[11px] sm:text-xs font-semibold text-cyan-600 dark:text-cyan-400 shadow-sm max-w-full">
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-500 shrink-0" />
-            <span className="truncate">Introducing PromptForge AI 2.0 • Client-Side Suite</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass-panel border border-emerald-500/30 text-[11px] sm:text-xs font-semibold text-emerald-600 dark:text-emerald-400 shadow-sm max-w-full">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 shrink-0" />
+            <span className="truncate">15 Product Prompts • 15 Micro-SaaS AI Blueprint Suite</span>
           </div>
 
           {/* Hero Heading */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] px-2">
-            Craft, Test & Vibe-Code With <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Precision AI System Prompts
+            Build & Launch Micro-SaaS With <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              15 Product System Prompts
             </span>
           </h1>
 
           {/* Supporting Text */}
           <p className="text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
-            The open-access library of battle-tested system instructions, parameter fillers, and LocalStorage collections for ChatGPT, Claude 3.5, Gemini, Cursor, and Antigravity.
+            The flagship open-access collection of 15 battle-tested Micro-SaaS system prompts, parameter fillers, and vibe-coding tools for ChatGPT, Claude 3.5, Gemini, Cursor, and Google Antigravity.
           </p>
 
           {/* Hero Search Bar */}

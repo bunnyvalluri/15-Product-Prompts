@@ -10,11 +10,10 @@ import {
   ExternalLink,
   Sparkles,
   Zap,
-  Bot,
-  Cpu,
-  Layers,
   Code2,
-  Table as TableIcon
+  Table as TableIcon,
+  Play,
+  MessageSquareText
 } from 'lucide-react';
 import blogsData from '../data/blogs.json';
 import promptsData from '../data/prompts.json';
@@ -61,10 +60,10 @@ export function BlogDetail() {
       {/* Back Button */}
       <button
         onClick={() => navigate('/blog')}
-        className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-cyan-500 transition-colors"
+        className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-emerald-400 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        Back to Blog Articles
+        Back to Articles & Prompts
       </button>
 
       {/* Header Info */}
@@ -85,7 +84,7 @@ export function BlogDetail() {
           {blog.title}
         </h1>
 
-        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal border-l-4 border-cyan-500 pl-4 py-1">
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal border-l-4 border-emerald-400 pl-4 py-1">
           {blog.excerpt}
         </p>
 
@@ -94,17 +93,17 @@ export function BlogDetail() {
             <img
               src={blog.authorAvatar}
               alt={blog.author}
-              className="w-11 h-11 rounded-full object-cover border-2 border-cyan-500/40"
+              className="w-11 h-11 rounded-full object-cover border-2 border-emerald-400/40"
             />
             <div>
               <p className="text-xs font-bold text-slate-900 dark:text-white">{blog.author}</p>
-              <p className="text-[10px] text-slate-400">Lead AI Systems Architect</p>
+              <p className="text-[10px] text-slate-400">15 Product Prompts Strategist</p>
             </div>
           </div>
 
           <button
             onClick={handleShare}
-            className="p-2.5 rounded-xl border border-slate-300 dark:border-slate-800 text-slate-400 hover:text-cyan-500 hover:border-cyan-500/40 transition-colors"
+            className="p-2.5 rounded-xl border border-slate-300 dark:border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-400/40 transition-colors"
             title="Share Article"
           >
             <Share2 className="w-4 h-4" />
@@ -116,16 +115,16 @@ export function BlogDetail() {
       {isSaasCollection ? (
         <div className="space-y-12">
           {/* Banner */}
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 space-y-4">
-            <div className="flex items-center gap-2 text-cyan-500 font-semibold text-xs tracking-wider uppercase">
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/20 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-cyan-500/5 space-y-4">
+            <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs tracking-wider uppercase">
               <Sparkles className="w-4 h-4" />
-              Flagship Micro-SaaS Blueprint
+              15 Product Prompts Official Blueprint
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
               15 Micro-SaaS Idea System Prompts
             </h2>
             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Below is the comprehensive list of 15 battle-tested Micro-SaaS prompts. You can copy any prompt with a single click, or open it in our interactive Prompt Editor to customize variable parameters.
+              Below is the complete list of 15 battle-tested Micro-SaaS system prompts. Click **Copy Prompt** to use immediately, or **Open in Editor** to customize variable parameters.
             </p>
           </div>
 
@@ -133,8 +132,8 @@ export function BlogDetail() {
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4 overflow-hidden">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <TableIcon className="w-5 h-5 text-cyan-500" />
-                Prompt Directory & Summary Table
+                <TableIcon className="w-5 h-5 text-emerald-400" />
+                15 Micro-SaaS Prompts Summary Table
               </h3>
               <span className="text-xs text-slate-400 font-mono">15 Prompts</span>
             </div>
@@ -145,7 +144,7 @@ export function BlogDetail() {
                   <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
                     <th className="py-3 px-3">#</th>
                     <th className="py-3 px-3">Micro-SaaS Idea</th>
-                    <th className="py-3 px-3">Target Audience</th>
+                    <th className="py-3 px-3">Target Audience / Core Function</th>
                     <th className="py-3 px-3">Primary Model</th>
                     <th className="py-3 px-3 text-right">Action</th>
                   </tr>
@@ -156,22 +155,22 @@ export function BlogDetail() {
                       key={p.id}
                       className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group"
                     >
-                      <td className="py-3 px-3 font-bold text-cyan-500 font-mono">{idx + 1}</td>
+                      <td className="py-3 px-3 font-bold text-emerald-400 font-mono">{idx + 1}</td>
                       <td className="py-3 px-3 font-semibold text-slate-900 dark:text-white">
                         {p.title}
                       </td>
                       <td className="py-3 px-3 text-slate-500 dark:text-slate-400">{p.description}</td>
                       <td className="py-3 px-3">
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-cyan-400 border border-cyan-500/20">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-emerald-400 border border-emerald-500/20">
                           {p.aiModel}
                         </span>
                       </td>
                       <td className="py-3 px-3 text-right">
                         <button
                           onClick={() => scrollToPrompt(idx)}
-                          className="text-xs font-semibold text-cyan-500 hover:text-cyan-400 hover:underline inline-flex items-center gap-1"
+                          className="text-xs font-semibold text-emerald-400 hover:underline inline-flex items-center gap-1"
                         >
-                          Jump to # {idx + 1}
+                          Jump to #{idx + 1}
                         </button>
                       </td>
                     </tr>
@@ -184,8 +183,8 @@ export function BlogDetail() {
           {/* 15 Detailed Prompt Cards */}
           <div className="space-y-10">
             <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
-              <Code2 className="w-6 h-6 text-cyan-500" />
-              15 Copyable System Prompts
+              <Code2 className="w-6 h-6 text-emerald-400" />
+              15 Copyable Micro-SaaS Prompts
             </h3>
 
             {saasPrompts.map((prompt, index) => {
@@ -194,12 +193,12 @@ export function BlogDetail() {
                 <div
                   key={prompt.id}
                   id={`saas-prompt-${index + 1}`}
-                  className="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 hover:border-cyan-500/30 transition-all scroll-mt-24"
+                  className="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 hover:border-emerald-500/30 transition-all scroll-mt-24"
                 >
                   {/* Top Header Row */}
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-500 border border-cyan-500/30 flex items-center justify-center text-sm font-extrabold font-mono">
+                      <span className="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-sm font-extrabold font-mono">
                         #{index + 1}
                       </span>
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white">
@@ -223,14 +222,14 @@ export function BlogDetail() {
                   <div className="rounded-2xl border border-slate-300 dark:border-slate-800 bg-slate-950 overflow-hidden shadow-xl">
                     <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900 border-b border-slate-800">
                       <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                        <Zap className="w-3.5 h-3.5 text-cyan-400" />
-                        System Prompt Template
+                        <Zap className="w-3.5 h-3.5 text-emerald-400" />
+                        Prompt Template:
                       </span>
 
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleCopyPrompt(prompt.id, prompt.content)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 transition-all"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all"
                         >
                           {isCopied ? (
                             <>
@@ -247,7 +246,7 @@ export function BlogDetail() {
 
                         <button
                           onClick={() => handleOpenInEditor(prompt.content)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700 hover:text-cyan-400 hover:border-cyan-500/40 transition-all"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700 hover:text-emerald-400 hover:border-emerald-500/40 transition-all"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                           Open in Editor
@@ -267,7 +266,7 @@ export function BlogDetail() {
                       {prompt.parameters?.map((param) => (
                         <span
                           key={param.name}
-                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                         >
                           {`{{${param.name}}}`}
                         </span>
@@ -288,6 +287,68 @@ export function BlogDetail() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Video Walkthrough Section (matching screenshot bottom section) */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/20 bg-slate-900/90 text-white space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center">
+                  <Play className="w-5 h-5 fill-emerald-400 text-emerald-400 ml-0.5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Video Guide: Micro-SaaS Blueprint Walkthrough</h3>
+                  <p className="text-xs text-slate-400">Step-by-step masterclass on deploying Micro-SaaS apps with AI Prompts</p>
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full text-xs font-mono bg-slate-800 text-emerald-400 border border-emerald-500/30">
+                14:20 mins
+              </span>
+            </div>
+
+            {/* Video Player Card Preview */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 group cursor-pointer shadow-2xl flex items-center justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200"
+                alt="Video Walkthrough Thumbnail"
+                className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors" />
+              <div className="relative z-10 flex flex-col items-center gap-3">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center shadow-xl shadow-emerald-500/30 group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-slate-950 text-slate-950 ml-1" />
+                </div>
+                <span className="text-xs font-bold text-white bg-slate-900/90 px-4 py-1.5 rounded-full border border-slate-700">
+                  Watch Video Tutorial
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Related Categories Navigation (matching screenshot footer section) */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400">
+              Explore More Categories
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: 'ChatGPT Prompts', path: '/explore?category=chatgpt' },
+                { label: 'Claude 3.5 Sonnet', path: '/explore?category=claude' },
+                { label: 'Google Antigravity', path: '/explore?category=antigravity' },
+                { label: 'Cursor .cursorrules', path: '/explore?category=cursor' },
+                { label: 'Midjourney v6', path: '/explore?category=midjourney' },
+                { label: 'B2B Sales & Outreach', path: '/explore?category=marketing' },
+                { label: 'Database & API Specs', path: '/explore?category=programming' }
+              ].map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.path}
+                  className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-emerald-500/40 hover:text-emerald-400 transition-all"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       ) : (

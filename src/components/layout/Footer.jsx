@@ -25,15 +25,15 @@ export function Footer() {
           {/* Column 1: Brand & Tagline */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                <Sparkles className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/25">
+                <Sparkles className="w-6 h-6 text-slate-950 font-bold" />
               </div>
               <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
-                PromptForge<span className="text-cyan-500">.ai</span>
+                15 Product<span className="text-emerald-400"> Prompts</span>
               </span>
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed">
-              The premier client-side AI prompt engineering library, parameter customizer, and vibe-coding editor. Built for ChatGPT, Claude 3.5, Gemini 1.5 Pro, Cursor, and Google Antigravity.
+              Curated collection of 15 battle-tested Micro-SaaS prompts, system rules, parameter customizers, and vibe-coding tools for ChatGPT, Claude 3.5, Gemini 1.5, Cursor, and Google Antigravity.
             </p>
             <div className="flex items-center gap-3 pt-2">
               {[
@@ -114,7 +114,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
-          <p>© {new Date().getFullYear()} PromptForge AI. All rights reserved. 100% Client-Side SaaS Architecture.</p>
+          <p>© {new Date().getFullYear()} 15 Product Prompts. All rights reserved. 100% Client-Side SaaS Architecture.</p>
           <div className="flex items-center gap-1 text-slate-400">
             <span>Crafted with</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />

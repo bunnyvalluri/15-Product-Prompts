@@ -64,15 +64,15 @@ export function Navbar({ onOpenSearch }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition-transform">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 font-bold" />
           </div>
           <div className="flex flex-col">
             <span className="font-extrabold text-base sm:text-xl tracking-tight text-slate-900 dark:text-white">
-              PromptForge<span className="text-cyan-500">.ai</span>
+              15 Product<span className="text-emerald-400"> Prompts</span>
             </span>
-            <span className="hidden sm:block text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-slate-400 dark:text-slate-500 -mt-1">
-              AI Library & Editor
+            <span className="hidden sm:block text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-emerald-500 dark:text-emerald-400 -mt-1">
+              Micro-SaaS & AI Blueprints
             </span>
           </div>
         </Link>

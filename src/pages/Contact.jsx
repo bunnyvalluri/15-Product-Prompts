@@ -66,7 +66,7 @@ export function Contact() {
             },
             {
               title: "Global Remote Team",
-              desc: "San Francisco, CA & Remote Worldwide",
+              desc: "Hyderabad, India & Remote Worldwide",
               icon: Globe,
               color: "text-cyan-500 bg-cyan-500/10"
             },
@@ -243,7 +243,7 @@ export function Contact() {
                   <div className="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto animate-bounce">
                     <MapPin className="w-5 h-5" />
                   </div>
-                  <p className="font-extrabold text-white text-sm">San Francisco, CA & Remote</p>
+                  <p className="font-extrabold text-white text-sm">Hyderabad, India & Remote</p>
                   <p className="text-xs text-slate-400">Serving Developers & AI Engineers Worldwide</p>
                 </div>
               </div>

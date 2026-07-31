@@ -1,0 +1,1577 @@
+{
+  "component": "RenderPage/RenderPage",
+  "props": {
+    "errors": {},
+    "auth": {
+      "user": null
+    },
+    "ziggy": {
+      "url": "https://resources.leadgenman.com",
+      "port": null,
+      "defaults": [],
+      "routes": {
+        "cashier.payment": {
+          "uri": "stripe/payment/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "parameters": [
+            "id"
+          ]
+        },
+        "cashier.webhook": {
+          "uri": "stripe/webhook",
+          "methods": [
+            "POST"
+          ]
+        },
+        "sanctum.csrf-cookie": {
+          "uri": "sanctum/csrf-cookie",
+          "methods": [
+            "GET",
+            "HEAD"
+          ]
+        },
+        "ignition.healthCheck": {
+          "uri": "_ignition/health-check",
+          "methods": [
+            "GET",
+            "HEAD"
+          ]
+        },
+        "ignition.executeSolution": {
+          "uri": "_ignition/execute-solution",
+          "methods": [
+            "POST"
+          ]
+        },
+        "ignition.updateConfig": {
+          "uri": "_ignition/update-config",
+          "methods": [
+            "POST"
+          ]
+        },
+        "verification-code.send": {
+          "uri": "api/verification-code/send",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "verification-code.verify": {
+          "uri": "api/verification-code/verify",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "verification-code.resend": {
+          "uri": "api/verification-code/resend",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "api.pages.getPaginatedPages": {
+          "uri": "api/get-paginated-pages",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "register": {
+          "uri": "register",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "login": {
+          "uri": "login",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "password.request": {
+          "uri": "forgot-password",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "password.email": {
+          "uri": "forgot-password",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "password.reset": {
+          "uri": "reset-password/{token}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "token"
+          ]
+        },
+        "password.store": {
+          "uri": "reset-password",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "verification.notice": {
+          "uri": "verify-email",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "verification.verify": {
+          "uri": "verify-email/{id}/{hash}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id",
+            "hash"
+          ]
+        },
+        "verification.send": {
+          "uri": "email/verification-notification",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "password.confirm": {
+          "uri": "confirm-password",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "password.update": {
+          "uri": "password",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "logout": {
+          "uri": "logout",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "invitations.accept": {
+          "uri": "invitations/{token}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "token"
+          ]
+        },
+        "stripe.webhook.ai-credits": {
+          "uri": "stripe/webhook/ai-credits",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "google.redirect": {
+          "uri": "login/google/redirect",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "google.callback": {
+          "uri": "login/google/callback",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "home": {
+          "uri": "/",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "switch-organization": {
+          "uri": "switch-organization/{organizationId}",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "organizationId"
+          ]
+        },
+        "invitations.resend": {
+          "uri": "invitations/{invitation}/resend",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "invitation"
+          ],
+          "bindings": {
+            "invitation": "id"
+          }
+        },
+        "invitations.revoke": {
+          "uri": "invitations/{invitation}",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "invitation"
+          ],
+          "bindings": {
+            "invitation": "id"
+          }
+        },
+        "organization.upload-default-og-image": {
+          "uri": "organization/upload-default-og-image",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "organization.delete-default-og-image": {
+          "uri": "organization/delete-default-og-image",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "organizations.members.remove": {
+          "uri": "organizations/{organization}/members/{user}",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "organization",
+            "user"
+          ],
+          "bindings": {
+            "organization": "slug",
+            "user": "id"
+          }
+        },
+        "organizations.index": {
+          "uri": "organizations",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "organizations.store": {
+          "uri": "organizations",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "organizations.update": {
+          "uri": "organizations/{organization}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "organization"
+          ],
+          "bindings": {
+            "organization": "slug"
+          }
+        },
+        "organizations.destroy": {
+          "uri": "organizations/{organization}",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "organization"
+          ],
+          "bindings": {
+            "organization": "slug"
+          }
+        },
+        "organizations.membership": {
+          "uri": "organizations/{organization}/membership",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "organization"
+          ],
+          "bindings": {
+            "organization": "slug"
+          }
+        },
+        "organizations.invite": {
+          "uri": "organizations/{organization}/invite",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "organization"
+          ],
+          "bindings": {
+            "organization": "slug"
+          }
+        },
+        "settings": {
+          "uri": "subscription/settings",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "billing-portal": {
+          "uri": "subscription/billing-portal",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout": {
+          "uri": "subscription/subscription-checkout",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-quantity": {
+          "uri": "subscription/subscription-quantity",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout-ltd": {
+          "uri": "subscription/subscription-checkout-ltd",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout-ltd-tier1": {
+          "uri": "subscription/subscription-checkout-ltd-tier-1",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout-ltd-tier2": {
+          "uri": "subscription/subscription-checkout-ltd-tier-2",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout-ltd-tier3": {
+          "uri": "subscription/subscription-checkout-ltd-tier-3",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout-ltd-tier4": {
+          "uri": "subscription/subscription-checkout-ltd-tier-4",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "subscription-checkout-ltd-tier5": {
+          "uri": "subscription/subscription-checkout-ltd-tier-5",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "ai-credits-checkout": {
+          "uri": "subscription/ai-credits-checkout",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.edit": {
+          "uri": "profile",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.update": {
+          "uri": "profile",
+          "methods": [
+            "PATCH"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.destroy": {
+          "uri": "profile",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.updateAffiliateUrl": {
+          "uri": "profile/affiliate",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.styles": {
+          "uri": "profile/styles",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.styles.update": {
+          "uri": "profile/styles",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.styles.update.logo": {
+          "uri": "profile/styles/logo",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "profile.styles.update.favicon": {
+          "uri": "profile/styles/favicon",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations": {
+          "uri": "integrations",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.tokens.create": {
+          "uri": "integrations",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.f2f": {
+          "uri": "integrations/f2f",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.rb2b": {
+          "uri": "integrations/rb2b",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.zapier": {
+          "uri": "integrations/zapier",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.f2f.update": {
+          "uri": "integrations/f2f",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.rb2b.update": {
+          "uri": "integrations/rb2b",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "integrations.webhooks": {
+          "uri": "integrations/webhooks",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "webhooks.store": {
+          "uri": "integrations/webhooks",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "webhooks.destroy": {
+          "uri": "integrations/webhooks/{webhook}",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "webhook"
+          ],
+          "bindings": {
+            "webhook": "id"
+          }
+        },
+        "webhooks.toggle": {
+          "uri": "integrations/webhooks/toggle/{webhook}",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "webhook"
+          ],
+          "bindings": {
+            "webhook": "id"
+          }
+        },
+        "dashboard": {
+          "uri": "dashboard",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "editor.edit": {
+          "uri": "editor/edit/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.update": {
+          "uri": "editor/update/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "upload-file": {
+          "uri": "editor/upload-file",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "editor.variables": {
+          "uri": "editor/variables/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.variables.update": {
+          "uri": "editor/variables/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.upload-cover-image": {
+          "uri": "editor/upload-cover-image/{id}",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.remove-cover-image": {
+          "uri": "editor/remove-cover-image/{id}",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.update-slug": {
+          "uri": "editor/update-slug/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.page-analytics": {
+          "uri": "editor/analytics/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.page-leads": {
+          "uri": "editor/leads/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.seo-settings": {
+          "uri": "editor/seo-settings/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.seo-settings.update": {
+          "uri": "editor/seo-settings/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.preferences": {
+          "uri": "editor/preferences/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.preferences.update": {
+          "uri": "editor/preferences/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.page-scripts": {
+          "uri": "editor/page-scripts/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.page-scripts.update": {
+          "uri": "editor/page-scripts/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.release-lock": {
+          "uri": "editor/{pageId}/release-lock",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "pageId"
+          ]
+        },
+        "editor.force-unlock": {
+          "uri": "editor/{pageId}/force-unlock",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "pageId"
+          ]
+        },
+        "editor.lead-generation-methods": {
+          "uri": "editor/{pageId}/lead-generation-methods",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "pageId"
+          ]
+        },
+        "editor.lead-generation-methods.update": {
+          "uri": "editor/{pageId}/lead-generation-methods",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "pageId"
+          ]
+        },
+        "editor.page-widgets": {
+          "uri": "editor/{pageId}/page-widgets",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "pageId"
+          ]
+        },
+        "editor.page-widgets.update": {
+          "uri": "editor/{pageId}/page-widgets",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "pageId"
+          ]
+        },
+        "editor.preview": {
+          "uri": "editor/preview/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.main-page-editor": {
+          "uri": "editor/main-page-editor",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "editor.main-page-editor.update": {
+          "uri": "editor/main-page-editor",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "editor.upload-og-image": {
+          "uri": "editor/{id}/upload-og-image",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "editor.delete-og-image": {
+          "uri": "editor/{id}/delete-og-image",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "lead-magnets.create": {
+          "uri": "lead-magnets/create",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "lead-magnets.ai.create": {
+          "uri": "lead-magnets/ai/create",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "pages": {
+          "uri": "pages",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "pages.create": {
+          "uri": "pages/create",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "pages.update": {
+          "uri": "pages/update/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "pages.delete": {
+          "uri": "pages/delete/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "pages.duplicate": {
+          "uri": "pages/duplicate/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "organization.seo-settings.update": {
+          "uri": "organization/seo-settings",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "ai-lead-magnets.index": {
+          "uri": "ai-lead-magnets",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "ai-lead-magnets.store": {
+          "uri": "ai-lead-magnets",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "ai-lead-magnets.create-page": {
+          "uri": "ai-lead-magnets/page/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "ai-lead-magnets.retry": {
+          "uri": "ai-lead-magnets/retry/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "templates": {
+          "uri": "templates",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "templates.create-from-page": {
+          "uri": "page-to-template/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "templates.edit": {
+          "uri": "templates/edit/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "templates.update": {
+          "uri": "templates/update/{id}",
+          "methods": [
+            "PUT"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "templates.create-page-from-template": {
+          "uri": "template-to-page/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "templates.delete": {
+          "uri": "templates/delete/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "leads.delete": {
+          "uri": "leads/delete/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "leads.export": {
+          "uri": "leads/export/{page_id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "page_id"
+          ]
+        },
+        "coming-soon": {
+          "uri": "coming-soon",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "feedback": {
+          "uri": "feedback",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "domains.show": {
+          "uri": "domains",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "domains.store": {
+          "uri": "domains",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "domains.destroy": {
+          "uri": "domains/{id}",
+          "methods": [
+            "DELETE"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "leads": {
+          "uri": "leads",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "leads.export.all": {
+          "uri": "leads/all/export",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "pages.export-pdf": {
+          "uri": "pages/export-pdf/{id}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co",
+          "parameters": [
+            "id"
+          ]
+        },
+        "admin.dashboard": {
+          "uri": "admin",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "admin.stripe-checker": {
+          "uri": "admin/stripe-checker",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "admin.validate-voucher": {
+          "uri": "admin/validate-voucher",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "admin.check-membership": {
+          "uri": "admin/check-membership",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "admin.update-membership-quantity": {
+          "uri": "admin/update-membership-quantity",
+          "methods": [
+            "POST"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "create-lead": {
+          "uri": "create-lead",
+          "methods": [
+            "POST"
+          ]
+        },
+        "check-password": {
+          "uri": "check-password",
+          "methods": [
+            "POST"
+          ]
+        },
+        "pages.getPaginatedPages": {
+          "uri": "get-paginated-pages",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "my.subpage.co"
+        },
+        "page.render.root": {
+          "uri": "/",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "{username}.subpage.co",
+          "parameters": [
+            "username"
+          ]
+        },
+        "page.render": {
+          "uri": "{slug}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "domain": "{username}.subpage.co",
+          "parameters": [
+            "username",
+            "slug"
+          ]
+        },
+        "gated-content.google.redirect": {
+          "uri": "gated-content/google/redirect",
+          "methods": [
+            "GET",
+            "HEAD"
+          ]
+        },
+        "gated-content.google.callback": {
+          "uri": "gated-content/google/callback",
+          "methods": [
+            "GET",
+            "HEAD"
+          ]
+        },
+        "page.render.root.custom_domain": {
+          "uri": "/",
+          "methods": [
+            "GET",
+            "HEAD"
+          ]
+        },
+        "page.render.custom_domain": {
+          "uri": "{slug}",
+          "methods": [
+            "GET",
+            "HEAD"
+          ],
+          "parameters": [
+            "slug"
+          ]
+        },
+        "pages.getPaginatedPages.custom_domain": {
+          "uri": "get-paginated-pages",
+          "methods": [
+            "GET",
+            "HEAD"
+          ]
+        }
+      },
+      "location": "https://resources.leadgenman.com/15vibecodingprompts"
+    },
+    "menu": [],
+    "permissions": null,
+    "roles": null,
+    "flash": {
+      "success": null,
+      "error": null
+    },
+    "premium": false,
+    "currentOrganizationHasPremium": false,
+    "active_premium_plan": false,
+    "available_total_organizations": false,
+    "subdomain_username": "resource",
+    "recaptcha": "6LcQEfgpAAAAADlcZqlPGuIneZdqVR_Hsy8Zj6sD",
+    "affiliate_url": "https://subpage.co?ref=badge",
+    "organizations": {
+      "all": null,
+      "current": null
+    },
+    "page": {
+      "id": "a25e51bf-3e9d-4d2b-858c-d3d20dffaa42",
+      "created_at": "2026-07-28T17:30:21.000000Z",
+      "updated_at": "2026-07-28T17:31:04.000000Z",
+      "title": "15 Vibe Coding Prompts",
+      "content": "[{\"id\": \"1\", \"tab_title\": \"Default Tab\", \"tab_content\": \"[{\\\"id\\\":\\\"be604cfc-62fa-4024-9905-271cb23ed873\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"center\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Copy, fill the brackets, ship. One prompt for every stage.\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"d8fb65dd-3063-47f1-a31b-f10f7527c0b5\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":2},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"The 15 Prompts at a Glance\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"936aba55-9b73-453a-aa86-5d139cbf27ef\\\",\\\"type\\\":\\\"table\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\"},\\\"content\\\":{\\\"type\\\":\\\"tableContent\\\",\\\"columnWidths\\\":[null,null,null],\\\"rows\\\":[{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"#\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Prompt\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Use it when\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"01\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Write a Full PRD\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Before building anything new\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"02\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Create Your \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"http://CLAUDE.md\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"CLAUDE.md\\\",\\\"styles\\\":{}}]}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Once per project, first session\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"03\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Ultra Plan Mode\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Any task touching multiple files\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"04\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Spec-Driven Development\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Features that must not drift\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"05\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Full UI &amp; UX Design Brief\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Before designing a screen or flow\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"06\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Implementation Plan\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"After the spec is approved\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"07\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wire Up an MCP Server\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Connecting Claude to outside tools\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"08\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Connect Your Database\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Setting up Postgres / Supabase\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"09\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Find Security Gaps\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Before anything goes live\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"10\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Debug an Error Fast\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"The moment an error appears\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"11\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"E2E Test Your Application\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Locking in your money flows\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"12\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Clean Up Dead Code\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"When the repo starts feeling heavy\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"13\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Write Clean Git Commits\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Every single commit\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"14\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Hooks as Guardrails\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Automating your quality checks\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"15\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Turn a Task Into a Skill\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Anything you have done 3+ times\\\",\\\"styles\\\":{}}]]}]},\\\"children\\\":[]},{\\\"id\\\":\\\"cef16d53-f476-4ef5-b72e-229527263a38\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":2},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"The Prompts\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"54c3569d-6018-41cf-8b2a-cbbbd79e54da\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"01 -- Write a Full PRD\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"976d3f91-83e7-47ea-b855-48f121a77156\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Write a complete PRD for the feature below.\\\\n\\\\nFeature: [DESCRIBE FEATURE]\\\\nUsers: [WHO USES IT]\\\\nStack: [YOUR STACK]\\\\n\\\\nInclude:\\\\n\\\\n* Problem statement + success metrics\\\\n* User stories with acceptance criteria\\\\n* Scope: what ships in v1, what does not\\\\n* Data model changes\\\\n* Edge cases + failure states\\\\n* Open questions for me to answer\\\\n\\\\nKeep it under 2 pages. Be specific, no filler.\\\\nSave it as docs/prd-[feature].md so every later\\\\nprompt can reference it.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"22890719-a00c-48d3-a3f3-a57806caaae1\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"02 -- Create Your \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"http://CLAUDE.md\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"CLAUDE.md\\\",\\\"styles\\\":{}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"a413561f-5643-4a70-b658-fc54a7ae3bb2\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Scan this entire codebase, then generate a CLAUDE.md.\\\\n\\\\nInclude:\\\\n\\\\n* What this project is, in 2 lines\\\\n* Tech stack + the versions that matter\\\\n* Commands: [DEV / BUILD / TEST / LINT]\\\\n* Architecture: where things live and why\\\\n* Code conventions you actually detect in the code\\\\n* Hard rules: [YOUR NON-NEGOTIABLES] -- what to\\\\n  never touch without asking\\\\n* Gotchas a new engineer would hit in week 1\\\\n\\\\nWrite rules as short imperatives. Nothing generic --\\\\nonly what is true for THIS repo. If you are unsure\\\\nabout a rule, ask me instead of inventing it.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"3e5e46e3-ea10-463a-8a9e-65fe6d9bb4c4\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"03 -- Ultra Plan Mode\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"93f08582-10b9-40ba-9cac-a8d576022a72\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Enter plan mode. Do NOT write any code yet.\\\\n\\\\nTask: [PASTE TASK]\\\\nConstraints: [DEADLINE / STACK / NO-GO ZONES]\\\\n\\\\n1. Read every file this task touches, list them\\\\n   with one line on what each does today\\\\n2. Map current behavior vs target behavior\\\\n3. Propose 2-3 approaches with real tradeoffs:\\\\n   complexity, risk, blast radius\\\\n4. Pick one and justify it in 3 lines\\\\n5. Break it into steps small enough to verify\\\\n   one at a time, each with its own check\\\\n6. List risks + the exact rollback for each\\\\n7. Flag anything touching [AUTH / PAYMENTS /\\\\n   PROD DATA] for my explicit sign-off\\\\n\\\\nThen stop. Show me the plan and wait for my\\\\napproval before touching a single file.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"5f10e8b9-7945-41dd-96e0-d77e16eb8562\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"04 -- Spec-Driven Development\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"6d3f6162-3a94-407c-824d-081216f60fc0\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"We build specs first. Write a spec for: [FEATURE]\\\\n\\\\nContext: [WHO USES IT + WHY NOW]\\\\n\\\\nSpec format:\\\\n\\\\n* Behavior: given / when / then, every case --\\\\n  happy path, edge cases, failure states\\\\n* API contract: inputs, outputs, error shapes,\\\\n  status codes\\\\n* Data: schema changes + migrations needed\\\\n* UI states: loading, empty, error, success\\\\n* Non-goals: what this spec deliberately skips\\\\n* Acceptance checklist I can verify line by line\\\\n\\\\nAfter I approve the spec, implement EXACTLY the\\\\nspec. If reality forces a deviation, stop, update\\\\nthe spec, get my ok, then continue. The spec is\\\\nthe source of truth, not the code.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"17727f0a-ecd2-4eb5-9ed3-285c45b95d0e\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"05 -- Full UI &amp; UX Design Brief\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"7babc60c-5df3-486f-8292-960a77862b7e\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Create a full UI/UX design brief for: [SCREEN OR FLOW]\\\\n\\\\nAudience: [USERS]\\\\nBrand: [COLORS / FONTS / VIBE]\\\\n\\\\nDeliver:\\\\n\\\\n* User journey through the flow, step by step\\\\n* Layout per screen: hierarchy, spacing, breakpoints\\\\n* Component inventory with every state --\\\\n  hover, empty, error, loading\\\\n* Typography + color tokens\\\\n* Motion: what animates, duration, easing\\\\n* Accessibility notes\\\\n\\\\nStudy patterns from [2-3 PRODUCTS YOU ADMIRE]\\\\nfor direction. Never copy them.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"ffc46398-1611-46fa-89c5-2c41208baa79\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"06 -- Implementation Plan\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"45457f13-52f2-43f2-9532-a4c65d4a8855\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Create an implementation plan for: [APPROVED\\\\nSPEC / PRD]\\\\n\\\\nRules:\\\\n\\\\n* Sequence steps so the app compiles and runs\\\\n  after EVERY single step\\\\n* Each step: files touched, what changes,\\\\n  how I verify it works\\\\n* Flag steps needing a migration or new dependency\\\\n* Put the riskiest unknowns first\\\\n* Size each step: [S / M / L]\\\\n\\\\nOutput a numbered build sequence I can run one\\\\nstep at a time. Wait for my \\\\\\\"go\\\\\\\" between steps.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"e906e222-e445-4972-b491-4bb3fd1cdff1\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"07 -- Wire Up an MCP Server\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"ee25ff19-ef1c-4ef1-983f-fbaa4b339fe2\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wire up an MCP server for: [SERVICE / API]\\\\n\\\\nWhat I need it to do: [JOBS TO BE DONE]\\\\n\\\\n1. Check for an official or well-maintained\\\\n   existing server first -- name your source\\\\n2. If one exists: exact install command + the\\\\n   .mcp.json config, scoped to this project\\\\n3. If not: scaffold one with the MCP SDK --\\\\n   tools, auth, error handling, typed responses\\\\n4. Add ONLY the tools I will actually use: [LIST]\\\\n5. Wire secrets through [ENV VARS], never\\\\n   hardcode keys in the config file\\\\n6. Verify the connection and call one tool\\\\n   end to end, show me the output\\\\n7. Document each tool in 1 line so future\\\\n   sessions know when to reach for it\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"76962494-06a4-4fef-bd1a-80efbb3d738a\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"08 -- Connect Your Database\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"d0d18c15-b09d-4558-be98-ea8a8a81e149\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Connect this app to [POSTGRES / SUPABASE / YOUR DB].\\\\n\\\\n* Pick the client that fits this stack,\\\\n  justify it in 1 line\\\\n* Env vars: name them, add to .env.example,\\\\n  never commit real values\\\\n* Schema: tables for [ENTITIES] with types,\\\\n  relations, and indexes for [HOT QUERIES]\\\\n* Create + run the migrations, and show me\\\\n  the rollback for each one\\\\n* One typed query helper per table -- no raw\\\\n  SQL scattered through components\\\\n* Access rules / row-level security if this\\\\n  is [MULTI-TENANT]\\\\n* Connection pooling if we are serverless\\\\n\\\\nThen prove it: seed one row, read it back,\\\\nshow me the output.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"df7868de-50d1-4ae0-b39d-4e59421f4606\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"09 -- Find Security Gaps\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"fb1b477c-9c92-43d1-bdf5-c7df956ea21b\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Audit this codebase for security gaps.\\\\nAttack it like you want in.\\\\n\\\\nFocus areas: [AUTH / PAYMENTS / USER DATA]\\\\n\\\\nCheck:\\\\n\\\\n* Secrets in code, config, or git history\\\\n* Injection: SQL, XSS, command, path traversal\\\\n* Auth: routes missing checks, weak sessions,\\\\n  broken redirects\\\\n* IDOR: can user A read user B&#039;s data?\\\\n* File uploads + input validation on every form\\\\n* Dependency CVEs -- run the audit, read it\\\\n* Rate limiting on [EXPENSIVE ENDPOINTS]\\\\n* What leaks through error messages and logs\\\\n\\\\nRank findings by severity with exact file:line,\\\\nfix the critical ones now, and list the rest\\\\nas tickets with effort estimates.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"166380b6-ec00-45d7-9ab9-f4d637219e7a\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"10 -- Debug an Error Fast\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"0beb4196-d61d-4497-bc39-4e8c1db52d8c\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Debug this error. Do NOT guess.\\\\n\\\\nError: [PASTE FULL ERROR + STACK TRACE]\\\\nWhen it happens: [STEPS TO REPRODUCE]\\\\n\\\\n1. Read the stack trace, open the exact files\\\\n   involved\\\\n2. State expected vs actual behavior in 1 line\\\\n3. List 3 hypotheses, ranked by likelihood\\\\n4. Prove or kill each one with logs or a tiny\\\\n   test -- evidence, not vibes\\\\n5. Fix the root cause, not the symptom\\\\n6. Search the repo for the same pattern -- if\\\\n   it can break here, it breaks elsewhere\\\\n7. Add a regression test that fails without\\\\n   the fix\\\\n8. Tell me in 2 lines why it broke and why it\\\\n   can never break this way again\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"07addf24-6b95-44ad-873a-592d67262c73\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"11 -- E2E Test Your Application\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"a11e0c32-8cb4-4f44-9c77-2946e0e2d598\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Write Playwright E2E tests for: [FLOW]\\\\n\\\\nStack: [YOUR STACK] CI: [GITHUB ACTIONS / OTHER]\\\\n\\\\n* Money paths first: [SIGNUP / CHECKOUT /\\\\n  CORE ACTION]\\\\n* Test what the user sees, not implementation\\\\n  details\\\\n* Selectors: roles and labels, never brittle\\\\n  CSS chains\\\\n* One unhappy path per flow: bad input,\\\\n  network failure, expired session\\\\n* Tests stay independent -- any order, zero\\\\n  shared state, each seeds its own data\\\\n* Headless in CI, headed locally for debugging\\\\n* Screenshots + traces on failure only\\\\n\\\\nRun the suite, show me the results, fix what\\\\nfails, and tell me what the suite still does\\\\nNOT cover.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"df03d8ab-95c8-42b0-b7ed-75f885f020b2\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"12 -- Clean Up Dead Code\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"c107b53e-3b59-4470-90c4-da282449084d\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Find and delete dead code in this repo.\\\\n\\\\nScope: [WHOLE REPO / SPECIFIC FOLDER]\\\\n\\\\n* Unused exports, components, hooks, utils\\\\n* Unreachable branches + commented-out blocks\\\\n* package.json dependencies nothing imports\\\\n* Stale feature flags stuck always-on or\\\\n  always-off\\\\n* Duplicate logic that should merge into one\\\\n* Dead CSS classes and unused assets\\\\n\\\\nVerify with a search before EVERY deletion --\\\\ndynamic imports and string references count.\\\\nDelete in small commits, run [BUILD + TESTS]\\\\nafter each one, and report total lines removed\\\\nplus anything you were not 100% sure about.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"9952a9c4-2bf4-412a-ba39-76b96edb38cb\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"13 -- Write Clean Git Commits\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"28d763db-656f-4bf4-afe7-e9e5e2e8d23d\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Commit my staged changes properly.\\\\n\\\\nConvention: [CONVENTIONAL COMMITS / YOUR FORMAT]\\\\n\\\\n* Split unrelated changes into separate commits\\\\n* Format: type(scope): what changed and why\\\\n  feat / fix / refactor / chore / docs / test\\\\n* Subject under 50 chars, imperative mood\\\\n* Body explains the WHY, wrapped at 72\\\\n* Reference the ticket: [TICKET-ID]\\\\n* Never mix a refactor with a behavior change\\\\n  in one commit\\\\n* Never commit [SECRETS / .ENV / GENERATED\\\\n  FILES]\\\\n\\\\nShow me the plan -- files per commit + messages --\\\\nbefore you commit anything. Then commit one at\\\\na time so I can stop you between them.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"e3fbb4c7-1d96-40c3-982c-6a2657ad55ae\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"14 -- Hooks as Guardrails\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"11169362-f9e5-452b-bbc7-cf29f16dcd87\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Set up Claude Code hooks as guardrails here.\\\\n\\\\nStack: [YOUR STACK + PACKAGE MANAGER]\\\\n\\\\n* PostToolUse: run [LINT + TYPECHECK] after\\\\n  every file edit, feed errors straight back\\\\n* PreToolUse: block edits to [PROTECTED PATHS:\\\\n  MIGRATIONS, .ENV, PROD CONFIG]\\\\n* Stop: run [TEST SUITE] before a session ends\\\\n* Notification: ping me with [SOUND / SLACK]\\\\n  when my input is needed\\\\n\\\\nWrite the hook scripts + the settings.json\\\\nentries. Keep each script under 20 lines and\\\\nexit non-zero with a clear message so the\\\\nagent knows exactly what to fix. Then trigger\\\\neach hook on purpose and show me it firing.\\\\n\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"88b145b4-9419-4139-8d2a-6aaace1802e0\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"15 -- Turn a Task Into a Skill\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"242bbb42-890c-46ec-aecc-4f10596505ea\\\",\\\"type\\\":\\\"codeBlock\\\",\\\"props\\\":{\\\"language\\\":\\\"javascript\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Turn this repetitive task into a Claude Code skill.\\\\n\\\\nThe task I keep doing: [DESCRIBE TASK + STEPS]\\\\n\\\\n* Create .claude/skills/[NAME]/SKILL.md\\\\n* Frontmatter: name + description with the exact\\\\n  trigger phrases I actually say\\\\n* Body: numbered workflow, my conventions,\\\\n  edge cases\\\\n* What it should ask me for vs infer on its own\\\\n* What \\\\\\\"done\\\\\\\" looks like\\\\n\\\\nThen dry-run the skill on a real example and\\\\nrefine until the output matches how I do it\\\\nby hand.\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"cf849adf-4a65-42db-9d91-78962bcdefea\\\",\\\"type\\\":\\\"sp_divider\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"children\\\":[]},{\\\"id\\\":\\\"55ff1bcf-b43e-44a8-aa79-dfebfacb2c43\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"center\\\"},\\\"content\\\":[{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.skool.com/ai-inner-circle/about\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🚨 NEW CLAUDE CODE + N8N AUTOMATION BOOTCAMP — LIVE NOW 🚨\\\",\\\"styles\\\":{}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"b344e042-54a1-4f2c-8e44-0e3b146f23b4\\\",\\\"type\\\":\\\"sp_loom\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"link\\\":\\\"https://www.loom.com/share/9bf984f25bae4517883d7983fe1962bd\\\"},\\\"children\\\":[]},{\\\"id\\\":\\\"7f64bc83-515a-49a1-ba2b-b0aeaf16db11\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"center\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🚀 Save 10-20 hours every week with AI Workflows inside, or your money back.\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"eb54d4c3-b7eb-4475-8faa-1a18a450e1c7\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"center\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" 👉 \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.skool.com/ai-inner-circle/about\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Join the Club: AI Inner Circle Community [\\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Click here\\\",\\\"styles\\\":{\\\"underline\\\":true}},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"]\\\",\\\"styles\\\":{}}]},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" 👈\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"67add5bf-d170-4493-b650-808a2c47b435\\\",\\\"type\\\":\\\"sp_divider\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"children\\\":[]},{\\\"id\\\":\\\"974688e6-183c-4e14-a53e-c23cd605db83\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Follow Manthan\\\",\\\"styles\\\":{\\\"bold\\\":true}}],\\\"children\\\":[]},{\\\"id\\\":\\\"b63c235b-67b1-48c2-a236-5f10816bbc7b\\\",\\\"type\\\":\\\"table\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\"},\\\"content\\\":{\\\"type\\\":\\\"tableContent\\\",\\\"columnWidths\\\":[140,null],\\\"rows\\\":[{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Platform\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Link\\\",\\\"styles\\\":{}}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Instagram\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.instagram.com/leadgenman/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"@leadgenman\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"YouTube\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.youtube.com/@LeadGenMan\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"LeadGenMan\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"TikTok\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.tiktok.com/@leadgenmanthan\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"@leadgenmanthan\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"LinkedIn\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.linkedin.com/in/leadgenmanthan/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"leadgenmanthan\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}]]},{\\\"cells\\\":[[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Facebook\\\",\\\"styles\\\":{}}],[{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.facebook.com/p/Lead-Gen-Man-61571060319687/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Lead Gen Man\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}]]}]},\\\"children\\\":[]},{\\\"id\\\":\\\"c253a50a-b941-4150-a0c9-79600ea9c986\\\",\\\"type\\\":\\\"heading\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\",\\\"level\\\":3},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Products by Manthan\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"dfce1702-1930-4e52-9be0-45a0b19ea4af\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"TiltIt\\\",\\\"styles\\\":{\\\"bold\\\":true}},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" -- 3D animation software for content creators\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"58e242df-01c1-4a26-8a03-dac1d68ecc7d\\\",\\\"type\\\":\\\"bulletListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Website: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"http://tiltit.video\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"tiltit.video\\\",\\\"styles\\\":{\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"e915b37d-7d14-412a-aeae-0dee8ba6112b\\\",\\\"type\\\":\\\"bulletListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Instagram: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.instagram.com/tiltit.video\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"@\\\",\\\"styles\\\":{\\\"underline\\\":true}}]},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"http://tiltit.video\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"tiltit.video\\\",\\\"styles\\\":{\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"00f6513f-9b33-463c-a3ef-4ad8b4286e79\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"PenAnywhere\\\",\\\"styles\\\":{\\\"bold\\\":true}},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" -- Mac screen annotator for presentations and tutorials\\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"b52c5039-22a5-4862-91fa-af620fa930ab\\\",\\\"type\\\":\\\"bulletListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Website: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"http://penanywhere.com\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"penanywhere.com\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"italic\\\":true,\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"cd9d3524-1687-4bb2-9401-92c73beb83d0\\\",\\\"type\\\":\\\"bulletListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"App Store: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://apps.apple.com/app/penanywhere/id6760774183\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Download\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"italic\\\":true,\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"ba28bf25-5819-4641-80cd-639d36a7abee\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[],\\\"children\\\":[]},{\\\"id\\\":\\\"30275822-1ebd-4225-8b5d-0f4820de5beb\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"You can find me here: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.linkedin.com/in/leadgenmanthan/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"LinkedIn\\\",\\\"styles\\\":{\\\"bold\\\":true}}]},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\", \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.instagram.com/leadgen_man/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Instagram\\\",\\\"styles\\\":{\\\"bold\\\":true}}]},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\", \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.youtube.com/@LeadGenMan\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Youtube\\\",\\\"styles\\\":{\\\"bold\\\":true}}]},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" \\\",\\\"styles\\\":{\\\"bold\\\":true}},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"and\\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" \\\",\\\"styles\\\":{\\\"bold\\\":true}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://courses.leadgenman.com/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Udemy\\\",\\\"styles\\\":{\\\"bold\\\":true}}]},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\".\\\",\\\"styles\\\":{\\\"bold\\\":true}}],\\\"children\\\":[]},{\\\"id\\\":\\\"e513e612-c8d3-4f86-8ae3-edbcd35dbe93\\\",\\\"type\\\":\\\"sp_divider\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"children\\\":[]},{\\\"id\\\":\\\"418f513e-f9f5-476b-a7bb-c2943b2094c9\\\",\\\"type\\\":\\\"numberedListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Master n8n AI Agents: Build &amp; Sell AI Agents and Automations: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.udemy.com/course/master-n8n-ai-agents-build-sell-ai-agents-and-automations/?couponCode=6D4057A8F2834EE3FA84\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Click here\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"080de107-871a-4342-a004-829296682569\\\",\\\"type\\\":\\\"numberedListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"AI Voice Agent Course using Retell AI, n8n, Make, Go Highlevel and Vapi AI: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.udemy.com/course/master-ai-voice-agents-automate-calls-with-ai-and-no-code/?referralCode=56BDE4ACEE03F6017359\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Click here\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"93687e62-7393-4a4f-9477-bc6024806e56\\\",\\\"type\\\":\\\"numberedListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Cold Email MasterCourse: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://www.udemy.com/course/cold-email-mastery-with-ai-ultimate-lead-generation-system/?referralCode=70B3F940F309878D2E77\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Click here\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"2b59d313-b16c-4123-a9f8-2a85cc04c430\\\",\\\"type\\\":\\\"numberedListItem\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Rest of the Courses: \\\",\\\"styles\\\":{}},{\\\"type\\\":\\\"link\\\",\\\"href\\\":\\\"https://courses.leadgenman.com/\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Click here\\\",\\\"styles\\\":{\\\"bold\\\":true,\\\"underline\\\":true}}]}],\\\"children\\\":[]},{\\\"id\\\":\\\"ae71a17f-ddf1-4e49-9c26-8e74d9e5c76a\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[],\\\"children\\\":[]},{\\\"id\\\":\\\"32a3d2c9-780d-4f58-8905-4211067b4dac\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Hope you found emm useful...Again it&#039;s just scratching the ground, this thing is rabbit hole 😂 \\\",\\\"styles\\\":{}}],\\\"children\\\":[]},{\\\"id\\\":\\\"d6e44926-d4aa-4dc7-a57a-aadd04994537\\\",\\\"type\\\":\\\"paragraph\\\",\\\"props\\\":{\\\"textColor\\\":\\\"default\\\",\\\"backgroundColor\\\":\\\"default\\\",\\\"textAlignment\\\":\\\"left\\\"},\\\"content\\\":[],\\\"children\\\":[]}]\"}]",
+      "user_id": 664,
+      "published": 1,
+      "gated_content": 0,
+      "cover_url": "https://subpagebucket.s3.eu-north-1.amazonaws.com/documents/664/5c62c436-a57d-4690-86c5-d0690e7bca92.png",
+      "cta_alert_bar_enabled": 0,
+      "cta_popup_enabled": 0,
+      "cta_alert_bar_settings": "{\"text\": \"This is a test alert bar\", \"button_link\": \"https://google.com\", \"button_text\": \"Click here\"}",
+      "cta_popup_settings": "{\"type\": \"form\", \"title\": \"Subscribe to our newsletter\", \"fields\": {\"name\": true, \"email\": true, \"phone\": false}, \"button_text\": \"Subscribe\", \"description\": \"Subscribe to our newsletter to get the latest updates\", \"show_settings\": {\"time\": 5, \"type\": 0}}",
+      "variables": null,
+      "slug": "15vibecodingprompts",
+      "render_type": 0,
+      "remove_branding": 1,
+      "seo_meta_title": null,
+      "seo_meta_description": null,
+      "seo_meta_keywords": null,
+      "partial_gated": 1,
+      "partial_gated_settings": "{\"title\": \"🔒 Unlock the content\", \"fields\": {\"name\": true, \"email\": true, \"phone\": false}, \"button_text\": \"Unlock\", \"description\": \"Fill out the form below to unlock the content\", \"gate_height\": 300}",
+      "seo_noindex": 0,
+      "private": 0,
+      "disable_resources_recommendation": 1,
+      "organization_id": 701,
+      "head_scripts": null,
+      "footer_scripts": null,
+      "password_gated": 0,
+      "password_gated_settings_password": null,
+      "tab_gated": 0,
+      "tab_gated_settings": "{\"tabs\": [0], \"title\": \"🔒 Unlock the content\", \"fields\": {\"name\": false, \"email\": true, \"phone\": false}, \"button_text\": \"Unlock\", \"description\": \"Fill out the form below to unlock the content\"}",
+      "og_image_upload_id": null,
+      "custom_css": null,
+      "allow_unlock_with_google": 1,
+      "double_optin_enabled": 0,
+      "double_optin_email_subject": null,
+      "double_optin_email_content": null,
+      "unlock_bypass_key": null,
+      "og_image": null,
+      "organization": {
+        "id": 701,
+        "created_at": "2025-02-04T22:05:51.000000Z",
+        "updated_at": "2025-11-01T07:55:36.000000Z",
+        "name": "Lead Gen Man",
+        "slug": "resource",
+        "brand_primary_color": "#000000",
+        "brand_secondary_color": "#000000",
+        "heading_font": "Raleway",
+        "body_font": "Inter",
+        "f2f_apikey": null,
+        "rb2b_apikey": null,
+        "terms_and_conditions": "I agree to the terms and conditions",
+        "ai_credits": 12,
+        "main_page_content": "[{\"id\": \"2b3e10ed-24a4-45c0-927f-4a9cdab1ec7d\", \"type\": \"heading\", \"props\": {\"level\": 1, \"textColor\": \"default\", \"textAlignment\": \"center\", \"backgroundColor\": \"default\"}, \"content\": [{\"text\": \"Lead Gen Man\", \"type\": \"text\", \"styles\": []}], \"children\": []}, {\"id\": \"a6882de6-6061-4dbf-bfd0-ab1d929badef\", \"type\": \"paragraph\", \"props\": {\"textColor\": \"default\", \"textAlignment\": \"center\", \"backgroundColor\": \"default\"}, \"content\": [{\"text\": \"You can find all the resources created by \", \"type\": \"text\", \"styles\": []}, {\"text\": \"me\", \"type\": \"text\", \"styles\": {\"bold\": true}}, {\"text\": \" here.\", \"type\": \"text\", \"styles\": []}], \"children\": []}, {\"id\": \"c789bbd3-f1f7-42e5-8a60-5f5da8c3401e\", \"type\": \"sp_lead_magnets_list\", \"props\": {\"columns\": 2, \"perPage\": 9, \"textColor\": \"default\", \"button_text\": \"test\", \"show_button\": false, \"show_covers\": false, \"textAlignment\": \"left\", \"show_description\": false}, \"children\": []}, {\"id\": \"7c378471-aca5-498f-b92f-7953ff5e92df\", \"type\": \"paragraph\", \"props\": {\"textColor\": \"default\", \"textAlignment\": \"left\", \"backgroundColor\": \"default\"}, \"content\": [], \"children\": []}]",
+        "default_seo_meta_title": "Master Lead Generation and Marketing",
+        "default_seo_meta_description": "Master B2B lead generation with our complete training program. 100+ hours of expert content, templates &amp; live coaching. Join 1.5K+ successful members.",
+        "default_noindex": 0,
+        "default_og_image_upload_id": 223,
+        "default_language": "en",
+        "logo": {
+          "id": 224,
+          "organization_id": 701,
+          "user_id": 664,
+          "path": "uploads/701/logo/WbIUsapdEKPoJziWuraGKjiWbXsQ8ciZqZXQw33A.png",
+          "original_name": "Lead Gen Man Logo.png",
+          "mime_type": "image/png",
+          "disk": "s3",
+          "collection": "logo",
+          "created_at": "2025-03-09T05:40:18.000000Z",
+          "updated_at": "2025-03-09T05:40:18.000000Z",
+          "url": "https://subpagebucket.s3.eu-north-1.amazonaws.com/uploads/701/logo/WbIUsapdEKPoJziWuraGKjiWbXsQ8ciZqZXQw33A.png"
+        },
+        "favicon": {
+          "id": 221,
+          "organization_id": 701,
+          "user_id": 664,
+          "path": "uploads/701/favicon/2dqawK5ZIg7LDCGTGjiUDfzOGF3CgMB9xsDt65e0.png",
+          "original_name": "Favicon (7).png",
+          "mime_type": "image/png",
+          "disk": "s3",
+          "collection": "favicon",
+          "created_at": "2025-03-09T05:38:34.000000Z",
+          "updated_at": "2025-03-09T05:38:34.000000Z",
+          "url": "https://subpagebucket.s3.eu-north-1.amazonaws.com/uploads/701/favicon/2dqawK5ZIg7LDCGTGjiUDfzOGF3CgMB9xsDt65e0.png"
+        },
+        "default_og_image": {
+          "id": 223,
+          "organization_id": 701,
+          "user_id": 664,
+          "path": "default-og-images/664/a5a3d98f-b7fd-4e28-af6f-c4a0fbf025b7.png",
+          "original_name": "Lead Gen Man Logo.png",
+          "mime_type": "image/png",
+          "disk": "s3",
+          "collection": "default-og-images",
+          "created_at": "2025-03-09T05:40:09.000000Z",
+          "updated_at": "2025-03-09T05:40:09.000000Z",
+          "url": "https://subpagebucket.s3.eu-north-1.amazonaws.com/default-og-images/664/a5a3d98f-b7fd-4e28-af6f-c4a0fbf025b7.png"
+        }
+      }
+    },
+    "default_seo_settings": {
+      "title": "Master Lead Generation and Marketing",
+      "description": "Master B2B lead generation with our complete training program. 100+ hours of expert content, templates &amp; live coaching. Join 1.5K+ successful members.",
+      "noindex": 0
+    },
+    "preview": false,
+    "event": {
+      "title": "15 Vibe Coding Prompts",
+      "image": "https://subpagebucket.s3.eu-north-1.amazonaws.com/documents/664/5c62c436-a57d-4690-86c5-d0690e7bca92.png",
+      "description": "Master B2B lead generation with our complete training program. 100+ hours of expert content, templates &amp; live coaching. Join 1.5K+ successful members.",
+      "keywords": ""
+    },
+    "branding": {
+      "primary_color": "#000000",
+      "secondary_color": "#000000",
+      "fonts": {
+        "heading": "Raleway",
+        "body": "Inter"
+      }
+    },
+    "custom_domain": true,
+    "integrations": {
+      "f2f": null,
+      "rb2b": null
+    },
+    "author_page": "https://resources.leadgenman.com",
+    "already_subscribed": false,
+    "terms_and_conditions": "I agree to the terms and conditions",
+    "uploads": {
+      "logo": "https://subpagebucket.s3.eu-north-1.amazonaws.com/uploads/701/logo/WbIUsapdEKPoJziWuraGKjiWbXsQ8ciZqZXQw33A.png",
+      "favicon": "https://subpagebucket.s3.eu-north-1.amazonaws.com/uploads/701/favicon/2dqawK5ZIg7LDCGTGjiUDfzOGF3CgMB9xsDt65e0.png"
+    },
+    "currentPageHasPremium": true,
+    "translations": {
+      "preview": {
+        "text": "This is a preview. Your changes are not saved."
+      },
+      "share": {
+        "share": "Share"
+      },
+      "sidebar": {
+        "trigger": "Press to open the sidebar"
+      },
+      "navigation": {
+        "previousTab": "Previous Tab",
+        "nextTab": "Next Tab"
+      },
+      "resources": {
+        "title": "Do you like this resource?",
+        "description": "Press the button below to view all resources published by the author or share this resource on your social media.",
+        "viewAll": "View all resources"
+      },
+      "gates": {
+        "password": {
+          "title": "Password Protected",
+          "description": "This content is password protected. Please enter the password to continue.",
+          "placeholder": "Enter password",
+          "submit": "Submit",
+          "uploadPrompt": "Please click on the block to upload a file to gate it. (max 10MB)",
+          "downloadPrompt": "Click the button below to download."
+        },
+        "partial": {
+          "title": "Continue Reading",
+          "description": "Sign up to continue reading this content.",
+          "submit": "Continue"
+        },
+        "google": {
+          "unlock": "Unlock with Google",
+          "orContinueWith": "Or continue with"
+        }
+      },
+      "navMain": {
+        "content": "Content"
+      },
+      "cover": {
+        "altText": "cover image"
+      },
+      "gatedPopup": {
+        "title": "Unlock content",
+        "description": "The content is locked. Please enter your email to unlock it.",
+        "emailPlaceholder": "Your email",
+        "verification": {
+          "description": "Enter the verification code sent to your email.",
+          "resendTimer": "You can resend the code in {time}.",
+          "resendButton": "Resend Code",
+          "verifyButton": "Verify Code",
+          "sendingCode": "Sending verification code...",
+          "verifying": "Verifying...",
+          "unlocking": "Unlocking..."
+        },
+        "unlockButton": "Unlock"
+      },
+      "passwordGatePopup": {
+        "title": "Unlock content",
+        "description": "The content is locked. Please enter the password to unlock it.",
+        "passwordPlaceholder": "Password",
+        "unlocking": "Unlocking...",
+        "unlockButton": "Unlock"
+      },
+      "alertBar": {
+        "dismiss": "Dismiss"
+      },
+      "popup": {
+        "form": {
+          "name": "Name",
+          "namePlaceholder": "Your name",
+          "email": "Email",
+          "emailPlaceholder": "Your email",
+          "phone": "Phone",
+          "phonePlaceholder": "Your phone"
+        },
+        "submit": {
+          "loading": "Submitting...",
+          "success": {
+            "title": "Success",
+            "description": "Form submitted successfully"
+          }
+        }
+      },
+      "partialGated": {
+        "form": {
+          "name": "Name",
+          "namePlaceholder": "Your name",
+          "email": "Email",
+          "emailPlaceholder": "Your email",
+          "phone": "Phone",
+          "phonePlaceholder": "Your phone"
+        },
+        "verification": {
+          "description": "Enter the verification code sent to your email.",
+          "resendTimer": "You can resend the code in {time}.",
+          "resendButton": "Resend Code",
+          "verifyButton": "Verify Code",
+          "sendingCode": "Sending verification code...",
+          "verifying": "Verifying...",
+          "unlocking": "Unlocking and verifying your email..."
+        }
+      },
+      "poweredBy": {
+        "text": "Content gated with"
+      },
+      "leadMagnetsList": {
+        "editSettings": "Edit Block Settings",
+        "columns": "Number of Columns",
+        "selectColumns": "Select columns",
+        "oneColumn": "1 Column",
+        "twoColumns": "2 Columns",
+        "threeColumns": "3 Columns",
+        "fourColumns": "4 Columns",
+        "showCoverImages": "Show Cover Images",
+        "showDescription": "Show Description",
+        "showButton": "Show Button",
+        "buttonText": "Button Text",
+        "enterButtonText": "Enter button text",
+        "noLeadMagnetsFound": "No Lead Magnets Found",
+        "noLeadMagnetsAvailable": "There are currently no lead magnets available.",
+        "noDescriptionAvailable": "No description available",
+        "loadingMorePages": "Loading more pages..."
+      }
+    },
+    "locale": "en",
+    "cookie_consent_translations": {
+      "consentModal": {
+        "title": "We use cookies",
+        "description": "We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from.",
+        "acceptAllBtn": "Accept all",
+        "acceptNecessaryBtn": "Reject all",
+        "showPreferencesBtn": "Manage preferences"
+      },
+      "preferencesModal": {
+        "title": "Cookie preferences",
+        "acceptAllBtn": "Accept all",
+        "acceptNecessaryBtn": "Reject all",
+        "savePreferencesBtn": "Save preferences",
+        "closeIconLabel": "Close modal",
+        "sections": {
+          "cookieUsage": {
+            "title": "Cookie Usage",
+            "description": "We use cookies to ensure the basic functionalities of the website and to enhance your online experience."
+          },
+          "necessary": {
+            "title": "Strictly Necessary Cookies",
+            "description": "These cookies are essential for the proper functioning of the website."
+          },
+          "analytics": {
+            "title": "Analytics Cookies",
+            "description": "These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you."
+          },
+          "other": {
+            "title": "Other Cookies",
+            "description": "These cookies are used for other purposes, such as custom scripts."
+          }
+        }
+      }
+    }
+  },
+  "url": "/15vibecodingprompts",
+  "version": "83f7d545e5fcfd19e4d8a04ddd4f6fd0"
+}

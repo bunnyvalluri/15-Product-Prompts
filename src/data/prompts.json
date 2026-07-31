@@ -1,5 +1,605 @@
 [
   {
+    "id": "prompt-vibe-1",
+    "title": "01 -- Write a Full PRD",
+    "slug": "vibe-coding-write-a-full-prd",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 9500,
+    "copies": 4100,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #01: Write a Full PRD. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Write a complete PRD for the feature below.\n\nFeature: [DESCRIBE FEATURE]\nUsers: [WHO USES IT]\nStack: [YOUR STACK]\n\nInclude:\n\n* Problem statement + success metrics\n* User stories with acceptance criteria\n* Scope: what ships in v1, what does not\n* Data model changes\n* Edge cases + failure states\n* Open questions for me to answer\n\nKeep it under 2 pages. Be specific, no filler.\nSave it as docs/prd-[feature].md so every later\nprompt can reference it.",
+    "parameters": [
+      {
+        "name": "describe_feature",
+        "label": "DESCRIBE FEATURE",
+        "defaultValue": "DESCRIBE FEATURE"
+      },
+      {
+        "name": "who_uses_it",
+        "label": "WHO USES IT",
+        "defaultValue": "WHO USES IT"
+      },
+      {
+        "name": "your_stack",
+        "label": "YOUR STACK",
+        "defaultValue": "YOUR STACK"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-2",
+    "title": "02 -- Create Your",
+    "slug": "vibe-coding-create-your",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 9820,
+    "copies": 4280,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #02: Create Your. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Scan this entire codebase, then generate a CLAUDE.md.\n\nInclude:\n\n* What this project is, in 2 lines\n* Tech stack + the versions that matter\n* Commands: [DEV / BUILD / TEST / LINT]\n* Architecture: where things live and why\n* Code conventions you actually detect in the code\n* Hard rules: [YOUR NON-NEGOTIABLES] -- what to\n  never touch without asking\n* Gotchas a new engineer would hit in week 1\n\nWrite rules as short imperatives. Nothing generic --\nonly what is true for THIS repo. If you are unsure\nabout a rule, ask me instead of inventing it.",
+    "parameters": [
+      {
+        "name": "dev_build_test_lint",
+        "label": "DEV / BUILD / TEST / LINT",
+        "defaultValue": "DEV / BUILD / TEST / LINT"
+      },
+      {
+        "name": "your_non_negotiables",
+        "label": "YOUR NON-NEGOTIABLES",
+        "defaultValue": "YOUR NON-NEGOTIABLES"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-3",
+    "title": "03 -- Ultra Plan Mode",
+    "slug": "vibe-coding-ultra-plan-mode",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 10140,
+    "copies": 4460,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #03: Ultra Plan Mode. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Enter plan mode. Do NOT write any code yet.\n\nTask: [PASTE TASK]\nConstraints: [DEADLINE / STACK / NO-GO ZONES]\n\n1. Read every file this task touches, list them\n   with one line on what each does today\n2. Map current behavior vs target behavior\n3. Propose 2-3 approaches with real tradeoffs:\n   complexity, risk, blast radius\n4. Pick one and justify it in 3 lines\n5. Break it into steps small enough to verify\n   one at a time, each with its own check\n6. List risks + the exact rollback for each\n7. Flag anything touching [AUTH / PAYMENTS /\n   PROD DATA] for my explicit sign-off\n\nThen stop. Show me the plan and wait for my\napproval before touching a single file.",
+    "parameters": [
+      {
+        "name": "paste_task",
+        "label": "PASTE TASK",
+        "defaultValue": "PASTE TASK"
+      },
+      {
+        "name": "deadline_stack_no_go_zones",
+        "label": "DEADLINE / STACK / NO-GO ZONES",
+        "defaultValue": "DEADLINE / STACK / NO-GO ZONES"
+      },
+      {
+        "name": "auth_payments_prod_data",
+        "label": "AUTH / PAYMENTS /\n   PROD DATA",
+        "defaultValue": "AUTH / PAYMENTS /\n   PROD DATA"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-4",
+    "title": "04 -- Spec-Driven Development",
+    "slug": "vibe-coding-spec-driven-development",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 10460,
+    "copies": 4640,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #04: Spec-Driven Development. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "We build specs first. Write a spec for: [FEATURE]\n\nContext: [WHO USES IT + WHY NOW]\n\nSpec format:\n\n* Behavior: given / when / then, every case --\n  happy path, edge cases, failure states\n* API contract: inputs, outputs, error shapes,\n  status codes\n* Data: schema changes + migrations needed\n* UI states: loading, empty, error, success\n* Non-goals: what this spec deliberately skips\n* Acceptance checklist I can verify line by line\n\nAfter I approve the spec, implement EXACTLY the\nspec. If reality forces a deviation, stop, update\nthe spec, get my ok, then continue. The spec is\nthe source of truth, not the code.",
+    "parameters": [
+      {
+        "name": "feature",
+        "label": "FEATURE",
+        "defaultValue": "FEATURE"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-5",
+    "title": "05 -- Full UI &amp; UX Design Brief",
+    "slug": "vibe-coding-full-ui-amp-ux-design-brief",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 10780,
+    "copies": 4820,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #05: Full UI &amp; UX Design Brief. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Create a full UI/UX design brief for: [SCREEN OR FLOW]\n\nAudience: [USERS]\nBrand: [COLORS / FONTS / VIBE]\n\nDeliver:\n\n* User journey through the flow, step by step\n* Layout per screen: hierarchy, spacing, breakpoints\n* Component inventory with every state --\n  hover, empty, error, loading\n* Typography + color tokens\n* Motion: what animates, duration, easing\n* Accessibility notes\n\nStudy patterns from [2-3 PRODUCTS YOU ADMIRE]\nfor direction. Never copy them.",
+    "parameters": [
+      {
+        "name": "screen_or_flow",
+        "label": "SCREEN OR FLOW",
+        "defaultValue": "SCREEN OR FLOW"
+      },
+      {
+        "name": "users",
+        "label": "USERS",
+        "defaultValue": "USERS"
+      },
+      {
+        "name": "colors_fonts_vibe",
+        "label": "COLORS / FONTS / VIBE",
+        "defaultValue": "COLORS / FONTS / VIBE"
+      },
+      {
+        "name": "2_3_products_you_admire",
+        "label": "2-3 PRODUCTS YOU ADMIRE",
+        "defaultValue": "2-3 PRODUCTS YOU ADMIRE"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-6",
+    "title": "06 -- Implementation Plan",
+    "slug": "vibe-coding-implementation-plan",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 11100,
+    "copies": 5000,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #06: Implementation Plan. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Create an implementation plan for: [APPROVED\nSPEC / PRD]\n\nRules:\n\n* Sequence steps so the app compiles and runs\n  after EVERY single step\n* Each step: files touched, what changes,\n  how I verify it works\n* Flag steps needing a migration or new dependency\n* Put the riskiest unknowns first\n* Size each step: [S / M / L]\n\nOutput a numbered build sequence I can run one\nstep at a time. Wait for my \"go\" between steps.",
+    "parameters": [
+      {
+        "name": "approved_spec_prd",
+        "label": "APPROVED\nSPEC / PRD",
+        "defaultValue": "APPROVED\nSPEC / PRD"
+      },
+      {
+        "name": "s_m_l",
+        "label": "S / M / L",
+        "defaultValue": "S / M / L"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-7",
+    "title": "07 -- Wire Up an MCP Server",
+    "slug": "vibe-coding-wire-up-an-mcp-server",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 11420,
+    "copies": 5180,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #07: Wire Up an MCP Server. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Wire up an MCP server for: [SERVICE / API]\n\nWhat I need it to do: [JOBS TO BE DONE]\n\n1. Check for an official or well-maintained\n   existing server first -- name your source\n2. If one exists: exact install command + the\n   .mcp.json config, scoped to this project\n3. If not: scaffold one with the MCP SDK --\n   tools, auth, error handling, typed responses\n4. Add ONLY the tools I will actually use: [LIST]\n5. Wire secrets through [ENV VARS], never\n   hardcode keys in the config file\n6. Verify the connection and call one tool\n   end to end, show me the output\n7. Document each tool in 1 line so future\n   sessions know when to reach for it",
+    "parameters": [
+      {
+        "name": "service_api",
+        "label": "SERVICE / API",
+        "defaultValue": "SERVICE / API"
+      },
+      {
+        "name": "jobs_to_be_done",
+        "label": "JOBS TO BE DONE",
+        "defaultValue": "JOBS TO BE DONE"
+      },
+      {
+        "name": "list",
+        "label": "LIST",
+        "defaultValue": "LIST"
+      },
+      {
+        "name": "env_vars",
+        "label": "ENV VARS",
+        "defaultValue": "ENV VARS"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-8",
+    "title": "08 -- Connect Your Database",
+    "slug": "vibe-coding-connect-your-database",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 11740,
+    "copies": 5360,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #08: Connect Your Database. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Connect this app to [POSTGRES / SUPABASE / YOUR DB].\n\n* Pick the client that fits this stack,\n  justify it in 1 line\n* Env vars: name them, add to .env.example,\n  never commit real values\n* Schema: tables for [ENTITIES] with types,\n  relations, and indexes for [HOT QUERIES]\n* Create + run the migrations, and show me\n  the rollback for each one\n* One typed query helper per table -- no raw\n  SQL scattered through components\n* Access rules / row-level security if this\n  is [MULTI-TENANT]\n* Connection pooling if we are serverless\n\nThen prove it: seed one row, read it back,\nshow me the output.",
+    "parameters": [
+      {
+        "name": "postgres_supabase_your_db",
+        "label": "POSTGRES / SUPABASE / YOUR DB",
+        "defaultValue": "POSTGRES / SUPABASE / YOUR DB"
+      },
+      {
+        "name": "entities",
+        "label": "ENTITIES",
+        "defaultValue": "ENTITIES"
+      },
+      {
+        "name": "hot_queries",
+        "label": "HOT QUERIES",
+        "defaultValue": "HOT QUERIES"
+      },
+      {
+        "name": "multi_tenant",
+        "label": "MULTI-TENANT",
+        "defaultValue": "MULTI-TENANT"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-9",
+    "title": "09 -- Find Security Gaps",
+    "slug": "vibe-coding-find-security-gaps",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 12060,
+    "copies": 5540,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #09: Find Security Gaps. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Audit this codebase for security gaps.\nAttack it like you want in.\n\nFocus areas: [AUTH / PAYMENTS / USER DATA]\n\nCheck:\n\n* Secrets in code, config, or git history\n* Injection: SQL, XSS, command, path traversal\n* Auth: routes missing checks, weak sessions,\n  broken redirects\n* IDOR: can user A read user B&#039;s data?\n* File uploads + input validation on every form\n* Dependency CVEs -- run the audit, read it\n* Rate limiting on [EXPENSIVE ENDPOINTS]\n* What leaks through error messages and logs\n\nRank findings by severity with exact file:line,\nfix the critical ones now, and list the rest\nas tickets with effort estimates.",
+    "parameters": [
+      {
+        "name": "auth_payments_user_data",
+        "label": "AUTH / PAYMENTS / USER DATA",
+        "defaultValue": "AUTH / PAYMENTS / USER DATA"
+      },
+      {
+        "name": "expensive_endpoints",
+        "label": "EXPENSIVE ENDPOINTS",
+        "defaultValue": "EXPENSIVE ENDPOINTS"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-10",
+    "title": "10 -- Debug an Error Fast",
+    "slug": "vibe-coding-debug-an-error-fast",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 12380,
+    "copies": 5720,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #10: Debug an Error Fast. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Debug this error. Do NOT guess.\n\nError: [PASTE FULL ERROR + STACK TRACE]\nWhen it happens: [STEPS TO REPRODUCE]\n\n1. Read the stack trace, open the exact files\n   involved\n2. State expected vs actual behavior in 1 line\n3. List 3 hypotheses, ranked by likelihood\n4. Prove or kill each one with logs or a tiny\n   test -- evidence, not vibes\n5. Fix the root cause, not the symptom\n6. Search the repo for the same pattern -- if\n   it can break here, it breaks elsewhere\n7. Add a regression test that fails without\n   the fix\n8. Tell me in 2 lines why it broke and why it\n   can never break this way again",
+    "parameters": [
+      {
+        "name": "steps_to_reproduce",
+        "label": "STEPS TO REPRODUCE",
+        "defaultValue": "STEPS TO REPRODUCE"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-11",
+    "title": "11 -- E2E Test Your Application",
+    "slug": "vibe-coding-e2e-test-your-application",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 12700,
+    "copies": 5900,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #11: E2E Test Your Application. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Write Playwright E2E tests for: [FLOW]\n\nStack: [YOUR STACK] CI: [GITHUB ACTIONS / OTHER]\n\n* Money paths first: [SIGNUP / CHECKOUT /\n  CORE ACTION]\n* Test what the user sees, not implementation\n  details\n* Selectors: roles and labels, never brittle\n  CSS chains\n* One unhappy path per flow: bad input,\n  network failure, expired session\n* Tests stay independent -- any order, zero\n  shared state, each seeds its own data\n* Headless in CI, headed locally for debugging\n* Screenshots + traces on failure only\n\nRun the suite, show me the results, fix what\nfails, and tell me what the suite still does\nNOT cover.",
+    "parameters": [
+      {
+        "name": "flow",
+        "label": "FLOW",
+        "defaultValue": "FLOW"
+      },
+      {
+        "name": "your_stack",
+        "label": "YOUR STACK",
+        "defaultValue": "YOUR STACK"
+      },
+      {
+        "name": "github_actions_other",
+        "label": "GITHUB ACTIONS / OTHER",
+        "defaultValue": "GITHUB ACTIONS / OTHER"
+      },
+      {
+        "name": "signup_checkout_core_action",
+        "label": "SIGNUP / CHECKOUT /\n  CORE ACTION",
+        "defaultValue": "SIGNUP / CHECKOUT /\n  CORE ACTION"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-12",
+    "title": "12 -- Clean Up Dead Code",
+    "slug": "vibe-coding-clean-up-dead-code",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 13020,
+    "copies": 6080,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #12: Clean Up Dead Code. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Find and delete dead code in this repo.\n\nScope: [WHOLE REPO / SPECIFIC FOLDER]\n\n* Unused exports, components, hooks, utils\n* Unreachable branches + commented-out blocks\n* package.json dependencies nothing imports\n* Stale feature flags stuck always-on or\n  always-off\n* Duplicate logic that should merge into one\n* Dead CSS classes and unused assets\n\nVerify with a search before EVERY deletion --\ndynamic imports and string references count.\nDelete in small commits, run [BUILD + TESTS]\nafter each one, and report total lines removed\nplus anything you were not 100% sure about.",
+    "parameters": [
+      {
+        "name": "whole_repo_specific_folder",
+        "label": "WHOLE REPO / SPECIFIC FOLDER",
+        "defaultValue": "WHOLE REPO / SPECIFIC FOLDER"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-13",
+    "title": "13 -- Write Clean Git Commits",
+    "slug": "vibe-coding-write-clean-git-commits",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 13340,
+    "copies": 6260,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #13: Write Clean Git Commits. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Commit my staged changes properly.\n\nConvention: [CONVENTIONAL COMMITS / YOUR FORMAT]\n\n* Split unrelated changes into separate commits\n* Format: type(scope): what changed and why\n  feat / fix / refactor / chore / docs / test\n* Subject under 50 chars, imperative mood\n* Body explains the WHY, wrapped at 72\n* Reference the ticket: [TICKET-ID]\n* Never mix a refactor with a behavior change\n  in one commit\n* Never commit [SECRETS / .ENV / GENERATED\n  FILES]\n\nShow me the plan -- files per commit + messages --\nbefore you commit anything. Then commit one at\na time so I can stop you between them.",
+    "parameters": [
+      {
+        "name": "conventional_commits_your_format",
+        "label": "CONVENTIONAL COMMITS / YOUR FORMAT",
+        "defaultValue": "CONVENTIONAL COMMITS / YOUR FORMAT"
+      },
+      {
+        "name": "ticket_id",
+        "label": "TICKET-ID",
+        "defaultValue": "TICKET-ID"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-14",
+    "title": "14 -- Hooks as Guardrails",
+    "slug": "vibe-coding-hooks-as-guardrails",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 13660,
+    "copies": 6440,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #14: Hooks as Guardrails. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Set up Claude Code hooks as guardrails here.\n\nStack: [YOUR STACK + PACKAGE MANAGER]\n\n* PostToolUse: run [LINT + TYPECHECK] after\n  every file edit, feed errors straight back\n* PreToolUse: block edits to [PROTECTED PATHS:\n  MIGRATIONS, .ENV, PROD CONFIG]\n* Stop: run [TEST SUITE] before a session ends\n* Notification: ping me with [SOUND / SLACK]\n  when my input is needed\n\nWrite the hook scripts + the settings.json\nentries. Keep each script under 20 lines and\nexit non-zero with a clear message so the\nagent knows exactly what to fix. Then trigger\neach hook on purpose and show me it firing.",
+    "parameters": [
+      {
+        "name": "test_suite",
+        "label": "TEST SUITE",
+        "defaultValue": "TEST SUITE"
+      },
+      {
+        "name": "sound_slack",
+        "label": "SOUND / SLACK",
+        "defaultValue": "SOUND / SLACK"
+      }
+    ]
+  },
+  {
+    "id": "prompt-vibe-15",
+    "title": "15 -- Turn a Task Into a Skill",
+    "slug": "vibe-coding-turn-a-task-into-a-skill",
+    "category": "antigravity",
+    "categoryName": "Antigravity & Vibe Coding",
+    "aiModel": "Google Antigravity & Claude 3.5",
+    "aiModelId": "antigravity",
+    "difficulty": "Advanced",
+    "readingTime": "3 min",
+    "views": 13980,
+    "copies": 6620,
+    "rating": 5,
+    "featured": true,
+    "trending": true,
+    "isLatest": true,
+    "tags": [
+      "Vibe Coding",
+      "Antigravity",
+      "Claude Code",
+      "System Rules",
+      "Autonomous Agent"
+    ],
+    "description": "Official Vibe Coding system prompt #15: Turn a Task Into a Skill. Designed for Claude Code, Antigravity, and Cursor.",
+    "content": "Turn this repetitive task into a Claude Code skill.\n\nThe task I keep doing: [DESCRIBE TASK + STEPS]\n\n* Create .claude/skills/[NAME]/SKILL.md\n* Frontmatter: name + description with the exact\n  trigger phrases I actually say\n* Body: numbered workflow, my conventions,\n  edge cases\n* What it should ask me for vs infer on its own\n* What \"done\" looks like\n\nThen dry-run the skill on a real example and\nrefine until the output matches how I do it\nby hand.",
+    "parameters": [
+      {
+        "name": "name",
+        "label": "NAME",
+        "defaultValue": "NAME"
+      }
+    ]
+  },
+  {
     "id": "prompt-1",
     "title": "Autonomous Senior Full-Stack Architect Prompt",
     "slug": "autonomous-senior-full-stack-architect",
@@ -15,13 +615,31 @@
     "featured": true,
     "trending": true,
     "isLatest": false,
-    "tags": ["Full-Stack", "Architecture", "React", "Node.js", "Clean Code"],
+    "tags": [
+      "Full-Stack",
+      "Architecture",
+      "React",
+      "Node.js",
+      "Clean Code"
+    ],
     "description": "Transforms any LLM into an elite Senior Full-Stack Architect that writes modular, typed, clean, production-grade code with error handling.",
     "content": "You are an elite Senior Full-Stack Software Architect specializing in {{tech_stack}}. Your task is to design and implement a complete feature or module for: {{project_goal}}.\n\n### Core Directives:\n1. **Architecture & Standards**: Follow strict modular design principles, SOLID guidelines, and maintainable project structures.\n2. **Type Safety & Validation**: Ensure robust error boundaries, explicit parameter validation, and defensive programming.\n3. **UI & UX Excellence**: Use modern visual styling (glassmorphism, subtle micro-interactions, dark/light themes) and responsive layout patterns.\n4. **Performance & Security**: Minimize re-renders, implement debounced event handlers, prevent XSS/injection vulnerabilities.\n5. **Deliverable Format**: Output fully functional code with clear file paths, explanatory comments for non-obvious logic, and zero placeholder stubs.\n\n### Requirements:\n- {{custom_requirements}}",
     "parameters": [
-      { "name": "tech_stack", "label": "Tech Stack", "defaultValue": "React, Vite, Tailwind CSS, Node.js" },
-      { "name": "project_goal", "label": "Project Goal / Feature", "defaultValue": "Real-time collaborative markdown document editor with live preview" },
-      { "name": "custom_requirements", "label": "Custom Requirements", "defaultValue": "Include local state persistence and keyboard shortcut support (Ctrl+S, Ctrl+K)" }
+      {
+        "name": "tech_stack",
+        "label": "Tech Stack",
+        "defaultValue": "React, Vite, Tailwind CSS, Node.js"
+      },
+      {
+        "name": "project_goal",
+        "label": "Project Goal / Feature",
+        "defaultValue": "Real-time collaborative markdown document editor with live preview"
+      },
+      {
+        "name": "custom_requirements",
+        "label": "Custom Requirements",
+        "defaultValue": "Include local state persistence and keyboard shortcut support (Ctrl+S, Ctrl+K)"
+      }
     ]
   },
   {
@@ -36,17 +654,34 @@
     "readingTime": "4 min",
     "views": 6100,
     "copies": 2840,
-    "rating": 5.0,
+    "rating": 5,
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Antigravity", "Vibe Coding", "Agentic Workflow", "System Architecture"],
+    "tags": [
+      "Antigravity",
+      "Vibe Coding",
+      "Agentic Workflow",
+      "System Architecture"
+    ],
     "description": "Master system instruction prompt for Google Antigravity to build end-to-end web applications with autonomous planning and execution.",
     "content": "Act as an autonomous agentic pair programmer within Google Antigravity. I want you to build {{application_type}} from scratch.\n\n### Execution Protocol:\n1. **Phase 1: Planning**: Outline core component breakdown, data structures, state flow, and local storage schema in markdown before writing code.\n2. **Phase 2: UI/UX Aesthetic**: Use modern design aesthetics—subtle mesh gradients, slate/indigo color palettes, smooth hover states, rounded-2xl cards, and accessible typography.\n3. **Phase 3: Component Engineering**: Create modular, reusable components with zero external server dependencies. Store interactive state in browser LocalStorage.\n4. **Phase 4: Verification & Polish**: Ensure no broken links, non-functional buttons, or missing states.\n\n### Specifications:\n- Target Application: {{application_type}}\n- Primary Color Theme: {{theme_palette}}\n- Core Features: {{feature_list}}",
     "parameters": [
-      { "name": "application_type", "label": "Application Type", "defaultValue": "SaaS Analytics & Metrics Dashboard" },
-      { "name": "theme_palette", "label": "Theme Palette", "defaultValue": "Dark Mode with Electric Cyan and Violet accents" },
-      { "name": "feature_list", "label": "Key Features", "defaultValue": "Interactive charts, drag-and-drop widget layout, filterable data tables, JSON export" }
+      {
+        "name": "application_type",
+        "label": "Application Type",
+        "defaultValue": "SaaS Analytics & Metrics Dashboard"
+      },
+      {
+        "name": "theme_palette",
+        "label": "Theme Palette",
+        "defaultValue": "Dark Mode with Electric Cyan and Violet accents"
+      },
+      {
+        "name": "feature_list",
+        "label": "Key Features",
+        "defaultValue": "Interactive charts, drag-and-drop widget layout, filterable data tables, JSON export"
+      }
     ]
   },
   {
@@ -65,12 +700,25 @@
     "featured": true,
     "trending": false,
     "isLatest": true,
-    "tags": ["Cursor", ".cursorrules", "DX", "Code Quality"],
+    "tags": [
+      "Cursor",
+      ".cursorrules",
+      "DX",
+      "Code Quality"
+    ],
     "description": "Ready-to-copy .cursorrules file content that enforces high code quality, clean component patterns, and precise UI styling.",
     "content": "# Cursor Rules Configuration for {{project_name}}\n\n## Global Preferences\n- Prefer functional components with hook-based state management.\n- Use utility-first Tailwind CSS for styling. Avoid inline style objects unless calculating dynamic layout dimensions.\n- Always keep components small, single-purpose, and modular.\n- Maintain consistent naming: PascalCase for components, camelCase for helper utility functions.\n- Implement accessible HTML5 elements with appropriate aria labels.\n\n## Code Style Guidelines\n- Framework: {{framework}}\n- Icons: Use `lucide-react` exclusively.\n- State Management: React Context API and custom LocalStorage hooks.\n- UI Theme: Dark mode first with rich glassmorphism backdrop filters.\n\n## Code Generation Constraints\n- NEVER output stub functions or commented-out placeholders like '// implement later'.\n- Handle edge cases: null values, loading skeletons, and empty array states gracefully.",
     "parameters": [
-      { "name": "project_name", "label": "Project Name", "defaultValue": "PromptForge AI" },
-      { "name": "framework", "label": "Framework / Library", "defaultValue": "Vite + React.js + Tailwind CSS" }
+      {
+        "name": "project_name",
+        "label": "Project Name",
+        "defaultValue": "PromptForge AI"
+      },
+      {
+        "name": "framework",
+        "label": "Framework / Library",
+        "defaultValue": "Vite + React.js + Tailwind CSS"
+      }
     ]
   },
   {
@@ -89,11 +737,21 @@
     "featured": true,
     "trending": true,
     "isLatest": false,
-    "tags": ["Midjourney", "Portrait", "Cinematic", "Photorealism", "Art"],
+    "tags": [
+      "Midjourney",
+      "Portrait",
+      "Cinematic",
+      "Photorealism",
+      "Art"
+    ],
     "description": "Ultra-detailed parameter string for generating magazine-quality cinematic portraits with natural lighting and hyper-realistic skin textures.",
     "content": "A high-fashion cinematic portrait of {{subject_description}}, shot on Hasselblad H6D-100c, 85mm f/1.4 lens, natural dramatic Rembrandt lighting, subtle bokeh, rich volumetric atmosphere, photorealistic skin pores, intricate clothing textures, volumetric fog, color graded in teal and orange --ar 16:9 --style raw --v 6.0 --stylize 250",
     "parameters": [
-      { "name": "subject_description", "label": "Subject Description", "defaultValue": "a futuristic AI engineer working in a dimly lit neon lab surrounded by glowing glass screens" }
+      {
+        "name": "subject_description",
+        "label": "Subject Description",
+        "defaultValue": "a futuristic AI engineer working in a dimly lit neon lab surrounded by glowing glass screens"
+      }
     ]
   },
   {
@@ -112,13 +770,31 @@
     "featured": false,
     "trending": true,
     "isLatest": false,
-    "tags": ["SaaS", "Copywriting", "Landing Page", "Conversion", "Marketing"],
+    "tags": [
+      "SaaS",
+      "Copywriting",
+      "Landing Page",
+      "Conversion",
+      "Marketing"
+    ],
     "description": "Generates persuasive, PAS (Problem-Agitate-Solution) structured copy for SaaS landing page hero sections, feature grids, and CTAs.",
     "content": "Act as a world-class SaaS copywriter trained in direct-response copy and conversion rate optimization (CRO). Write compelling landing page copy for: {{product_name}} (Product description: {{product_summary}}).\n\nTarget Audience: {{target_audience}}\n\n### Required Structure:\n1. **Hero Section**:\n   - Attention-Grabbing Headline (under 10 words)\n   - Punchy Subheadline focusing on key benefit\n   - Primary CTA button text\n   - Secondary CTA text\n   - Trust bar badge line\n2. **Value Proposition (3 Core Pillars)**:\n   - Pillar Title, Subtitle, and 2-sentence explanation\n3. **Social Proof & Testimonials**:\n   - 3 realistic customer quote vignettes\n4. **FAQ Section**:\n   - 4 objections addressed with absolute clarity.",
     "parameters": [
-      { "name": "product_name", "label": "Product Name", "defaultValue": "FlowPulse AI" },
-      { "name": "product_summary", "label": "Product Summary", "defaultValue": "An automated workflow engine that connects developer git repos to customer release notes" },
-      { "name": "target_audience", "label": "Target Audience", "defaultValue": "Engineering Managers and Technical Product Leads" }
+      {
+        "name": "product_name",
+        "label": "Product Name",
+        "defaultValue": "FlowPulse AI"
+      },
+      {
+        "name": "product_summary",
+        "label": "Product Summary",
+        "defaultValue": "An automated workflow engine that connects developer git repos to customer release notes"
+      },
+      {
+        "name": "target_audience",
+        "label": "Target Audience",
+        "defaultValue": "Engineering Managers and Technical Product Leads"
+      }
     ]
   },
   {
@@ -137,12 +813,25 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Code Review", "Security", "Performance", "Refactoring"],
+    "tags": [
+      "Code Review",
+      "Security",
+      "Performance",
+      "Refactoring"
+    ],
     "description": "Performs static security audits, memory leak detection, edge-case vulnerability testing, and complexity reduction.",
     "content": "You are a Principal Security Engineer and Static Code Auditor. Audit the following {{language}} code snippet:\n\n```{{language}}\n{{code_snippet}}\n```\n\n### Analysis Framework:\n1. **Security Vulnerabilities**: Identify any OWASP top 10 flaws, unhandled exceptions, race conditions, or unsafe memory/state mutations.\n2. **Performance Bottlenecks**: Pinpoint redundant computations, un-memoized loops, or unnecessary re-renders.\n3. **Refactored Code**: Provide the refactored, hardened implementation with explanatory line comments.\n4. **Test Cases**: Write 3 unit tests covering edge cases.",
     "parameters": [
-      { "name": "language", "label": "Programming Language", "defaultValue": "javascript" },
-      { "name": "code_snippet", "label": "Code Snippet", "defaultValue": "const handleUserSubmit = async (e) => {\n  const data = await fetch('/api/user?id=' + inputVal);\n  setUserData(await data.json());\n};" }
+      {
+        "name": "language",
+        "label": "Programming Language",
+        "defaultValue": "javascript"
+      },
+      {
+        "name": "code_snippet",
+        "label": "Code Snippet",
+        "defaultValue": "const handleUserSubmit = async (e) => {\n  const data = await fetch('/api/user?id=' + inputVal);\n  setUserData(await data.json());\n};"
+      }
     ]
   },
   {
@@ -161,11 +850,20 @@
     "featured": false,
     "trending": true,
     "isLatest": false,
-    "tags": ["Lovable", "UI/UX", "Dashboard", "Tailwind CSS"],
+    "tags": [
+      "Lovable",
+      "UI/UX",
+      "Dashboard",
+      "Tailwind CSS"
+    ],
     "description": "Generates clean React components with glassmorphism backdrop filters, soft ambient blurs, and polished dark theme contrast.",
     "content": "Build a responsive modern Web App interface for {{app_concept}} using React, Tailwind CSS, and Lucide icons.\n\nDesign Requirements:\n- Style: Dark mode UI with subtle glassmorphism (`backdrop-blur-md bg-slate-900/60 border border-slate-800/80`).\n- Layout: Sidebar navigation with collapsible menus, sticky top header with search & notification counter, main content grid.\n- Content Elements: 4 metric highlight cards with trend percentages (+14.2%), interactive filter tabs, data list table with status badges.\n- Interactions: Smooth scale hover effects on cards (`hover:-translate-y-1 transition-all duration-300`).",
     "parameters": [
-      { "name": "app_concept", "label": "App Concept", "defaultValue": "AI API Usage & Token Cost Monitor" }
+      {
+        "name": "app_concept",
+        "label": "App Concept",
+        "defaultValue": "AI API Usage & Token Cost Monitor"
+      }
     ]
   },
   {
@@ -184,11 +882,20 @@
     "featured": false,
     "trending": false,
     "isLatest": false,
-    "tags": ["Gemini", "Large Context", "Repo Summary", "Documentation"],
+    "tags": [
+      "Gemini",
+      "Large Context",
+      "Repo Summary",
+      "Documentation"
+    ],
     "description": "Ingests massive codebase context to produce architecture diagrams, data models, and dependency flow explanations.",
     "content": "You have been provided with the entire source code repository for {{project_name}}.\n\n### Task:\nProduce an Executive Technical Architecture Document with:\n1. **System Overview**: Primary tech stack, entry points, and directory layout explanation.\n2. **Data Flow Matrix**: Trace how user input flows from UI components down to local storage/state managers.\n3. **Core Entities**: List key data structures, state schemas, and component relations.\n4. **Mermaid Diagram**: Output a clear Mermaid `graph TD` showing component hierarchy.",
     "parameters": [
-      { "name": "project_name", "label": "Project Name", "defaultValue": "PromptForge AI Frontend Application" }
+      {
+        "name": "project_name",
+        "label": "Project Name",
+        "defaultValue": "PromptForge AI Frontend Application"
+      }
     ]
   },
   {
@@ -207,12 +914,25 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Windsurf", "Cascade", "Refactoring", "Multi-file"],
+    "tags": [
+      "Windsurf",
+      "Cascade",
+      "Refactoring",
+      "Multi-file"
+    ],
     "description": "Guide Windsurf AI's Cascade engine to safely refactor code across multiple files while keeping imports intact.",
     "content": "Cascade Engine Directive: Refactor {{target_module}} across the codebase to implement {{pattern_name}}.\n\nStep-by-step actions:\n1. Inspect all files referencing `{{target_module}}` across the project.\n2. Create a centralized export file in `src/utils/` or `src/context/` to avoid duplication.\n3. Update component imports clean without breaking relative paths.\n4. Ensure backward compatibility and export prop type interfaces cleanly.",
     "parameters": [
-      { "name": "target_module", "label": "Target Module / Component", "defaultValue": "Toast notification handlers" },
-      { "name": "pattern_name", "label": "Pattern Name", "defaultValue": "React Context Provider pattern with custom hook" }
+      {
+        "name": "target_module",
+        "label": "Target Module / Component",
+        "defaultValue": "Toast notification handlers"
+      },
+      {
+        "name": "pattern_name",
+        "label": "Pattern Name",
+        "defaultValue": "React Context Provider pattern with custom hook"
+      }
     ]
   },
   {
@@ -231,12 +951,25 @@
     "featured": false,
     "trending": false,
     "isLatest": false,
-    "tags": ["Education", "Feynman Method", "Tutor", "Learning"],
+    "tags": [
+      "Education",
+      "Feynman Method",
+      "Tutor",
+      "Learning"
+    ],
     "description": "Explains complex technical, scientific, or mathematical subjects using simple analogies and step-by-step interactive questions.",
     "content": "Act as Richard Feynman. Explain the concept of {{complex_concept}} to someone with {{knowledge_level}} prior experience.\n\nRules:\n1. Use plain English and relatable real-world analogies (avoid jargon unless explained instantly).\n2. Break the explanation into 3 intuitive building blocks.\n3. Include a 'Check Your Understanding' question at the end with a hint.",
     "parameters": [
-      { "name": "complex_concept", "label": "Complex Concept", "defaultValue": "Asynchronous JavaScript Promises and Event Loop" },
-      { "name": "knowledge_level", "label": "Knowledge Level", "defaultValue": "zero programming background" }
+      {
+        "name": "complex_concept",
+        "label": "Complex Concept",
+        "defaultValue": "Asynchronous JavaScript Promises and Event Loop"
+      },
+      {
+        "name": "knowledge_level",
+        "label": "Knowledge Level",
+        "defaultValue": "zero programming background"
+      }
     ]
   },
   {
@@ -255,11 +988,20 @@
     "featured": false,
     "trending": false,
     "isLatest": false,
-    "tags": ["Node.js", "Express", "REST API", "Clean Architecture"],
+    "tags": [
+      "Node.js",
+      "Express",
+      "REST API",
+      "Clean Architecture"
+    ],
     "description": "Scaffolds enterprise Node.js controllers, services, middleware, and route handlers with validation.",
     "content": "Scaffold a production-grade Node.js/Express REST API module for {{entity_name}}.\n\nStructure:\n- Controller layer (request handling, response formatting)\n- Service layer (business logic)\n- Repository/Data Access layer (mock JSON persistence)\n- Express Middleware (input validation & error handling wrapper)\n\nProvide the complete code for each file cleanly separated.",
     "parameters": [
-      { "name": "entity_name", "label": "Entity Name", "defaultValue": "User Prompt Collections" }
+      {
+        "name": "entity_name",
+        "label": "Entity Name",
+        "defaultValue": "User Prompt Collections"
+      }
     ]
   },
   {
@@ -278,12 +1020,26 @@
     "featured": false,
     "trending": true,
     "isLatest": false,
-    "tags": ["DALL-E", "Logo", "Branding", "Vector", "Graphic Design"],
+    "tags": [
+      "DALL-E",
+      "Logo",
+      "Branding",
+      "Vector",
+      "Graphic Design"
+    ],
     "description": "Generates minimal vector logos with clean geometry, flat colors, and isolated white backgrounds.",
     "content": "A minimal, modern vector logo mark for a SaaS tech company called {{brand_name}}. Concept: {{logo_concept}}. Flat design, sharp geometric lines, smooth gradient accents of electric cyan and deep indigo, isolated on a plain solid dark background, ultra high resolution, vector graphic aesthetic.",
     "parameters": [
-      { "name": "brand_name", "label": "Brand Name", "defaultValue": "PromptForge AI" },
-      { "name": "logo_concept", "label": "Logo Concept", "defaultValue": "An stylized anvil fusing with a glowing AI spark motif" }
+      {
+        "name": "brand_name",
+        "label": "Brand Name",
+        "defaultValue": "PromptForge AI"
+      },
+      {
+        "name": "logo_concept",
+        "label": "Logo Concept",
+        "defaultValue": "An stylized anvil fusing with a glowing AI spark motif"
+      }
     ]
   },
   {
@@ -302,15 +1058,41 @@
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Pitch Deck", "Fundraising", "Claude 3.5", "Venture Capital"],
+    "tags": [
+      "Micro-SaaS",
+      "Pitch Deck",
+      "Fundraising",
+      "Claude 3.5",
+      "Venture Capital"
+    ],
     "description": "System prompt for an AI agent that audits startup pitch deck copy, financial assumptions, TAM/SAM/SOM metrics, and investor objection risks.",
     "content": "You are a seasoned Venture Capital Analyst and Pitch Deck Strategist. Analyze the following pitch deck summary for {{startup_name}} targeting {{target_market}}.\n\n### Evaluation Directives:\n1. **Value Proposition & Problem-Solution Fit**: Is the core pain point defined sharply? Score 1-10 with direct improvement suggestions.\n2. **Market Sizing (TAM / SAM / SOM)**: Validate whether calculations sound realistic. Flag inflated metrics or missing bottom-up methodology.\n3. **Business Model & Unit Economics**: Evaluate monetization strategy, CAC vs LTV expectations, and pricing tier clarity.\n4. **Investor Objection Audit**: List the top 5 questions a seed investor will ask during a Q&A and provide winning response scripts.\n5. **Slide-by-Slide Polish**: Provide exact copy rewrites for the Hero Slide, Problem Slide, Solution Slide, and Ask Slide.\n\n### Input Startup Context:\n- Name: {{startup_name}}\n- Problem: {{problem_statement}}\n- Solution: {{solution_overview}}\n- Target Audience: {{target_market}}\n- Revenue Model: {{monetization_model}}",
     "parameters": [
-      { "name": "startup_name", "label": "Startup Name", "defaultValue": "DeckPulse AI" },
-      { "name": "problem_statement", "label": "Problem Statement", "defaultValue": "Founders spend 40+ hours making pitch decks that fail to communicate TAM and unit economics clearly to VCs." },
-      { "name": "solution_overview", "label": "Solution Overview", "defaultValue": "AI-powered pitch deck auditor that evaluates narrative flow, financial models, and predicts investor questions." },
-      { "name": "target_market", "label": "Target Market", "defaultValue": "Pre-seed & Seed stage tech founders" },
-      { "name": "monetization_model", "label": "Monetization Model", "defaultValue": "$49 per audit or $199/mo for unlimited revisions and investor match suggestions" }
+      {
+        "name": "startup_name",
+        "label": "Startup Name",
+        "defaultValue": "DeckPulse AI"
+      },
+      {
+        "name": "problem_statement",
+        "label": "Problem Statement",
+        "defaultValue": "Founders spend 40+ hours making pitch decks that fail to communicate TAM and unit economics clearly to VCs."
+      },
+      {
+        "name": "solution_overview",
+        "label": "Solution Overview",
+        "defaultValue": "AI-powered pitch deck auditor that evaluates narrative flow, financial models, and predicts investor questions."
+      },
+      {
+        "name": "target_market",
+        "label": "Target Market",
+        "defaultValue": "Pre-seed & Seed stage tech founders"
+      },
+      {
+        "name": "monetization_model",
+        "label": "Monetization Model",
+        "defaultValue": "$49 per audit or $199/mo for unlimited revisions and investor match suggestions"
+      }
     ]
   },
   {
@@ -329,14 +1111,36 @@
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Cold Email", "B2B Sales", "Outreach", "Copywriting"],
+    "tags": [
+      "Micro-SaaS",
+      "Cold Email",
+      "B2B Sales",
+      "Outreach",
+      "Copywriting"
+    ],
     "description": "Generates hyper-personalized 4-step B2B email sequences based on target prospect LinkedIn bio, company news, and value proposition.",
     "content": "You are a World-Class B2B Copywriter & Cold Outreach Specialist. Write a 4-step high-converting cold outreach email sequence targeting {{prospect_role}} at {{target_industry}} companies.\n\n### Constraints & Rules:\n- Keep Email 1 under 90 words. No fluff or corporate jargon.\n- Use a soft CTA (e.g., 'Worth a brief 2-minute look?' instead of 'Book a 30-min call').\n- Personalize line 1 using {{prospect_trigger}}.\n- Email 2 (Bump - 3 days later): Frame a short case study result.\n- Email 3 (Value add - 5 days later): Share a quick video audit tip.\n- Email 4 (Breakup - 7 days later): Clean, respectful closing option.\n\n### Inputs:\n- Target Prospect Role: {{prospect_role}}\n- Target Industry: {{target_industry}}\n- Value Prop: {{value_proposition}}\n- Prospect Trigger: {{prospect_trigger}}",
     "parameters": [
-      { "name": "prospect_role", "label": "Prospect Role", "defaultValue": "VP of Growth / Head of Marketing" },
-      { "name": "target_industry", "label": "Target Industry", "defaultValue": "B2B SaaS companies with 10-50 employees" },
-      { "name": "value_proposition", "label": "Value Proposition", "defaultValue": "Increase demo booking conversion by 35% using automated video onboarding widgets" },
-      { "name": "prospect_trigger", "label": "Prospect Trigger", "defaultValue": "Recent hiring post for Senior Product Marketer" }
+      {
+        "name": "prospect_role",
+        "label": "Prospect Role",
+        "defaultValue": "VP of Growth / Head of Marketing"
+      },
+      {
+        "name": "target_industry",
+        "label": "Target Industry",
+        "defaultValue": "B2B SaaS companies with 10-50 employees"
+      },
+      {
+        "name": "value_proposition",
+        "label": "Value Proposition",
+        "defaultValue": "Increase demo booking conversion by 35% using automated video onboarding widgets"
+      },
+      {
+        "name": "prospect_trigger",
+        "label": "Prospect Trigger",
+        "defaultValue": "Recent hiring post for Senior Product Marketer"
+      }
     ]
   },
   {
@@ -351,15 +1155,26 @@
     "readingTime": "5 min",
     "views": 9100,
     "copies": 4200,
-    "rating": 5.0,
+    "rating": 5,
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Database", "Supabase", "Prisma", "API Design", "PostgreSQL"],
+    "tags": [
+      "Micro-SaaS",
+      "Database",
+      "Supabase",
+      "Prisma",
+      "API Design",
+      "PostgreSQL"
+    ],
     "description": "Converts plain-text app ideas into production-ready PostgreSQL / Supabase SQL migrations, Prisma schemas, and REST/GraphQL specs.",
     "content": "You are a Principal Database Architect & Backend Lead. Design a scalable database schema and API contract for a Micro-SaaS application: {{app_concept}}.\n\n### Required Deliverables:\n1. **Entity Relationship Schema**: List entities, fields, data types, primary keys, and foreign keys.\n2. **PostgreSQL / Supabase Migration SQL**: Provide complete `CREATE TABLE` scripts with RLS (Row Level Security) policies.\n3. **Prisma Schema**: Output standard `schema.prisma` file definitions.\n4. **REST API Spec**: Define endpoints (GET, POST, PUT, DELETE) with URL paths, request payloads, response bodies, and HTTP status codes.\n\n### App Concept:\n{{app_concept}}",
     "parameters": [
-      { "name": "app_concept", "label": "App Concept", "defaultValue": "A multi-tenant SaaS feedback widget that allows website visitors to submit bug reports and feature upvotes with screenshot attachments." }
+      {
+        "name": "app_concept",
+        "label": "App Concept",
+        "defaultValue": "A multi-tenant SaaS feedback widget that allows website visitors to submit bug reports and feature upvotes with screenshot attachments."
+      }
     ]
   },
   {
@@ -378,12 +1193,26 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Microcopy", "UI/UX", "Onboarding", "Conversion"],
+    "tags": [
+      "Micro-SaaS",
+      "Microcopy",
+      "UI/UX",
+      "Onboarding",
+      "Conversion"
+    ],
     "description": "Crafts punchy hero headlines, subtext, empty state micro-copy, tooltips, and onboarding step instructions for Micro-SaaS products.",
     "content": "Act as a Senior UX Writer specializing in SaaS conversion rate optimization. Write micro-copy for {{app_name}}, a {{app_description}}.\n\n### Provide Copy for the Following Elements:\n1. **Hero Header & Subtitle**: 3 high-converting variations (Direct, Curiosity-driven, Outcome-focused).\n2. **Primary CTA Buttons**: Action-oriented text for free trial vs instant demo.\n3. **Empty State Messages**: Welcoming copy when dashboard cards have 0 data items.\n4. **Tooltips & Helper Text**: 3 inline guide tooltips explaining complex features.\n5. **Error & Success Toasts**: Clear, human error messages and encouraging success states.",
     "parameters": [
-      { "name": "app_name", "label": "App Name", "defaultValue": "InvoicePulse" },
-      { "name": "app_description", "label": "App Description", "defaultValue": "Automated invoice reminder tool for freelancers that sends polite WhatsApp & SMS notifications before payment is overdue." }
+      {
+        "name": "app_name",
+        "label": "App Name",
+        "defaultValue": "InvoicePulse"
+      },
+      {
+        "name": "app_description",
+        "label": "App Description",
+        "defaultValue": "Automated invoice reminder tool for freelancers that sends polite WhatsApp & SMS notifications before payment is overdue."
+      }
     ]
   },
   {
@@ -402,11 +1231,21 @@
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Security", "Code Review", "OWASP", "Clean Code"],
+    "tags": [
+      "Micro-SaaS",
+      "Security",
+      "Code Review",
+      "OWASP",
+      "Clean Code"
+    ],
     "description": "Audits pull requests for OWASP Top 10 vulnerabilities, memory leaks, unhandled async errors, and performance bottlenecks.",
     "content": "You are a Lead Application Security Engineer and Code Reviewer. Perform an in-depth security and quality audit on the following code snippet for {{language_framework}}.\n\n### Audit Checklist:\n1. **OWASP Security Audit**: Check for SQL Injection, XSS, CSRF, insecure data storage, or improper secret handling.\n2. **Performance & Memory Leaks**: Identify unnecessary re-renders, un-indexed database queries, or unclosed subscriptions.\n3. **Edge Case & Error Resilience**: Check for missing null/undefined checks, unhandled async promise rejections.\n4. **Refactored Code Fix**: Output the complete refactored, production-ready version with annotations.",
     "parameters": [
-      { "name": "language_framework", "label": "Language / Framework", "defaultValue": "React.js + Node.js Express" }
+      {
+        "name": "language_framework",
+        "label": "Language / Framework",
+        "defaultValue": "React.js + Node.js Express"
+      }
     ]
   },
   {
@@ -425,11 +1264,21 @@
     "featured": false,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "SEO", "Programmatic SEO", "Content Strategy", "Keywords"],
+    "tags": [
+      "Micro-SaaS",
+      "SEO",
+      "Programmatic SEO",
+      "Content Strategy",
+      "Keywords"
+    ],
     "description": "Designs SEO pillar page architectures, long-tail keyword clusters, internal linking maps, and structured JSON-LD schema markup.",
     "content": "You are a Head of Programmatic SEO for SaaS companies. Build an end-to-end SEO topic cluster strategy for {{saas_niche}}.\n\n### Output Requirements:\n1. **Pillar Page Outline**: Title, H1, H2 structure, target primary keyword, and search intent.\n2. **10 Sub-Topic Articles**: Title, target long-tail keywords, search volume estimate, and internal link anchor text.\n3. **Programmatic Template Matrix**: URL pattern blueprint for programmatic landing pages (e.g., `/vs/{{competitor}}` or `/integrations/{{tool}}`).\n4. **JSON-LD Schema Markup**: Valid `FAQPage` and `SoftwareApplication` schema script.",
     "parameters": [
-      { "name": "saas_niche", "label": "SaaS Niche", "defaultValue": "AI Customer Support Chatbots for Shopify Stores" }
+      {
+        "name": "saas_niche",
+        "label": "SaaS Niche",
+        "defaultValue": "AI Customer Support Chatbots for Shopify Stores"
+      }
     ]
   },
   {
@@ -448,11 +1297,20 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Customer Retention", "Churn Reduction", "Sentiment Analysis"],
+    "tags": [
+      "Micro-SaaS",
+      "Customer Retention",
+      "Churn Reduction",
+      "Sentiment Analysis"
+    ],
     "description": "Scans customer support tickets, G2 reviews, and exit feedback to calculate churn risk scores and suggest personalized retention offers.",
     "content": "You are a SaaS Customer Success Intelligence AI. Analyze the following customer message/ticket for {{customer_plan}} user.\n\n### Output Tasks:\n1. **Sentiment Score**: Rate sentiment from -10 (Severe Churn Risk) to +10 (Delighted Advocate).\n2. **Churn Drivers**: Identify root causes (Pricing, Feature Gap, Bug, Poor UX, Competitor Switch).\n3. **Urgency Level**: Immediate CS intervention vs Automated Drip Response.\n4. **Retention Action Plan**: Write a personalized, empathetic email response offering a discount, 1-on-1 strategy call, or workaround.",
     "parameters": [
-      { "name": "customer_plan", "label": "Customer Tier Plan", "defaultValue": "Pro Tier ($99/mo)" }
+      {
+        "name": "customer_plan",
+        "label": "Customer Tier Plan",
+        "defaultValue": "Pro Tier ($99/mo)"
+      }
     ]
   },
   {
@@ -471,12 +1329,25 @@
     "featured": true,
     "trending": false,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Competitor Analysis", "Pricing Strategy", "Market Research"],
+    "tags": [
+      "Micro-SaaS",
+      "Competitor Analysis",
+      "Pricing Strategy",
+      "Market Research"
+    ],
     "description": "Teardowns competitor pricing tiers, feature caps, user complaints, and positions your Micro-SaaS to capture underserved market gaps.",
     "content": "You are a Market Research Director specializing in Micro-SaaS positioning. Perform a competitive intelligence audit comparing {{our_product}} against competitors: {{competitors_list}}.\n\n### Strategy Blueprint:\n1. **Feature Comparison Table**: Matrix comparing core capabilities, price per seat, free tier limits.\n2. **Competitor Weakness Map**: Top 3 complaints found on Reddit/G2/Capterra for each competitor.\n3. **Blue Ocean Opportunity**: Where is the market underserved? (e.g. simpler UI, flat pricing, privacy focus).\n4. **Positioning Headline**: 3 punchy positioning taglines to use on landing page hero sections.",
     "parameters": [
-      { "name": "our_product", "label": "Our Product", "defaultValue": "LiteForm - Lightweight static HTML form backend with zero JS footprint" },
-      { "name": "competitors_list", "label": "Competitors List", "defaultValue": "Typeform, Formspree, Tally, Jotform" }
+      {
+        "name": "our_product",
+        "label": "Our Product",
+        "defaultValue": "LiteForm - Lightweight static HTML form backend with zero JS footprint"
+      },
+      {
+        "name": "competitors_list",
+        "label": "Competitors List",
+        "defaultValue": "Typeform, Formspree, Tally, Jotform"
+      }
     ]
   },
   {
@@ -495,11 +1366,21 @@
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Social Media", "Content Recycling", "Twitter Thread", "LinkedIn"],
+    "tags": [
+      "Micro-SaaS",
+      "Social Media",
+      "Content Recycling",
+      "Twitter Thread",
+      "LinkedIn"
+    ],
     "description": "Repurposes long-form blog posts or product launch notes into viral X (Twitter) threads, LinkedIn carousels, and newsletter blurbs.",
     "content": "Act as a Viral Content Strategist for Indie Founders. Repurpose the following long-form content into 3 platform formats:\n\n### Formats Required:\n1. **X (Twitter) 6-Post Thread**: High-hook line 1, punchy bullet points, strong takeaway final post with CTA.\n2. **LinkedIn Story Post**: Professional narrative format with line breaks, emoji accents, and engaging question at the end.\n3. **Newsletter Blurb**: 150-word quick digest summary with clear button link.\n\n### Source Content:\n{{source_text}}",
     "parameters": [
-      { "name": "source_text", "label": "Source Content", "defaultValue": "We launched our Micro-SaaS product and hit $1,000 MRR in 14 days without paid ads. Here is how we leveraged Reddit launch posts, Product Hunt, and targeted cold Twitter DMs." }
+      {
+        "name": "source_text",
+        "label": "Source Content",
+        "defaultValue": "We launched our Micro-SaaS product and hit $1,000 MRR in 14 days without paid ads. Here is how we leveraged Reddit launch posts, Product Hunt, and targeted cold Twitter DMs."
+      }
     ]
   },
   {
@@ -518,12 +1399,26 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Legal", "GDPR", "Privacy Policy", "Terms of Service"],
+    "tags": [
+      "Micro-SaaS",
+      "Legal",
+      "GDPR",
+      "Privacy Policy",
+      "Terms of Service"
+    ],
     "description": "Generates tailored legal framework drafts (GDPR, CCPA, Terms of Service, Refund Policy) based on app data handling practices.",
     "content": "You are a Legal Counsel specializing in internet software & SaaS compliance. Draft tailored Terms of Service and Privacy Policy outlines for {{company_name}} offering {{service_description}}.\n\n### Clauses to Include:\n1. **Data Collection & GDPR/CCPA Rights**: Cookies, analytics tools, user rights to data deletion.\n2. **Subscription & Billing**: Auto-renewal terms, refund policy (14-day money back or non-refundable), cancellation terms.\n3. **Limitation of Liability & SLA**: Service uptime disclaimer and indirect damages waiver.\n4. **Acceptable Use Policy**: Prohibited activities (scraping, spamming, reverse engineering).",
     "parameters": [
-      { "name": "company_name", "label": "Company Name", "defaultValue": "PromptForge Technologies LLC" },
-      { "name": "service_description", "label": "Service Description", "defaultValue": "Subscription-based web app generating AI prompt templates and exporting custom JSON configurations." }
+      {
+        "name": "company_name",
+        "label": "Company Name",
+        "defaultValue": "PromptForge Technologies LLC"
+      },
+      {
+        "name": "service_description",
+        "label": "Service Description",
+        "defaultValue": "Subscription-based web app generating AI prompt templates and exporting custom JSON configurations."
+      }
     ]
   },
   {
@@ -542,12 +1437,26 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "API", "Documentation", "SDK", "Developer Experience"],
+    "tags": [
+      "Micro-SaaS",
+      "API",
+      "Documentation",
+      "SDK",
+      "Developer Experience"
+    ],
     "description": "Converts OpenAPI/Swagger definitions into developer-grade documentation with runnable cURL, JavaScript, and Python code examples.",
     "content": "You are a Principal Developer Relations Engineer. Write comprehensive, clean API documentation for the endpoint `{{endpoint_path}}` (HTTP Method: `{{http_method}}`).\n\n### Requirements:\n1. **Endpoint Overview**: Purpose, authentication requirement (Bearer Token), rate limits.\n2. **Request Parameters Table**: Field name, type, required status, description.\n3. **Code Snippets**: Runnable examples in cURL, JavaScript (Fetch), and Python (Requests).\n4. **Response Payload Samples**: 200 OK success JSON and 400/401 error response examples.",
     "parameters": [
-      { "name": "endpoint_path", "label": "Endpoint Path", "defaultValue": "/v1/prompts/generate" },
-      { "name": "http_method", "label": "HTTP Method", "defaultValue": "POST" }
+      {
+        "name": "endpoint_path",
+        "label": "Endpoint Path",
+        "defaultValue": "/v1/prompts/generate"
+      },
+      {
+        "name": "http_method",
+        "label": "HTTP Method",
+        "defaultValue": "POST"
+      }
     ]
   },
   {
@@ -566,12 +1475,26 @@
     "featured": false,
     "trending": false,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Product Management", "RICE Framework", "MVP", "Prioritization"],
+    "tags": [
+      "Micro-SaaS",
+      "Product Management",
+      "RICE Framework",
+      "MVP",
+      "Prioritization"
+    ],
     "description": "Evaluates feature backlogs using Reach, Impact, Confidence, Effort to define minimum viable product scope.",
     "content": "You are a Product Manager for a lean Micro-SaaS startup. Analyze the following list of candidate features for {{product_name}} and score them using the RICE framework (RICE Score = (Reach * Impact * Confidence) / Effort).\n\n### Candidate Features:\n{{features_list}}\n\n### Output Format:\n1. **Ranked Prioritization Matrix**: Table listing Feature, Reach (1-10), Impact (0.25-3), Confidence (50%-100%), Effort (person-weeks), and Final RICE Score.\n2. **MVP Boundary Recommendation**: Which 3 features MUST be in v1.0, and which 3 should be deferred to post-launch v1.1.",
     "parameters": [
-      { "name": "product_name", "label": "Product Name", "defaultValue": "BookmarkVault AI" },
-      { "name": "features_list", "label": "Features List", "defaultValue": "1. Chrome extension bookmark saver. 2. AI auto-tagging. 3. Full-text vector search. 4. Notion export. 5. Public shareable collection links. 6. Multi-user team workspace." }
+      {
+        "name": "product_name",
+        "label": "Product Name",
+        "defaultValue": "BookmarkVault AI"
+      },
+      {
+        "name": "features_list",
+        "label": "Features List",
+        "defaultValue": "1. Chrome extension bookmark saver. 2. AI auto-tagging. 3. Full-text vector search. 4. Notion export. 5. Public shareable collection links. 6. Multi-user team workspace."
+      }
     ]
   },
   {
@@ -590,13 +1513,31 @@
     "featured": false,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Customer Support", "FAQ", "Chatbot", "Automation"],
+    "tags": [
+      "Micro-SaaS",
+      "Customer Support",
+      "FAQ",
+      "Chatbot",
+      "Automation"
+    ],
     "description": "Empathic tier-1 customer support bot prompt for handling billing inquiries, bug reports, and account questions.",
     "content": "You are the automated support assistant for {{product_name}}. Respond to the following user query: \"{{user_query}}\".\n\n### Persona & Tone Guardrails:\n- Be friendly, empathetic, concise, and helpful.\n- If it is a billing question, explain refund terms clearly.\n- If it is a technical bug, ask for browser details & step-by-step reproduction steps.\n- Never make promises about unreleased features.\n- If user is upset, escalate politely to human support at support@{{domain_name}}.",
     "parameters": [
-      { "name": "product_name", "label": "Product Name", "defaultValue": "PromptForge AI" },
-      { "name": "user_query", "label": "User Query", "defaultValue": "I was charged twice on my credit card when I upgraded to Pro. Please refund!" },
-      { "name": "domain_name", "label": "Domain Name", "defaultValue": "promptforge.ai" }
+      {
+        "name": "product_name",
+        "label": "Product Name",
+        "defaultValue": "PromptForge AI"
+      },
+      {
+        "name": "user_query",
+        "label": "User Query",
+        "defaultValue": "I was charged twice on my credit card when I upgraded to Pro. Please refund!"
+      },
+      {
+        "name": "domain_name",
+        "label": "Domain Name",
+        "defaultValue": "promptforge.ai"
+      }
     ]
   },
   {
@@ -615,11 +1556,21 @@
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Newsletter", "Substack", "Copywriting", "Hooks"],
+    "tags": [
+      "Micro-SaaS",
+      "Newsletter",
+      "Substack",
+      "Copywriting",
+      "Hooks"
+    ],
     "description": "Generates high-CTR email subject lines, preview snippets, opening narrative hooks, and CTA buttons for newsletter issues.",
     "content": "Act as an Elite Email Copywriter. Write 5 high-converting email subject lines, preview text snippets, and 2 opening narrative hooks for a newsletter issue about {{newsletter_topic}}.\n\n### Copy Variations:\n1. **Curiosity-Driven Hook**: Make the reader feel like they're discovering a secret.\n2. **Data / Number-Driven Hook**: Use realistic statistics to command authority.\n3. **Storytelling Hook**: Start in media res with a founder anecdote.\n4. **Negative Angle Hook**: Warn readers about a costly mistake to avoid.",
     "parameters": [
-      { "name": "newsletter_topic", "label": "Newsletter Topic", "defaultValue": "How to build and launch a Micro-SaaS tool in 7 days using Google Antigravity and Vite" }
+      {
+        "name": "newsletter_topic",
+        "label": "Newsletter Topic",
+        "defaultValue": "How to build and launch a Micro-SaaS tool in 7 days using Google Antigravity and Vite"
+      }
     ]
   },
   {
@@ -634,16 +1585,31 @@
     "readingTime": "4 min",
     "views": 9800,
     "copies": 4900,
-    "rating": 5.0,
+    "rating": 5,
     "featured": true,
     "trending": true,
     "isLatest": true,
-    "tags": ["Micro-SaaS", "Antigravity", "Cursor", "Vibe Coding", "System Rules", "Vite"],
+    "tags": [
+      "Micro-SaaS",
+      "Antigravity",
+      "Cursor",
+      "Vibe Coding",
+      "System Rules",
+      "Vite"
+    ],
     "description": "Generates custom system rules (.cursorrules or Antigravity instructions) tailored specifically for building Micro-SaaS web apps with Vite, React, and Supabase.",
     "content": "You are a Lead AI Systems Architect specializing in Google Antigravity and Cursor rules for Micro-SaaS projects.\n\nGenerate a complete `.cursorrules` or system prompt file for building a Micro-SaaS called {{app_name}} using stack: {{tech_stack}}.\n\n### Rules Configuration Requirements:\n1. **Design System & Aesthetics**: Dark mode default, slate/cyan theme, glassmorphism cards, Lucide icons, zero generic default buttons.\n2. **Architecture**: Modular React components, custom hooks for LocalStorage/Supabase, zero unnecessary npm bloat dependencies.\n3. **Quality Directives**: Handle loading skeletons, empty states, error boundaries, and copy-to-clipboard toast notifications.\n4. **Execution Protocol**: Autonomous planning phase before file generation.",
     "parameters": [
-      { "name": "app_name", "label": "App Name", "defaultValue": "PromptForge Micro-SaaS" },
-      { "name": "tech_stack", "label": "Tech Stack", "defaultValue": "Vite + React 19 + Tailwind CSS + Lucide React + LocalStorage" }
+      {
+        "name": "app_name",
+        "label": "App Name",
+        "defaultValue": "PromptForge Micro-SaaS"
+      },
+      {
+        "name": "tech_stack",
+        "label": "Tech Stack",
+        "defaultValue": "Vite + React 19 + Tailwind CSS + Lucide React + LocalStorage"
+      }
     ]
   }
 ]

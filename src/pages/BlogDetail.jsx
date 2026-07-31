@@ -12,8 +12,7 @@ import {
   Zap,
   Code2,
   Table as TableIcon,
-  Play,
-  MessageSquareText
+  Play
 } from 'lucide-react';
 import blogsData from '../data/blogs.json';
 import promptsData from '../data/prompts.json';
@@ -27,10 +26,10 @@ export function BlogDetail() {
   const [copiedId, setCopiedId] = useState(null);
 
   const blog = blogsData.find((b) => b.slug === slug) || blogsData[0];
-  const isSaasCollection = blog.slug === '15-micro-saas-idea-prompts';
+  const isVibeCollection = blog.slug === '15vibecodingprompts' || blog.slug === '15-vibe-coding-prompts' || blog.slug === '15-micro-saas-idea-prompts';
 
-  // Get 15 Micro-SaaS prompts from dataset
-  const saasPrompts = promptsData.filter((p) => p.id.startsWith('prompt-saas-'));
+  // Get 15 Vibe Coding prompts from dataset
+  const displayPrompts = promptsData.filter((p) => p.id.startsWith('prompt-vibe-'));
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -49,7 +48,7 @@ export function BlogDetail() {
   };
 
   const scrollToPrompt = (index) => {
-    const el = document.getElementById(`saas-prompt-${index + 1}`);
+    const el = document.getElementById(`vibe-prompt-${index + 1}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -112,19 +111,19 @@ export function BlogDetail() {
       </div>
 
       {/* Main Content Area */}
-      {isSaasCollection ? (
+      {isVibeCollection ? (
         <div className="space-y-12">
           {/* Banner */}
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/20 bg-gradient-to-r from-emerald-500/5 via-teal-500/5 to-cyan-500/5 space-y-4">
             <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs tracking-wider uppercase">
               <Sparkles className="w-4 h-4" />
-              15 Product Prompts Official Blueprint
+              15 Vibe Coding Prompts Blueprint
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-              15 Micro-SaaS Idea System Prompts
+              Copy, Fill The Brackets & Ship
             </h2>
             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Below is the complete list of 15 battle-tested Micro-SaaS system prompts. Click **Copy Prompt** to use immediately, or **Open in Editor** to customize variable parameters.
+              Below is the complete list of 15 battle-tested Vibe Coding prompts for Claude Code, Google Antigravity, and Cursor. Click **Copy Prompt** to use immediately, or **Open in Editor** to customize parameters.
             </p>
           </div>
 
@@ -133,7 +132,7 @@ export function BlogDetail() {
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <TableIcon className="w-5 h-5 text-emerald-400" />
-                15 Micro-SaaS Prompts Summary Table
+                15 Vibe Coding Prompts Summary Table
               </h3>
               <span className="text-xs text-slate-400 font-mono">15 Prompts</span>
             </div>
@@ -143,14 +142,14 @@ export function BlogDetail() {
                 <thead>
                   <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
                     <th className="py-3 px-3">#</th>
-                    <th className="py-3 px-3">Micro-SaaS Idea</th>
-                    <th className="py-3 px-3">Target Audience / Core Function</th>
-                    <th className="py-3 px-3">Primary Model</th>
+                    <th className="py-3 px-3">Vibe Coding Prompt</th>
+                    <th className="py-3 px-3">Description / Directives</th>
+                    <th className="py-3 px-3">Model</th>
                     <th className="py-3 px-3 text-right">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
-                  {saasPrompts.map((p, idx) => (
+                  {displayPrompts.map((p, idx) => (
                     <tr
                       key={p.id}
                       className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group"
@@ -184,15 +183,15 @@ export function BlogDetail() {
           <div className="space-y-10">
             <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
               <Code2 className="w-6 h-6 text-emerald-400" />
-              15 Copyable Micro-SaaS Prompts
+              15 Copyable Vibe Coding Prompts
             </h3>
 
-            {saasPrompts.map((prompt, index) => {
+            {displayPrompts.map((prompt, index) => {
               const isCopied = copiedId === prompt.id;
               return (
                 <div
                   key={prompt.id}
-                  id={`saas-prompt-${index + 1}`}
+                  id={`vibe-prompt-${index + 1}`}
                   className="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 hover:border-emerald-500/30 transition-all scroll-mt-24"
                 >
                   {/* Top Header Row */}
@@ -223,7 +222,7 @@ export function BlogDetail() {
                     <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900 border-b border-slate-800">
                       <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5">
                         <Zap className="w-3.5 h-3.5 text-emerald-400" />
-                        Prompt Template:
+                        Prompt Code:
                       </span>
 
                       <div className="flex items-center gap-2">
@@ -262,13 +261,13 @@ export function BlogDetail() {
                   {/* Parameters & Tags */}
                   <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-slate-200 dark:border-slate-800/80">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-xs font-semibold text-slate-400">Variables:</span>
+                      <span className="text-xs font-semibold text-slate-400">Parameters:</span>
                       {prompt.parameters?.map((param) => (
                         <span
                           key={param.name}
                           className="px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                         >
-                          {`{{${param.name}}}`}
+                          {`[${param.label}]`}
                         </span>
                       ))}
                     </div>
@@ -289,7 +288,7 @@ export function BlogDetail() {
             })}
           </div>
 
-          {/* Video Walkthrough Section (matching screenshot bottom section) */}
+          {/* Video Walkthrough Section */}
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/20 bg-slate-900/90 text-white space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
               <div className="flex items-center gap-3">
@@ -297,47 +296,42 @@ export function BlogDetail() {
                   <Play className="w-5 h-5 fill-emerald-400 text-emerald-400 ml-0.5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Video Guide: Micro-SaaS Blueprint Walkthrough</h3>
-                  <p className="text-xs text-slate-400">Step-by-step masterclass on deploying Micro-SaaS apps with AI Prompts</p>
+                  <h3 className="text-lg font-bold text-white">Video Walkthrough: Vibe Coding Masterclass</h3>
+                  <p className="text-xs text-slate-400">Learn how to leverage system prompts to save 10-20 hours every week</p>
                 </div>
               </div>
-              <span className="px-3 py-1 rounded-full text-xs font-mono bg-slate-800 text-emerald-400 border border-emerald-500/30">
-                14:20 mins
-              </span>
+              <a
+                href="https://www.loom.com/share/9bf984f25bae4517883"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-all inline-flex items-center gap-1.5 font-sans"
+              >
+                Watch Full Video <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
 
-            {/* Video Player Card Preview */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 group cursor-pointer shadow-2xl flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200"
-                alt="Video Walkthrough Thumbnail"
-                className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+            {/* Loom Video Frame Embed */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl">
+              <iframe
+                src="https://www.loom.com/embed/9bf984f25bae4517883"
+                title="Vibe Coding Walkthrough Video"
+                className="w-full h-full border-0"
+                allowFullScreen
               />
-              <div className="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition-colors" />
-              <div className="relative z-10 flex flex-col items-center gap-3">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center shadow-xl shadow-emerald-500/30 group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-slate-950 text-slate-950 ml-1" />
-                </div>
-                <span className="text-xs font-bold text-white bg-slate-900/90 px-4 py-1.5 rounded-full border border-slate-700">
-                  Watch Video Tutorial
-                </span>
-              </div>
             </div>
           </div>
 
-          {/* Related Categories Navigation (matching screenshot footer section) */}
+          {/* Related Categories Navigation */}
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400">
-              Explore More Categories
+              Explore More Categories & Rules
             </h4>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: 'ChatGPT Prompts', path: '/explore?category=chatgpt' },
+                { label: 'Google Antigravity Rules', path: '/explore?category=antigravity' },
                 { label: 'Claude 3.5 Sonnet', path: '/explore?category=claude' },
-                { label: 'Google Antigravity', path: '/explore?category=antigravity' },
                 { label: 'Cursor .cursorrules', path: '/explore?category=cursor' },
-                { label: 'Midjourney v6', path: '/explore?category=midjourney' },
-                { label: 'B2B Sales & Outreach', path: '/explore?category=marketing' },
+                { label: 'ChatGPT Prompts', path: '/explore?category=chatgpt' },
                 { label: 'Database & API Specs', path: '/explore?category=programming' }
               ].map((item, idx) => (
                 <Link

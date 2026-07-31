@@ -6,14 +6,14 @@ const CollectionContext = createContext();
 
 const initialCollections = [
   {
-    id: 'col-microsaas-15',
-    name: '15 Micro-SaaS Idea Prompts',
-    description: 'Flagship collection: pitch deck audit, cold email, database schema, OWASP scanner, Antigravity rules',
-    color: 'from-cyan-400 via-blue-500 to-purple-600',
+    id: 'col-vibe-15',
+    name: '15 Vibe Coding Prompts',
+    description: 'Flagship blueprint: PRDs, system rules, ultra plan mode, MCP wiring, DB connection, security & git commits',
+    color: 'from-emerald-400 via-teal-500 to-cyan-500',
     promptIds: [
-      'prompt-saas-1', 'prompt-saas-2', 'prompt-saas-3', 'prompt-saas-4', 'prompt-saas-5',
-      'prompt-saas-6', 'prompt-saas-7', 'prompt-saas-8', 'prompt-saas-9', 'prompt-saas-10',
-      'prompt-saas-11', 'prompt-saas-12', 'prompt-saas-13', 'prompt-saas-14', 'prompt-saas-15'
+      'prompt-vibe-1', 'prompt-vibe-2', 'prompt-vibe-3', 'prompt-vibe-4', 'prompt-vibe-5',
+      'prompt-vibe-6', 'prompt-vibe-7', 'prompt-vibe-8', 'prompt-vibe-9', 'prompt-vibe-10',
+      'prompt-vibe-11', 'prompt-vibe-12', 'prompt-vibe-13', 'prompt-vibe-14', 'prompt-vibe-15'
     ],
     createdAt: new Date().toISOString()
   },

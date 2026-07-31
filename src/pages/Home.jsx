@@ -309,27 +309,27 @@ export function Home({ onOpenSearch }) {
 
       {/* Flagship Feature Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel p-6 sm:p-10 rounded-3xl border-2 border-cyan-500/30 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-purple-950/40 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="glass-panel p-6 sm:p-10 rounded-3xl border-2 border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900/60 to-teal-950/40 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-4 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" /> Featured Flagship Blueprint
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5" /> Featured Vibe Coding Blueprint
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
-              15 Micro-SaaS Idea Prompts
+              15 Vibe Coding Prompts
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed">
-              A curated collection of 15 battle-tested, high-converting Micro-SaaS prompts to generate startup ideas, database migrations, cold outreach campaigns, security audits, and Antigravity system rules.
+              Copy, fill the brackets, ship. The exact 15 system prompts for PRDs, system rules, ultra planning, MCP server wiring, database connections, security audits, and git commits.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
-                to="/blog/15-micro-saas-idea-prompts"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/25"
+                to="/blog/15vibecodingprompts"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-400 text-slate-950 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/25"
               >
-                View Full 15 Prompts Guide <ArrowRight className="w-4 h-4" />
+                View 15 Vibe Coding Prompts <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/explore?search=Micro-SaaS"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 hover:border-cyan-500/40 transition-all"
+                to="/explore?category=antigravity"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 hover:border-emerald-500/40 transition-all"
               >
                 Explore in Library
               </Link>

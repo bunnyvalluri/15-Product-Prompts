@@ -1,0 +1,5 @@
+Line 16:           content="15 Vibe Coding Prompts" />
+Line 24:         <title>15 Vibe Coding Prompts</title>
+Line 29:           content="15 Vibe Coding Prompts" />
+Line 191:     <div id="app" data-page="{"component":"RenderPage\/RenderPage","props":{"errors":{},"auth":{"user":null},"ziggy":{"url":"https:\/\/resources.leadg
+Line 454: by hand.\\",\\"styles\\":{}}],\\"children\\":[]},{\\"id\\":\\"cf849adf-4a65-42db-9d91-78962bcdefea\\",\\"type\\":\\"sp_divider\\",\\"props\\":{\\"text

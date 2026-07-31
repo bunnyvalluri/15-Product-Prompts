@@ -1,0 +1,25 @@
+Line 16: content="15 Vibe Coding Prompts" />
+Line 24: <title>15 Vibe Coding Prompts</title>
+Line 29: content="15 Vibe Coding Prompts" />
+Line 230: 1. Read every file this task touches, list them\\\
+Line 232: 2. Map current behavior vs target behavior\\\
+Line 233: 3. Propose 2-3 approaches with real tradeoffs:\\\
+Line 235: 4. Pick one and justify it in 3 lines\\\
+Line 236: 5. Break it into steps small enough to verify\\\
+Line 238: 6. List risks + the exact rollback for each\\\
+Line 239: 7. Flag anything touching [AUTH \/ PAYMENTS \/\\\
+Line 299: 1. Check for an official or well-maintained\\\
+Line 301: 2. If one exists: exact install command + the\\\
+Line 303: 3. If not: scaffold one with the MCP SDK --\\\
+Line 305: 4. Add ONLY the tools I will actually use: [LIST]\\\
+Line 306: 5. Wire secrets through [ENV VARS], never\\\
+Line 308: 6. Verify the connection and call one tool\\\
+Line 310: 7. Document each tool in 1 line so future\\\
+Line 355: 1. Read the stack trace, open the exact files\\\
+Line 357: 2. State expected vs actual behavior in 1 line\\\
+Line 358: 3. List 3 hypotheses, ranked by likelihood\\\
+Line 359: 4. Prove or kill each one with logs or a tiny\\\
+Line 361: 5. Fix the root cause, not the symptom\\\
+Line 362: 6. Search the repo for the same pattern -- if\\\
+Line 364: 7. Add a regression test that fails without\\\
+Line 366: 8. Tell me in 2 lines why it broke and why it\\\

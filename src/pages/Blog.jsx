@@ -26,7 +26,7 @@ export function Blog() {
 
       {/* Tag Filters */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2">
-        {['all', 'reasoning', 'antigravity', 'security'].map((tag) => (
+        {['all', 'vibe coding', 'antigravity', 'system rules'].map((tag) => (
           <button
             key={tag}
             onClick={() => setSelectedTag(tag)}

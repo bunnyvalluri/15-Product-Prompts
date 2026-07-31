@@ -32,28 +32,28 @@ export function Footer() {
                 15 Product<span className="text-emerald-500 dark:text-emerald-400"> Prompts</span>
               </span>
             </Link>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
               Curated collection of 15 battle-tested Micro-SaaS prompts, system rules, parameter customizers, and vibe-coding tools for ChatGPT, Claude 3.5, Gemini 1.5, Cursor, and Google Antigravity.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="space-y-3">
-            <h4 className="font-extrabold text-xs text-slate-900 dark:text-slate-100 uppercase tracking-wider">
+            <h4 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">
               Navigation
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
-              <li><Link to="/" className="text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-medium">Home</Link></li>
-              <li><Link to="/blog" className="text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-medium">15 Vibe Prompts Blog</Link></li>
-              <li><Link to="/about" className="text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-medium font-medium">About Project</Link></li>
-              <li><Link to="/contact" className="text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-medium">Contact Us</Link></li>
-              <li><Link to="/faq" className="text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-medium">FAQ</Link></li>
+              <li><Link to="/" className="text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-semibold">Home</Link></li>
+              <li><Link to="/blog" className="text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-semibold">15 Vibe Prompts Blog</Link></li>
+              <li><Link to="/about" className="text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-semibold">About Project</Link></li>
+              <li><Link to="/contact" className="text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-semibold">Contact Us</Link></li>
+              <li><Link to="/faq" className="text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-semibold">FAQ</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Connect & Social */}
           <div className="space-y-3">
-            <h4 className="font-extrabold text-xs text-slate-900 dark:text-slate-100 uppercase tracking-wider">
+            <h4 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">
               Community
             </h4>
             <div className="flex flex-wrap items-center gap-2">
@@ -70,7 +70,7 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-500 dark:hover:text-cyan-400 hover:border-cyan-500/40 text-xs font-semibold transition-all"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-100 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/40 text-xs font-bold transition-all shadow-xs"
                   >
                     <Icon className="w-3.5 h-3.5" />
                     <span>{s.name}</span>
@@ -82,10 +82,10 @@ export function Footer() {
 
           {/* Column 4: Newsletter */}
           <div className="space-y-3">
-            <h4 className="font-extrabold text-xs text-slate-900 dark:text-slate-100 uppercase tracking-wider">
+            <h4 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">
               Stay Updated
             </h4>
-            <p className="text-xs text-slate-600 dark:text-slate-400">
+            <p className="text-xs text-slate-700 dark:text-slate-300 font-medium">
               Get weekly curated system rules & vibe-coding prompt updates directly to your inbox.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-2">
@@ -109,14 +109,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs gap-3 text-center sm:text-left text-slate-600 dark:text-slate-400 font-medium">
-          <p className="break-words">
-            © {new Date().getFullYear()} 15 Product Prompts. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-slate-300 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm gap-3 text-center sm:text-left text-slate-800 dark:text-slate-100 font-bold tracking-wide">
+          <p className="break-words text-slate-800 dark:text-slate-100 font-semibold">
+            © {new Date().getFullYear()} <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">15 Product Prompts</span>. All rights reserved.
           </p>
-          <div className="flex items-center justify-center gap-1.5 shrink-0">
+          <div className="flex items-center justify-center gap-1.5 shrink-0 text-slate-800 dark:text-slate-100 font-semibold">
             <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
-            <span>for AI Developers</span>
+            <Heart className="w-4 h-4 text-rose-500 fill-rose-500 inline animate-pulse" />
+            <span>for AI Developers & Engineers</span>
           </div>
         </div>
       </div>

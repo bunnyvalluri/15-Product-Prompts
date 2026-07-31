@@ -69,7 +69,7 @@ export function Categories() {
           return (
             <Link
               key={cat.id}
-              to={`/explore?category=${cat.id}`}
+              to="/blog/15vibecodingprompts"
               className="group glass-panel rounded-2xl p-5 border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-xl transition-all flex flex-col justify-between"
             >
               <div>

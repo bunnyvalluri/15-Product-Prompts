@@ -38,9 +38,7 @@ export function Home({ onOpenSearch }) {
 
   const handleHeroSearch = (e) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/explore?search=${encodeURIComponent(searchQuery.trim())}`);
-    }
+    onOpenSearch();
   };
 
   return (
@@ -112,7 +110,7 @@ export function Home({ onOpenSearch }) {
                 <button
                   key={item.query}
                   type="button"
-                  onClick={() => navigate(`/explore?search=${encodeURIComponent(item.query)}`)}
+                  onClick={onOpenSearch}
                   className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-cyan-500/10 text-slate-600 dark:text-slate-300 hover:text-cyan-500 border border-slate-200 dark:border-slate-700/60 transition-all"
                 >
                   {item.label}
@@ -126,11 +124,11 @@ export function Home({ onOpenSearch }) {
             <Button
               size="lg"
               className="w-full sm:w-auto"
-              onClick={() => navigate('/explore')}
+              onClick={() => navigate('/blog/15vibecodingprompts')}
               icon={ArrowRight}
               iconPosition="right"
             >
-              Explore All Prompts
+              View 15 Vibe Coding Prompts
             </Button>
             <Button
               size="lg"
@@ -228,7 +226,7 @@ export function Home({ onOpenSearch }) {
               <div
                 key={m.id}
                 className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 cursor-pointer transition-colors"
-                onClick={() => navigate(`/explore?model=${m.id}`)}
+                onClick={() => navigate('/blog/15vibecodingprompts')}
               >
                 <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
                   {m.name}
@@ -294,11 +292,11 @@ export function Home({ onOpenSearch }) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Explore Categories</h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Discover top prompts across 20 tailored categories</p>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Featured Vibe Coding Suite</h2>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Discover 15 system prompts for AI development</p>
           </div>
-          <Link to="/categories" className="text-xs font-bold text-cyan-500 hover:text-cyan-400 flex items-center gap-1">
-            View All 20 Categories <ArrowRight className="w-3.5 h-3.5" />
+          <Link to="/blog/15vibecodingprompts" className="text-xs font-bold text-cyan-500 hover:text-cyan-400 flex items-center gap-1">
+            View All 15 Prompts <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -306,7 +304,7 @@ export function Home({ onOpenSearch }) {
           {categoriesData.slice(0, 10).map((cat) => (
             <Link
               key={cat.id}
-              to={`/explore?category=${cat.id}`}
+              to="/blog/15vibecodingprompts"
               className="glass-panel p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-md transition-all group"
             >
               <div className="flex items-center justify-between mb-2">
@@ -349,10 +347,10 @@ export function Home({ onOpenSearch }) {
                 View 15 Vibe Coding Prompts <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/explore?category=antigravity"
+                to="/editor"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 hover:border-emerald-500/40 transition-all"
               >
-                Explore in Library
+                Open Live Editor
               </Link>
             </div>
           </div>
@@ -385,7 +383,7 @@ export function Home({ onOpenSearch }) {
             <Badge variant="emerald" className="mb-1 sm:mb-2">Staff Picks</Badge>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Featured AI Prompts</h2>
           </div>
-          <Link to="/explore" className="text-xs font-bold text-cyan-500 hover:text-cyan-400 flex items-center gap-1">
+          <Link to="/blog/15vibecodingprompts" className="text-xs font-bold text-cyan-500 hover:text-cyan-400 flex items-center gap-1">
             Browse All <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

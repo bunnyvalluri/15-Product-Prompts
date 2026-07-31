@@ -64,10 +64,7 @@ export function Footer() {
               Explore
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/explore" className="hover:text-cyan-500 transition-colors">All Prompts</Link></li>
-              <li><Link to="/categories" className="hover:text-cyan-500 transition-colors">20+ Categories</Link></li>
               <li><Link to="/editor" className="hover:text-cyan-500 transition-colors">Prompt Editor</Link></li>
-              <li><Link to="/collections" className="hover:text-cyan-500 transition-colors">Saved Collections</Link></li>
             </ul>
           </div>
 
@@ -77,9 +74,7 @@ export function Footer() {
               Resources
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/resources" className="hover:text-cyan-500 transition-colors">Cheat Sheets & PDFs</Link></li>
               <li><Link to="/blog" className="hover:text-cyan-500 transition-colors">Prompt Engineering Blog</Link></li>
-              <li><Link to="/pricing" className="hover:text-cyan-500 transition-colors">Pricing Tiers</Link></li>
               <li><Link to="/faq" className="hover:text-cyan-500 transition-colors">Frequently Asked Questions</Link></li>
             </ul>
           </div>

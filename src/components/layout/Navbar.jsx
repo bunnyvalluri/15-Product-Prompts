@@ -42,13 +42,8 @@ export function Navbar({ onOpenSearch }) {
 
   const navLinks = [
     { name: 'Home', path: '/', icon: Sparkles },
-    { name: 'Explore', path: '/explore', icon: Compass },
-    { name: 'Categories', path: '/categories', icon: Grid },
     { name: 'Editor', path: '/editor', icon: FileCode2 },
-    { name: 'Collections', path: '/collections', icon: FolderHeart },
-    { name: 'Resources', path: '/resources', icon: BookOpen },
     { name: 'Blog', path: '/blog', icon: BookOpen },
-    { name: 'Pricing', path: '/pricing', icon: DollarSign },
     { name: 'About', path: '/about', icon: Info },
     { name: 'Contact', path: '/contact', icon: Mail }
   ];
@@ -78,49 +73,58 @@ export function Navbar({ onOpenSearch }) {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 bg-slate-100/60 dark:bg-slate-900/60 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-800/60">
           {navLinks.slice(0, 8).map((link) => {
             const isActive = location.pathname === link.path;
             return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                className={`relative px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 ${
                   isActive
-                    ? 'text-cyan-500 dark:text-cyan-400 bg-cyan-500/10'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                    ? 'text-cyan-600 dark:text-cyan-400 font-bold'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
-                {link.name}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeNavPill"
+                    className="absolute inset-0 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200/80 dark:border-slate-700/80 -z-0"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  {link.name}
+                </span>
               </Link>
             );
           })}
         </nav>
 
         {/* Actions (Search, Bookmarks, Theme, Mobile Toggle) */}
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           {/* Quick Search Button */}
           <button
             onClick={onOpenSearch}
-            className="p-2 sm:px-3 sm:py-1.5 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-600 transition-all flex items-center gap-2"
+            className="p-2 sm:px-3.5 sm:py-2 rounded-xl text-xs font-medium bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-cyan-500 hover:border-cyan-500/50 transition-all flex items-center gap-2 shadow-xs group"
             title="Search prompts (⌘K)"
           >
-            <Search className="w-4 h-4 text-cyan-500 shrink-0" />
-            <span className="hidden md:inline">Search prompts...</span>
-            <kbd className="hidden md:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+            <Search className="w-4 h-4 text-cyan-500 group-hover:scale-110 transition-transform shrink-0" />
+            <span className="hidden md:inline font-medium">Search prompts...</span>
+            <kbd className="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono font-bold rounded-md bg-slate-200/80 dark:bg-slate-700/80 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600">
               ⌘K
             </kbd>
           </button>
 
           {/* Bookmarks Counter */}
           <Link
-            to="/collections"
-            className="relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            to="/blog/15vibecodingprompts"
+            className="relative p-2 sm:p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
             title="Bookmarked Prompts"
           >
             <Bookmark className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />
             {bookmarkCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-cyan-500 text-white text-[10px] font-bold flex items-center justify-center animate-pulse">
+              <span className="absolute -top-1 -right-1 w-4.5 h-4.5 rounded-full bg-cyan-500 text-white text-[10px] font-extrabold flex items-center justify-center shadow-md shadow-cyan-500/40 animate-pulse">
                 {bookmarkCount}
               </span>
             )}
@@ -129,7 +133,7 @@ export function Navbar({ onOpenSearch }) {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-2 sm:p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
             aria-label="Toggle Theme"
           >
             {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700" />}
@@ -141,7 +145,7 @@ export function Navbar({ onOpenSearch }) {
             className="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-500" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -153,8 +157,29 @@ export function Navbar({ onOpenSearch }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass-panel border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-1 overflow-hidden"
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="lg:hidden glass-panel border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-1.5 overflow-hidden shadow-2xl"
           >
+            <div className="grid grid-cols-2 gap-2 mb-2 pb-2 border-b border-slate-200/60 dark:border-slate-800/60">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenSearch();
+                }}
+                className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20"
+              >
+                <Search className="w-3.5 h-3.5" />
+                Quick Search
+              </button>
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700"
+              >
+                {isDark ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-slate-700" />}
+                {isDark ? 'Light Mode' : 'Dark Mode'}
+              </button>
+            </div>
+
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = location.pathname === link.path;
@@ -162,14 +187,17 @@ export function Navbar({ onOpenSearch }) {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                  className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                     isActive
-                      ? 'bg-cyan-500/15 text-cyan-600 dark:text-cyan-400'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                      ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80'
                   }`}
                 >
-                  <Icon className="w-4 h-4 text-cyan-500" />
-                  {link.name}
+                  <div className="flex items-center gap-3">
+                    <Icon className="w-4 h-4 text-cyan-500" />
+                    {link.name}
+                  </div>
+                  {isActive && <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />}
                 </Link>
               );
             })}

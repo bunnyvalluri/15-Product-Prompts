@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -12,24 +12,41 @@ import {
   Zap,
   Code2,
   Table as TableIcon,
-  Play
+  ChevronUp,
+  Bookmark
 } from 'lucide-react';
 import blogsData from '../data/blogs.json';
 import promptsData from '../data/prompts.json';
 import { Badge } from '../components/common/Badge';
 import { useToast } from '../context/ToastContext';
+import { useBookmarks } from '../context/BookmarkContext';
 
 export function BlogDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { addToast } = useToast();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const [copiedId, setCopiedId] = useState(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activePromptIndex, setActivePromptIndex] = useState(0);
 
   const blog = blogsData.find((b) => b.slug === slug) || blogsData[0];
   const isVibeCollection = blog.slug === '15vibecodingprompts' || blog.slug === '15-vibe-coding-prompts' || blog.slug === '15-micro-saas-idea-prompts';
 
   // Get 15 Vibe Coding prompts from dataset
   const displayPrompts = promptsData.filter((p) => p.id.startsWith('prompt-vibe-'));
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        const currentProgress = (window.scrollY / totalHeight) * 100;
+        setScrollProgress(currentProgress);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -55,7 +72,26 @@ export function BlogDetail() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 relative">
+      {/* Top Reading Progress Bar */}
+      <div className="fixed top-0 left-0 right-0 h-1 bg-slate-200/50 dark:bg-slate-800/50 z-50 pointer-events-none">
+        <div
+          className="h-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
+      {/* Quick Floating Back to Top Button */}
+      {scrollProgress > 20 && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-500/30 shadow-2xl hover:scale-110 transition-all group"
+          title="Back to top"
+        >
+          <ChevronUp className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
+        </button>
+      )}
+
       {/* Back Button */}
       <button
         onClick={() => navigate('/blog')}
@@ -288,38 +324,6 @@ export function BlogDetail() {
             })}
           </div>
 
-          {/* Video Walkthrough Section */}
-          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/20 bg-slate-900/90 text-white space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center">
-                  <Play className="w-5 h-5 fill-emerald-400 text-emerald-400 ml-0.5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">Video Walkthrough: Vibe Coding Masterclass</h3>
-                  <p className="text-xs text-slate-400">Learn how to leverage system prompts to save 10-20 hours every week</p>
-                </div>
-              </div>
-              <a
-                href="https://www.loom.com/share/9bf984f25bae4517883"
-                target="_blank"
-                rel="noreferrer"
-                className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-all inline-flex items-center gap-1.5 font-sans"
-              >
-                Watch Full Video <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            {/* Loom Video Frame Embed */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl">
-              <iframe
-                src="https://www.loom.com/embed/9bf984f25bae4517883"
-                title="Vibe Coding Walkthrough Video"
-                className="w-full h-full border-0"
-                allowFullScreen
-              />
-            </div>
-          </div>
 
           {/* Related Categories Navigation */}
           <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4">
@@ -328,11 +332,11 @@ export function BlogDetail() {
             </h4>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: 'Google Antigravity Rules', path: '/explore?category=antigravity' },
-                { label: 'Claude 3.5 Sonnet', path: '/explore?category=claude' },
-                { label: 'Cursor .cursorrules', path: '/explore?category=cursor' },
-                { label: 'ChatGPT Prompts', path: '/explore?category=chatgpt' },
-                { label: 'Database & API Specs', path: '/explore?category=programming' }
+                { label: 'Google Antigravity Rules', path: '/blog/15vibecodingprompts' },
+                { label: 'Claude 3.5 Sonnet', path: '/blog/15vibecodingprompts' },
+                { label: 'Cursor .cursorrules', path: '/blog/15vibecodingprompts' },
+                { label: 'ChatGPT Prompts', path: '/blog/15vibecodingprompts' },
+                { label: 'Database & API Specs', path: '/blog/15vibecodingprompts' }
               ].map((item, idx) => (
                 <Link
                   key={idx}

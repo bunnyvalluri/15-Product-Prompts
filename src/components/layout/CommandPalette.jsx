@@ -69,7 +69,7 @@ export function CommandPalette({ isOpen, onClose, onSelectPrompt }) {
 
   const handleSelectCategory = (cat) => {
     onClose();
-    navigate(`/explore?category=${cat.id}`);
+    navigate('/blog/15vibecodingprompts');
   };
 
   return (

@@ -239,8 +239,35 @@ export function PromptEditor() {
                 <Edit3 className="w-4 h-4" />
                 Prompt Text Editor
               </span>
-              <span>{content.length} characters</span>
+              <div className="flex items-center gap-2 font-mono text-[10px]">
+                <span>{content.length} chars</span>
+                <span>•</span>
+                <span>{content ? content.trim().split(/\s+/).length : 0} words</span>
+                <span>•</span>
+                <span className="text-emerald-400 font-bold">~{Math.ceil(content.length / 4)} tokens</span>
+              </div>
             </div>
+
+            {/* Quick Insert Snippet Pills */}
+            <div className="flex items-center gap-1.5 flex-wrap p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mr-1">Insert Snippet:</span>
+              {[
+                { label: '+ {{variable}}', snippet: '{{variable_name}}' },
+                { label: '🤖 Role Directive', snippet: 'You are an expert AI system architect specializing in modular component design.' },
+                { label: '🌌 Antigravity Pair', snippet: 'Act as an autonomous agentic pair programmer within Google Antigravity.' },
+                { label: '🛡️ OWASP Review', snippet: 'Audit for OWASP top 10 vulnerabilities, race conditions, and unhandled edge cases.' },
+                { label: '🎨 Styling Rules', snippet: 'Styling: Use modern Tailwind CSS with glassmorphism aesthetics and dark mode support.' }
+              ].map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleContentChange(content ? `${content}\n\n${item.snippet}` : item.snippet)}
+                  className="px-2 py-1 rounded-lg text-[10px] font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-cyan-500/50 hover:text-cyan-500 transition-all"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
             <textarea
               value={content}
               onChange={(e) => handleContentChange(e.target.value)}

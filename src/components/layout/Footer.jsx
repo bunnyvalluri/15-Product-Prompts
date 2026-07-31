@@ -108,9 +108,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
-          <p>© {new Date().getFullYear()} 15 Product Prompts. All rights reserved. 100% Client-Side SaaS Architecture.</p>
-          <div className="flex items-center gap-1 text-slate-400">
+        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row items-center justify-between text-xs gap-4 text-center md:text-left">
+          <p className="break-words">© {new Date().getFullYear()} 15 Product Prompts. All rights reserved. 100% Client-Side SaaS Architecture.</p>
+          <div className="flex items-center justify-center gap-1 text-slate-400 shrink-0">
             <span>Crafted with</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
             <span>for Developers & AI Engineers</span>

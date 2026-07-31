@@ -46,7 +46,7 @@ export default function App() {
           <CollectionProvider>
             <BrowserRouter>
               <ScrollToTop />
-              <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col justify-between selection:bg-cyan-500 selection:text-white">
+              <div className="min-h-screen w-full flex flex-col justify-between selection:bg-cyan-500 selection:text-white">
                 <Navbar onOpenSearch={() => setCommandPaletteOpen(true)} />
 
                 <main className="flex-1">

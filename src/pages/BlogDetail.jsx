@@ -169,15 +169,15 @@ export function BlogDetail() {
               <span className="text-xs text-slate-400 font-mono">15 Prompts</span>
             </div>
 
-            <div className="overflow-x-auto touch-scroll">
-              <table className="w-full text-left text-xs min-w-[600px]">
+            <div className="overflow-x-auto touch-scroll border border-slate-200 dark:border-slate-800/80 rounded-2xl">
+              <table className="w-full text-left text-xs min-w-[750px] divide-y divide-slate-200 dark:divide-slate-800">
                 <thead>
-                  <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
-                    <th className="py-3 px-3">#</th>
-                    <th className="py-3 px-3">Vibe Coding Prompt</th>
-                    <th className="py-3 px-3">Description / Directives</th>
-                    <th className="py-3 px-3">Model</th>
-                    <th className="py-3 px-3 text-right">Action</th>
+                  <tr className="bg-slate-50 dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 uppercase tracking-wider font-extrabold text-[10px]">
+                    <th className="py-3.5 px-4 w-12">#</th>
+                    <th className="py-3.5 px-4 w-52">Vibe Coding Prompt</th>
+                    <th className="py-3.5 px-4">Description / Directives</th>
+                    <th className="py-3.5 px-4 w-44 whitespace-nowrap">Model</th>
+                    <th className="py-3.5 px-4 w-28 text-right whitespace-nowrap">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
@@ -186,20 +186,20 @@ export function BlogDetail() {
                       key={p.id}
                       className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors group"
                     >
-                      <td className="py-3 px-3 font-bold text-emerald-400 font-mono">{idx + 1}</td>
-                      <td className="py-3 px-3 font-semibold text-slate-900 dark:text-white">
+                      <td className="py-3.5 px-4 font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">{idx + 1}</td>
+                      <td className="py-3.5 px-4 font-bold text-slate-900 dark:text-white">
                         {p.title}
                       </td>
-                      <td className="py-3 px-3 text-slate-500 dark:text-slate-400">{p.description}</td>
-                      <td className="py-3 px-3">
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-emerald-400 border border-emerald-500/20">
+                      <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400 leading-relaxed font-medium">{p.description}</td>
+                      <td className="py-3.5 px-4 whitespace-nowrap">
+                        <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
                           {p.aiModel}
                         </span>
                       </td>
-                      <td className="py-3 px-3 text-right">
+                      <td className="py-3.5 px-4 text-right whitespace-nowrap">
                         <button
                           onClick={() => scrollToPrompt(idx)}
-                          className="text-xs font-semibold text-emerald-400 hover:underline inline-flex items-center gap-1"
+                          className="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1"
                         >
                           Jump to #{idx + 1}
                         </button>

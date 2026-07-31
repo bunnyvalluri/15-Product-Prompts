@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Send, MapPin, Globe, HelpCircle, Zap, ShieldCheck, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaDiscord, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useToast } from '../context/ToastContext';
 import { Badge } from '../components/common/Badge';
@@ -258,11 +258,12 @@ export function Contact() {
               <p className="text-xs text-slate-500 dark:text-slate-400">
                 Join our developer channels to discuss prompt techniques and vibe coding workflows.
               </p>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
                   { name: 'GitHub', icon: FaGithub, href: 'https://github.com' },
                   { name: 'Twitter', icon: FaTwitter, href: 'https://twitter.com' },
-                  { name: 'Discord', icon: FaDiscord, href: 'https://discord.com' }
+                  { name: 'Discord', icon: FaDiscord, href: 'https://discord.com' },
+                  { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/syntaxrahul/' }
                 ].map((s, idx) => {
                   const Icon = s.icon;
                   return (

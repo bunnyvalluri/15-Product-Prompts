@@ -61,7 +61,7 @@ export function Footer() {
                 { name: 'GitHub', icon: FaGithub, href: 'https://github.com' },
                 { name: 'Twitter', icon: FaTwitter, href: 'https://twitter.com' },
                 { name: 'Discord', icon: FaDiscord, href: 'https://discord.com' },
-                { name: 'LinkedIn', icon: FaLinkedin, href: 'https://linkedin.com' }
+                { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/syntaxrahul/' }
               ].map((s, idx) => {
                 const Icon = s.icon;
                 return (

@@ -23,7 +23,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #01: Write a Full PRD. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Write a complete PRD for the feature below.\n\nFeature: [DESCRIBE FEATURE]\nUsers: [WHO USES IT]\nStack: [YOUR STACK]\n\nInclude:\n\n* Problem statement + success metrics\n* User stories with acceptance criteria\n* Scope: what ships in v1, what does not\n* Data model changes\n* Edge cases + failure states\n* Open questions for me to answer\n\nKeep it under 2 pages. Be specific, no filler.\nSave it as docs/prd-[feature].md so every later\nprompt can reference it.",
+    "content": "Write a complete PRD for the feature below.\n\nFeature: {{describe_feature}}\nUsers: {{who_uses_it}}\nStack: {{your_stack}}\n\nInclude:\n\n* Problem statement + success metrics\n* User stories with acceptance criteria\n* Scope: what ships in v1, what does not\n* Data model changes\n* Edge cases + failure states\n* Open questions for me to answer\n\nKeep it under 2 pages. Be specific, no filler.\nSave it as docs/prd-[feature].md so every later\nprompt can reference it.",
     "parameters": [
       {
         "name": "describe_feature",
@@ -66,7 +66,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #02: Create Your. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Scan this entire codebase, then generate a CLAUDE.md.\n\nInclude:\n\n* What this project is, in 2 lines\n* Tech stack + the versions that matter\n* Commands: [DEV / BUILD / TEST / LINT]\n* Architecture: where things live and why\n* Code conventions you actually detect in the code\n* Hard rules: [YOUR NON-NEGOTIABLES] -- what to\n  never touch without asking\n* Gotchas a new engineer would hit in week 1\n\nWrite rules as short imperatives. Nothing generic --\nonly what is true for THIS repo. If you are unsure\nabout a rule, ask me instead of inventing it.",
+    "content": "Scan this entire codebase, then generate a CLAUDE.md.\n\nInclude:\n\n* What this project is, in 2 lines\n* Tech stack + the versions that matter\n* Commands: {{dev_build_test_lint}}\n* Architecture: where things live and why\n* Code conventions you actually detect in the code\n* Hard rules: {{your_non_negotiables}} -- what to\n  never touch without asking\n* Gotchas a new engineer would hit in week 1\n\nWrite rules as short imperatives. Nothing generic --\nonly what is true for THIS repo. If you are unsure\nabout a rule, ask me instead of inventing it.",
     "parameters": [
       {
         "name": "dev_build_test_lint",
@@ -104,7 +104,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #03: Ultra Plan Mode. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Enter plan mode. Do NOT write any code yet.\n\nTask: [PASTE TASK]\nConstraints: [DEADLINE / STACK / NO-GO ZONES]\n\n1. Read every file this task touches, list them\n   with one line on what each does today\n2. Map current behavior vs target behavior\n3. Propose 2-3 approaches with real tradeoffs:\n   complexity, risk, blast radius\n4. Pick one and justify it in 3 lines\n5. Break it into steps small enough to verify\n   one at a time, each with its own check\n6. List risks + the exact rollback for each\n7. Flag anything touching [AUTH / PAYMENTS /\n   PROD DATA] for my explicit sign-off\n\nThen stop. Show me the plan and wait for my\napproval before touching a single file.",
+    "content": "Enter plan mode. Do NOT write any code yet.\n\nTask: {{paste_task}}\nConstraints: {{deadline_stack_no_go_zones}}\n\n1. Read every file this task touches, list them\n   with one line on what each does today\n2. Map current behavior vs target behavior\n3. Propose 2-3 approaches with real tradeoffs:\n   complexity, risk, blast radius\n4. Pick one and justify it in 3 lines\n5. Break it into steps small enough to verify\n   one at a time, each with its own check\n6. List risks + the exact rollback for each\n7. Flag anything touching {{auth_payments_prod_data}} for my explicit sign-off\n\nThen stop. Show me the plan and wait for my\napproval before touching a single file.",
     "parameters": [
       {
         "name": "paste_task",
@@ -147,7 +147,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #04: Spec-Driven Development. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "We build specs first. Write a spec for: [FEATURE]\n\nContext: [WHO USES IT + WHY NOW]\n\nSpec format:\n\n* Behavior: given / when / then, every case --\n  happy path, edge cases, failure states\n* API contract: inputs, outputs, error shapes,\n  status codes\n* Data: schema changes + migrations needed\n* UI states: loading, empty, error, success\n* Non-goals: what this spec deliberately skips\n* Acceptance checklist I can verify line by line\n\nAfter I approve the spec, implement EXACTLY the\nspec. If reality forces a deviation, stop, update\nthe spec, get my ok, then continue. The spec is\nthe source of truth, not the code.",
+    "content": "We build specs first. Write a spec for: {{feature}}\n\nContext: [WHO USES IT + WHY NOW]\n\nSpec format:\n\n* Behavior: given / when / then, every case --\n  happy path, edge cases, failure states\n* API contract: inputs, outputs, error shapes,\n  status codes\n* Data: schema changes + migrations needed\n* UI states: loading, empty, error, success\n* Non-goals: what this spec deliberately skips\n* Acceptance checklist I can verify line by line\n\nAfter I approve the spec, implement EXACTLY the\nspec. If reality forces a deviation, stop, update\nthe spec, get my ok, then continue. The spec is\nthe source of truth, not the code.",
     "parameters": [
       {
         "name": "feature",
@@ -180,7 +180,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #05: Full UI &amp; UX Design Brief. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Create a full UI/UX design brief for: [SCREEN OR FLOW]\n\nAudience: [USERS]\nBrand: [COLORS / FONTS / VIBE]\n\nDeliver:\n\n* User journey through the flow, step by step\n* Layout per screen: hierarchy, spacing, breakpoints\n* Component inventory with every state --\n  hover, empty, error, loading\n* Typography + color tokens\n* Motion: what animates, duration, easing\n* Accessibility notes\n\nStudy patterns from [2-3 PRODUCTS YOU ADMIRE]\nfor direction. Never copy them.",
+    "content": "Create a full UI/UX design brief for: {{screen_or_flow}}\n\nAudience: {{users}}\nBrand: {{colors_fonts_vibe}}\n\nDeliver:\n\n* User journey through the flow, step by step\n* Layout per screen: hierarchy, spacing, breakpoints\n* Component inventory with every state --\n  hover, empty, error, loading\n* Typography + color tokens\n* Motion: what animates, duration, easing\n* Accessibility notes\n\nStudy patterns from {{2_3_products_you_admire}}\nfor direction. Never copy them.",
     "parameters": [
       {
         "name": "screen_or_flow",
@@ -228,7 +228,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #06: Implementation Plan. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Create an implementation plan for: [APPROVED\nSPEC / PRD]\n\nRules:\n\n* Sequence steps so the app compiles and runs\n  after EVERY single step\n* Each step: files touched, what changes,\n  how I verify it works\n* Flag steps needing a migration or new dependency\n* Put the riskiest unknowns first\n* Size each step: [S / M / L]\n\nOutput a numbered build sequence I can run one\nstep at a time. Wait for my \"go\" between steps.",
+    "content": "Create an implementation plan for: {{approved_spec_prd}}\n\nRules:\n\n* Sequence steps so the app compiles and runs\n  after EVERY single step\n* Each step: files touched, what changes,\n  how I verify it works\n* Flag steps needing a migration or new dependency\n* Put the riskiest unknowns first\n* Size each step: {{s_m_l}}\n\nOutput a numbered build sequence I can run one\nstep at a time. Wait for my \"go\" between steps.",
     "parameters": [
       {
         "name": "approved_spec_prd",
@@ -266,7 +266,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #07: Wire Up an MCP Server. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Wire up an MCP server for: [SERVICE / API]\n\nWhat I need it to do: [JOBS TO BE DONE]\n\n1. Check for an official or well-maintained\n   existing server first -- name your source\n2. If one exists: exact install command + the\n   .mcp.json config, scoped to this project\n3. If not: scaffold one with the MCP SDK --\n   tools, auth, error handling, typed responses\n4. Add ONLY the tools I will actually use: [LIST]\n5. Wire secrets through [ENV VARS], never\n   hardcode keys in the config file\n6. Verify the connection and call one tool\n   end to end, show me the output\n7. Document each tool in 1 line so future\n   sessions know when to reach for it",
+    "content": "Wire up an MCP server for: {{service_api}}\n\nWhat I need it to do: {{jobs_to_be_done}}\n\n1. Check for an official or well-maintained\n   existing server first -- name your source\n2. If one exists: exact install command + the\n   .mcp.json config, scoped to this project\n3. If not: scaffold one with the MCP SDK --\n   tools, auth, error handling, typed responses\n4. Add ONLY the tools I will actually use: {{list}}\n5. Wire secrets through {{env_vars}}, never\n   hardcode keys in the config file\n6. Verify the connection and call one tool\n   end to end, show me the output\n7. Document each tool in 1 line so future\n   sessions know when to reach for it",
     "parameters": [
       {
         "name": "service_api",
@@ -314,7 +314,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #08: Connect Your Database. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Connect this app to [POSTGRES / SUPABASE / YOUR DB].\n\n* Pick the client that fits this stack,\n  justify it in 1 line\n* Env vars: name them, add to .env.example,\n  never commit real values\n* Schema: tables for [ENTITIES] with types,\n  relations, and indexes for [HOT QUERIES]\n* Create + run the migrations, and show me\n  the rollback for each one\n* One typed query helper per table -- no raw\n  SQL scattered through components\n* Access rules / row-level security if this\n  is [MULTI-TENANT]\n* Connection pooling if we are serverless\n\nThen prove it: seed one row, read it back,\nshow me the output.",
+    "content": "Connect this app to {{postgres_supabase_your_db}}.\n\n* Pick the client that fits this stack,\n  justify it in 1 line\n* Env vars: name them, add to .env.example,\n  never commit real values\n* Schema: tables for {{entities}} with types,\n  relations, and indexes for {{hot_queries}}\n* Create + run the migrations, and show me\n  the rollback for each one\n* One typed query helper per table -- no raw\n  SQL scattered through components\n* Access rules / row-level security if this\n  is {{multi_tenant}}\n* Connection pooling if we are serverless\n\nThen prove it: seed one row, read it back,\nshow me the output.",
     "parameters": [
       {
         "name": "postgres_supabase_your_db",
@@ -362,7 +362,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #09: Find Security Gaps. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Audit this codebase for security gaps.\nAttack it like you want in.\n\nFocus areas: [AUTH / PAYMENTS / USER DATA]\n\nCheck:\n\n* Secrets in code, config, or git history\n* Injection: SQL, XSS, command, path traversal\n* Auth: routes missing checks, weak sessions,\n  broken redirects\n* IDOR: can user A read user B&#039;s data?\n* File uploads + input validation on every form\n* Dependency CVEs -- run the audit, read it\n* Rate limiting on [EXPENSIVE ENDPOINTS]\n* What leaks through error messages and logs\n\nRank findings by severity with exact file:line,\nfix the critical ones now, and list the rest\nas tickets with effort estimates.",
+    "content": "Audit this codebase for security gaps.\nAttack it like you want in.\n\nFocus areas: {{auth_payments_user_data}}\n\nCheck:\n\n* Secrets in code, config, or git history\n* Injection: SQL, XSS, command, path traversal\n* Auth: routes missing checks, weak sessions,\n  broken redirects\n* IDOR: can user A read user B&#039;s data?\n* File uploads + input validation on every form\n* Dependency CVEs -- run the audit, read it\n* Rate limiting on {{expensive_endpoints}}\n* What leaks through error messages and logs\n\nRank findings by severity with exact file:line,\nfix the critical ones now, and list the rest\nas tickets with effort estimates.",
     "parameters": [
       {
         "name": "auth_payments_user_data",
@@ -400,7 +400,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #10: Debug an Error Fast. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Debug this error. Do NOT guess.\n\nError: [PASTE FULL ERROR + STACK TRACE]\nWhen it happens: [STEPS TO REPRODUCE]\n\n1. Read the stack trace, open the exact files\n   involved\n2. State expected vs actual behavior in 1 line\n3. List 3 hypotheses, ranked by likelihood\n4. Prove or kill each one with logs or a tiny\n   test -- evidence, not vibes\n5. Fix the root cause, not the symptom\n6. Search the repo for the same pattern -- if\n   it can break here, it breaks elsewhere\n7. Add a regression test that fails without\n   the fix\n8. Tell me in 2 lines why it broke and why it\n   can never break this way again",
+    "content": "Debug this error. Do NOT guess.\n\nError: [PASTE FULL ERROR + STACK TRACE]\nWhen it happens: {{steps_to_reproduce}}\n\n1. Read the stack trace, open the exact files\n   involved\n2. State expected vs actual behavior in 1 line\n3. List 3 hypotheses, ranked by likelihood\n4. Prove or kill each one with logs or a tiny\n   test -- evidence, not vibes\n5. Fix the root cause, not the symptom\n6. Search the repo for the same pattern -- if\n   it can break here, it breaks elsewhere\n7. Add a regression test that fails without\n   the fix\n8. Tell me in 2 lines why it broke and why it\n   can never break this way again",
     "parameters": [
       {
         "name": "steps_to_reproduce",
@@ -433,7 +433,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #11: E2E Test Your Application. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Write Playwright E2E tests for: [FLOW]\n\nStack: [YOUR STACK] CI: [GITHUB ACTIONS / OTHER]\n\n* Money paths first: [SIGNUP / CHECKOUT /\n  CORE ACTION]\n* Test what the user sees, not implementation\n  details\n* Selectors: roles and labels, never brittle\n  CSS chains\n* One unhappy path per flow: bad input,\n  network failure, expired session\n* Tests stay independent -- any order, zero\n  shared state, each seeds its own data\n* Headless in CI, headed locally for debugging\n* Screenshots + traces on failure only\n\nRun the suite, show me the results, fix what\nfails, and tell me what the suite still does\nNOT cover.",
+    "content": "Write Playwright E2E tests for: {{flow}}\n\nStack: {{your_stack}} CI: {{github_actions_other}}\n\n* Money paths first: {{signup_checkout_core_action}}\n* Test what the user sees, not implementation\n  details\n* Selectors: roles and labels, never brittle\n  CSS chains\n* One unhappy path per flow: bad input,\n  network failure, expired session\n* Tests stay independent -- any order, zero\n  shared state, each seeds its own data\n* Headless in CI, headed locally for debugging\n* Screenshots + traces on failure only\n\nRun the suite, show me the results, fix what\nfails, and tell me what the suite still does\nNOT cover.",
     "parameters": [
       {
         "name": "flow",
@@ -481,7 +481,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #12: Clean Up Dead Code. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Find and delete dead code in this repo.\n\nScope: [WHOLE REPO / SPECIFIC FOLDER]\n\n* Unused exports, components, hooks, utils\n* Unreachable branches + commented-out blocks\n* package.json dependencies nothing imports\n* Stale feature flags stuck always-on or\n  always-off\n* Duplicate logic that should merge into one\n* Dead CSS classes and unused assets\n\nVerify with a search before EVERY deletion --\ndynamic imports and string references count.\nDelete in small commits, run [BUILD + TESTS]\nafter each one, and report total lines removed\nplus anything you were not 100% sure about.",
+    "content": "Find and delete dead code in this repo.\n\nScope: {{whole_repo_specific_folder}}\n\n* Unused exports, components, hooks, utils\n* Unreachable branches + commented-out blocks\n* package.json dependencies nothing imports\n* Stale feature flags stuck always-on or\n  always-off\n* Duplicate logic that should merge into one\n* Dead CSS classes and unused assets\n\nVerify with a search before EVERY deletion --\ndynamic imports and string references count.\nDelete in small commits, run [BUILD + TESTS]\nafter each one, and report total lines removed\nplus anything you were not 100% sure about.",
     "parameters": [
       {
         "name": "whole_repo_specific_folder",
@@ -514,7 +514,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #13: Write Clean Git Commits. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Commit my staged changes properly.\n\nConvention: [CONVENTIONAL COMMITS / YOUR FORMAT]\n\n* Split unrelated changes into separate commits\n* Format: type(scope): what changed and why\n  feat / fix / refactor / chore / docs / test\n* Subject under 50 chars, imperative mood\n* Body explains the WHY, wrapped at 72\n* Reference the ticket: [TICKET-ID]\n* Never mix a refactor with a behavior change\n  in one commit\n* Never commit [SECRETS / .ENV / GENERATED\n  FILES]\n\nShow me the plan -- files per commit + messages --\nbefore you commit anything. Then commit one at\na time so I can stop you between them.",
+    "content": "Commit my staged changes properly.\n\nConvention: {{conventional_commits_your_format}}\n\n* Split unrelated changes into separate commits\n* Format: type(scope): what changed and why\n  feat / fix / refactor / chore / docs / test\n* Subject under 50 chars, imperative mood\n* Body explains the WHY, wrapped at 72\n* Reference the ticket: {{ticket_id}}\n* Never mix a refactor with a behavior change\n  in one commit\n* Never commit [SECRETS / .ENV / GENERATED\n  FILES]\n\nShow me the plan -- files per commit + messages --\nbefore you commit anything. Then commit one at\na time so I can stop you between them.",
     "parameters": [
       {
         "name": "conventional_commits_your_format",
@@ -552,7 +552,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #14: Hooks as Guardrails. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Set up Claude Code hooks as guardrails here.\n\nStack: [YOUR STACK + PACKAGE MANAGER]\n\n* PostToolUse: run [LINT + TYPECHECK] after\n  every file edit, feed errors straight back\n* PreToolUse: block edits to [PROTECTED PATHS:\n  MIGRATIONS, .ENV, PROD CONFIG]\n* Stop: run [TEST SUITE] before a session ends\n* Notification: ping me with [SOUND / SLACK]\n  when my input is needed\n\nWrite the hook scripts + the settings.json\nentries. Keep each script under 20 lines and\nexit non-zero with a clear message so the\nagent knows exactly what to fix. Then trigger\neach hook on purpose and show me it firing.",
+    "content": "Set up Claude Code hooks as guardrails here.\n\nStack: [YOUR STACK + PACKAGE MANAGER]\n\n* PostToolUse: run [LINT + TYPECHECK] after\n  every file edit, feed errors straight back\n* PreToolUse: block edits to [PROTECTED PATHS:\n  MIGRATIONS, .ENV, PROD CONFIG]\n* Stop: run {{test_suite}} before a session ends\n* Notification: ping me with {{sound_slack}}\n  when my input is needed\n\nWrite the hook scripts + the settings.json\nentries. Keep each script under 20 lines and\nexit non-zero with a clear message so the\nagent knows exactly what to fix. Then trigger\neach hook on purpose and show me it firing.",
     "parameters": [
       {
         "name": "test_suite",
@@ -590,7 +590,7 @@
       "Autonomous Agent"
     ],
     "description": "Official Vibe Coding system prompt #15: Turn a Task Into a Skill. Designed for Claude Code, Antigravity, and Cursor.",
-    "content": "Turn this repetitive task into a Claude Code skill.\n\nThe task I keep doing: [DESCRIBE TASK + STEPS]\n\n* Create .claude/skills/[NAME]/SKILL.md\n* Frontmatter: name + description with the exact\n  trigger phrases I actually say\n* Body: numbered workflow, my conventions,\n  edge cases\n* What it should ask me for vs infer on its own\n* What \"done\" looks like\n\nThen dry-run the skill on a real example and\nrefine until the output matches how I do it\nby hand.",
+    "content": "Turn this repetitive task into a Claude Code skill.\n\nThe task I keep doing: [DESCRIBE TASK + STEPS]\n\n* Create .claude/skills/{{name}}/SKILL.md\n* Frontmatter: name + description with the exact\n  trigger phrases I actually say\n* Body: numbered workflow, my conventions,\n  edge cases\n* What it should ask me for vs infer on its own\n* What \"done\" looks like\n\nThen dry-run the skill on a real example and\nrefine until the output matches how I do it\nby hand.",
     "parameters": [
       {
         "name": "name",

@@ -29,10 +29,18 @@ export function Navbar({ onOpenSearch }) {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.scrollY > 10;
+          setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -49,9 +57,9 @@ export function Navbar({ onOpenSearch }) {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 left-0 right-0 z-[9999] w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-300/90 dark:border-slate-800/90 shadow-lg'
+          ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-300 dark:border-slate-800 shadow-md'
           : 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs'
       }`}
     >

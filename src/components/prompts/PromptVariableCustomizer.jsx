@@ -70,7 +70,7 @@ export function PromptVariableCustomizer({ prompt }) {
   const approxTokens = Math.ceil(charCount / 4);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Parameter Input Fields */}
       {prompt.parameters && prompt.parameters.length > 0 && (
         <div className="glass-panel p-3 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
@@ -91,9 +91,10 @@ export function PromptVariableCustomizer({ prompt }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {prompt.parameters.map((param) => (
               <div key={param.name} className="space-y-1">
-                <label className="text-[11px] font-semibold text-slate-700 dark:text-slate-300 flex items-start justify-between gap-2">
+                <label className="text-[11px] font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-between gap-2">
                   <span className="uppercase tracking-wide">{param.label}</span>
-                  <span className="text-cyan-500 font-mono text-[10px] font-bold shrink-0 bg-slate-100 dark:bg-slate-900 px-1.5 py-0.5 rounded">
+                  {/* Token tag hidden on mobile to save space */}
+                  <span className="hidden sm:inline text-cyan-500 font-mono text-[10px] font-bold shrink-0 bg-slate-100 dark:bg-slate-900 px-1.5 py-0.5 rounded">
                     {`{{${param.name}}}`}
                   </span>
                 </label>
@@ -102,7 +103,7 @@ export function PromptVariableCustomizer({ prompt }) {
                   value={paramValues[param.name] || ''}
                   onChange={(e) => handleParamChange(param.name, e.target.value)}
                   placeholder={`Enter ${param.label.toLowerCase()}...`}
-                  className="w-full px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+                  className="w-full px-3 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
                 />
               </div>
             ))}

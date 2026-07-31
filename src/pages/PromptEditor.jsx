@@ -35,7 +35,8 @@ const templates = [
 export function PromptEditor() {
   const location = useLocation();
   const { addToast } = useToast();
-  const initialContent = location.state?.content || templates[0].content;
+  // Load draft from localStorage on initial render if no location state passed
+  const initialContent = location.state?.content || localStorage.getItem('prompt_editor_draft') || templates[0].content;
   const [content, setContent] = useState(initialContent);
   const [history, setHistory] = useState([initialContent]);
   const [historyIndex, setHistoryIndex] = useState(0);
@@ -50,6 +51,13 @@ export function PromptEditor() {
       setHistoryIndex(0);
     }
   }, [location.state?.content]);
+
+  // Save draft automatically to LocalStorage on content change
+  useEffect(() => {
+    if (content) {
+      localStorage.setItem('prompt_editor_draft', content);
+    }
+  }, [content]);
 
   // Parse placeholders
   const detectedVariables = Array.from(content.matchAll(/{{\s*([a-zA-Z0-9_]+)\s*}}/g)).map(m => m[1]);

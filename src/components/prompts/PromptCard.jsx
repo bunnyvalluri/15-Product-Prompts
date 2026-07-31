@@ -46,6 +46,19 @@ export function PromptCard({ prompt, onQuickView, onOpenSaveCollection }) {
     Advanced: 'purple'
   };
 
+  const getModelColor = (modelName) => {
+    const name = (modelName || '').toLowerCase();
+    if (name.includes('antigravity')) return 'bg-emerald-400';
+    if (name.includes('claude')) return 'bg-amber-400';
+    if (name.includes('cursor')) return 'bg-purple-400';
+    if (name.includes('chatgpt') || name.includes('gpt')) return 'bg-cyan-400';
+    if (name.includes('deepseek')) return 'bg-blue-400';
+    return 'bg-cyan-400';
+  };
+
+  const paramCount = prompt.parameters ? prompt.parameters.length : 0;
+  const wordCount = prompt.content ? prompt.content.split(/\s+/).length : 0;
+
   return (
     <motion.div
       whileHover={{ y: -3 }}
@@ -63,6 +76,11 @@ export function PromptCard({ prompt, onQuickView, onOpenSaveCollection }) {
             <Badge variant={difficultyColors[prompt.difficulty] || 'default'} size="sm">
               {prompt.difficulty}
             </Badge>
+            {paramCount > 0 && (
+              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+                {paramCount} {paramCount === 1 ? 'var' : 'vars'}
+              </span>
+            )}
           </div>
 
           <div className="flex items-center gap-0.5 shrink-0">
@@ -129,14 +147,14 @@ export function PromptCard({ prompt, onQuickView, onOpenSaveCollection }) {
       <div>
         {/* Model & Metadata Bar */}
         <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-400 dark:text-slate-500 pb-2.5 mb-2.5 border-b border-slate-200/60 dark:border-slate-800/60">
-          <span className="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1 truncate max-w-[120px] sm:max-w-none">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 inline-block shrink-0" />
+          <span className="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1.5 truncate max-w-[140px] sm:max-w-none">
+            <span className={`w-2 h-2 rounded-full ${getModelColor(prompt.aiModel)} inline-block shrink-0`} />
             {prompt.aiModel}
           </span>
           <div className="flex items-center gap-2.5 shrink-0">
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1" title="Estimated word count">
               <Clock className="w-3 h-3" />
-              {prompt.readingTime}
+              ~{wordCount} words
             </span>
             <span className="flex items-center gap-1 text-amber-500 font-semibold">
               <Star className="w-3 h-3 fill-amber-500" />

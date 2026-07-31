@@ -34,6 +34,17 @@ function ScrollToTop() {
 export default function App() {
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setCommandPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <ThemeProvider>
       <ToastProvider>

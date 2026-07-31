@@ -219,18 +219,48 @@ export function Explore() {
           </div>
         </div>
 
-        {/* Active Filters Reset Bar */}
+        {/* Active Filter Chips */}
         {(query || selectedCategory !== 'all' || selectedModel !== 'all' || selectedDifficulty !== 'all') && (
-          <div className="flex items-center justify-between text-xs pt-1">
-            <span className="text-slate-500">
-              Showing <span className="font-bold text-cyan-500">{filteredPrompts.length}</span> matching prompts
-            </span>
+          <div className="flex items-center gap-2 flex-wrap pt-2 border-t border-slate-200/60 dark:border-slate-800/60 text-xs">
+            <span className="text-slate-400 font-semibold">Active Filters:</span>
+            {query && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-medium border border-cyan-500/20">
+                Search: &quot;{query}&quot;
+                <button onClick={() => setQuery('')} className="hover:text-cyan-800 dark:hover:text-white">
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
+            {selectedCategory !== 'all' && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 font-medium border border-purple-500/20">
+                Cat: {categoriesData.find((c) => c.id === selectedCategory)?.name || selectedCategory}
+                <button onClick={() => setSelectedCategory('all')} className="hover:text-purple-800 dark:hover:text-white">
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
+            {selectedModel !== 'all' && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 font-medium border border-amber-500/20">
+                Model: {selectedModel}
+                <button onClick={() => setSelectedModel('all')} className="hover:text-amber-800 dark:hover:text-white">
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
+            {selectedDifficulty !== 'all' && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-medium border border-emerald-500/20">
+                Level: {selectedDifficulty}
+                <button onClick={() => setSelectedDifficulty('all')} className="hover:text-emerald-800 dark:hover:text-white">
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            )}
             <button
               onClick={handleResetFilters}
-              className="flex items-center gap-1 text-cyan-500 hover:text-cyan-400 font-semibold"
+              className="flex items-center gap-1 text-cyan-500 hover:text-cyan-400 font-semibold ml-auto"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              Reset All Filters
+              Clear All ({filteredPrompts.length} matches)
             </button>
           </div>
         )}

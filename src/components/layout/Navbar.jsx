@@ -42,7 +42,6 @@ export function Navbar({ onOpenSearch }) {
 
   const navLinks = [
     { name: 'Home', path: '/', icon: Sparkles },
-    { name: 'Editor', path: '/editor', icon: FileCode2 },
     { name: 'Blog', path: '/blog', icon: BookOpen },
     { name: 'About', path: '/about', icon: Info },
     { name: 'Contact', path: '/contact', icon: Mail }

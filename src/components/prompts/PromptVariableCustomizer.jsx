@@ -42,11 +42,6 @@ export function PromptVariableCustomizer({ prompt }) {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleOpenInEditor = () => {
-    navigate('/editor', { state: { content: customizedContent } });
-    addToast('Loaded prompt in Live Editor', 'info');
-  };
-
   const handleDownload = (format) => {
     const filename = `${prompt.slug || 'custom-prompt'}.${format}`;
     const element = document.createElement('a');
@@ -132,14 +127,6 @@ export function PromptVariableCustomizer({ prompt }) {
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
-            <button
-              onClick={handleOpenInEditor}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 transition-colors"
-              title="Open in Live Prompt Editor"
-            >
-              <Code2 className="w-3.5 h-3.5" />
-              Edit Live
-            </button>
             <button
               onClick={() => handleDownload('txt')}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors"

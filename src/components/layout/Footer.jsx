@@ -64,7 +64,7 @@ export function Footer() {
               Explore
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/editor" className="hover:text-cyan-500 transition-colors">Prompt Editor</Link></li>
+              <li><Link to="/blog" className="hover:text-cyan-500 transition-colors">15 Product Prompts Blog</Link></li>
             </ul>
           </div>
 

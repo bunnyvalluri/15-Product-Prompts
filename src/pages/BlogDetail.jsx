@@ -60,10 +60,6 @@ export function BlogDetail() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const handleOpenInEditor = (promptText) => {
-    navigate('/editor', { state: { content: promptText } });
-  };
-
   const scrollToPrompt = (index) => {
     const el = document.getElementById(`vibe-prompt-${index + 1}`);
     if (el) {
@@ -277,14 +273,6 @@ export function BlogDetail() {
                               Copy Prompt
                             </>
                           )}
-                        </button>
-
-                        <button
-                          onClick={() => handleOpenInEditor(prompt.content)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700 hover:text-emerald-400 hover:border-emerald-500/40 transition-all"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                          Open in Editor
                         </button>
                       </div>
                     </div>

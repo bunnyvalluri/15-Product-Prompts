@@ -134,10 +134,10 @@ export function Home({ onOpenSearch }) {
               size="lg"
               variant="outline"
               className="w-full sm:w-auto"
-              onClick={() => navigate('/editor')}
+              onClick={() => navigate('/blog/15vibecodingprompts')}
               icon={Code2}
             >
-              Open Live Prompt Editor
+              Read AI Blueprint
             </Button>
           </div>
         </motion.div>
@@ -347,10 +347,10 @@ export function Home({ onOpenSearch }) {
                 View 15 Vibe Coding Prompts <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/editor"
+                to="/blog/15vibecodingprompts"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-800 text-white border border-slate-700 hover:border-emerald-500/40 transition-all"
               >
-                Open Live Editor
+                Browse Blueprint
               </Link>
             </div>
           </div>

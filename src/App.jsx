@@ -10,7 +10,6 @@ import { CommandPalette } from './components/layout/CommandPalette';
 
 import { Home } from './pages/Home';
 import { PromptDetail } from './pages/PromptDetail';
-import { PromptEditor } from './pages/PromptEditor';
 import { Blog } from './pages/Blog';
 import { BlogDetail } from './pages/BlogDetail';
 import { Contact } from './pages/Contact';
@@ -54,7 +53,6 @@ export default function App() {
                   <Routes>
                     <Route path="/" element={<Home onOpenSearch={() => setCommandPaletteOpen(true)} />} />
                     <Route path="/prompt/:id" element={<PromptDetail />} />
-                    <Route path="/editor" element={<PromptEditor />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogDetail />} />
                     <Route path="/contact" element={<Contact />} />

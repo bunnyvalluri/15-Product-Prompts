@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -27,8 +27,8 @@ export function BlogDetail() {
   const { addToast } = useToast();
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const [copiedId, setCopiedId] = useState(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [activePromptIndex, setActivePromptIndex] = useState(0);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const progressBarRef = useRef(null);
 
   const blog = blogsData.find((b) => b.slug === slug) || blogsData[0];
   const isVibeCollection = blog.slug === '15vibecodingprompts' || blog.slug === '15-vibe-coding-prompts' || blog.slug === '15-micro-saas-idea-prompts';
@@ -37,14 +37,25 @@ export function BlogDetail() {
   const displayPrompts = promptsData.filter((p) => p.id.startsWith('prompt-vibe-'));
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        const currentProgress = (window.scrollY / totalHeight) * 100;
-        setScrollProgress(currentProgress);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (totalHeight > 0) {
+            const currentProgress = (window.scrollY / totalHeight) * 100;
+            if (progressBarRef.current) {
+              progressBarRef.current.style.width = `${currentProgress}%`;
+            }
+            const isPastThreshold = currentProgress > 20;
+            setShowBackToTop((prev) => (prev !== isPastThreshold ? isPastThreshold : prev));
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -69,16 +80,16 @@ export function BlogDetail() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 relative">
-      {/* Top Reading Progress Bar */}
+      {/* Top Reading Progress Bar — Hardware Accelerated DOM Update */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-slate-200/50 dark:bg-slate-800/50 z-50 pointer-events-none">
         <div
-          className="h-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 transition-all duration-150"
-          style={{ width: `${scrollProgress}%` }}
+          ref={progressBarRef}
+          className="h-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 transition-all duration-75 w-0"
         />
       </div>
 
       {/* Quick Floating Back to Top Button */}
-      {scrollProgress > 20 && (
+      {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-slate-900/90 text-emerald-400 border border-emerald-500/30 shadow-2xl hover:scale-110 transition-all group"

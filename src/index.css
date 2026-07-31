@@ -142,13 +142,13 @@ pre::-webkit-scrollbar-thumb:hover {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 85s linear infinite;
 }
 
 .animate-marquee-reverse {
   display: flex;
   width: max-content;
-  animation: marquee-reverse 40s linear infinite;
+  animation: marquee-reverse 85s linear infinite;
 }
 
 .animate-marquee:hover,

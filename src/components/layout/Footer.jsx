@@ -111,12 +111,29 @@ export function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="mt-10 pt-6 border-t border-slate-300 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm gap-3 text-center sm:text-left text-slate-800 dark:text-slate-100 font-bold tracking-wide">
           <p className="break-words text-slate-800 dark:text-slate-100 font-semibold">
-            © {new Date().getFullYear()} <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">15 Product Prompts</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">15 Product Prompts</span> by{' '}
+            <a
+              href="https://valluri-rahul-portfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-600 dark:text-cyan-400 hover:text-emerald-500 dark:hover:text-emerald-300 underline font-extrabold transition-colors"
+            >
+              VALLURI RAHUL
+            </a>. All rights reserved.
           </p>
           <div className="flex items-center justify-center gap-1.5 shrink-0 text-slate-800 dark:text-slate-100 font-semibold">
             <span>Crafted with</span>
             <Heart className="w-4 h-4 text-rose-500 fill-rose-500 inline animate-pulse" />
-            <span>for AI Developers & Engineers</span>
+            <span>by{' '}
+              <a
+                href="https://valluri-rahul-portfolio.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-600 dark:text-cyan-400 hover:text-emerald-500 dark:hover:text-emerald-300 underline font-extrabold transition-colors"
+              >
+                VALLURI RAHUL
+              </a>
+            </span>
           </div>
         </div>
       </div>

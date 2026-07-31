@@ -20,7 +20,7 @@ export function Footer() {
 
   return (
     <footer className="relative w-full max-w-full overflow-hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 pb-safe">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-14 sm:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Column 1: Brand & Tagline */}
           <div className="space-y-4">
@@ -107,7 +107,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="mt-10 pt-6 border-t border-slate-300 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm gap-3 text-center sm:text-left text-slate-800 dark:text-slate-100 font-bold tracking-wide">
+        <div className="mt-10 pt-6 sm:pt-8 border-t border-slate-300 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm gap-3 text-center sm:text-left text-slate-800 dark:text-slate-100 font-bold tracking-wide pb-6 mb-2">
           <p className="break-words text-slate-800 dark:text-slate-100 font-semibold">
             © {new Date().getFullYear()} <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">15 Product Prompts</span> by{' '}
             <a

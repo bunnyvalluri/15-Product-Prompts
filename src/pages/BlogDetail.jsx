@@ -169,8 +169,42 @@ export function BlogDetail() {
               <span className="text-xs text-slate-400 font-mono">15 Prompts</span>
             </div>
 
-            <div className="overflow-x-auto touch-scroll border border-slate-200 dark:border-slate-800/80 rounded-2xl">
-              <table className="w-full text-left text-xs min-w-[750px] divide-y divide-slate-200 dark:divide-slate-800">
+            {/* Mobile Card List (visible on sm:hidden) */}
+            <div className="sm:hidden space-y-3">
+              {displayPrompts.map((p, idx) => (
+                <div
+                  key={p.id}
+                  className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2.5 shadow-xs"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-extrabold text-xs text-emerald-600 dark:text-emerald-400 font-mono">
+                      #{idx + 1}
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                      {p.aiModel}
+                    </span>
+                  </div>
+                  <h4 className="font-bold text-sm text-slate-900 dark:text-white leading-snug">
+                    {p.title}
+                  </h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                    {p.description}
+                  </p>
+                  <div className="pt-2 border-t border-slate-200/60 dark:border-slate-800/60 flex justify-end">
+                    <button
+                      onClick={() => scrollToPrompt(idx)}
+                      className="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1"
+                    >
+                      Jump to Prompt #{idx + 1} →
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop / Tablet Table View (visible on sm:block) */}
+            <div className="hidden sm:block overflow-x-auto touch-scroll border border-slate-200 dark:border-slate-800/80 rounded-2xl">
+              <table className="w-full text-left text-xs min-w-[700px] divide-y divide-slate-200 dark:divide-slate-800">
                 <thead>
                   <tr className="bg-slate-50 dark:bg-slate-900/80 text-slate-600 dark:text-slate-400 uppercase tracking-wider font-extrabold text-[10px]">
                     <th className="py-3.5 px-4 w-12">#</th>

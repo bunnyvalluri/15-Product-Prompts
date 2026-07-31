@@ -58,7 +58,7 @@ export function Footer() {
             </h4>
             <div className="flex flex-wrap items-center gap-2">
               {[
-                { name: 'GitHub', icon: FaGithub, href: 'https://github.com' },
+                { name: 'GitHub', icon: FaGithub, href: 'https://github.com/bunnyvalluri' },
                 { name: 'Twitter', icon: FaTwitter, href: 'https://twitter.com' },
                 { name: 'Discord', icon: FaDiscord, href: 'https://discord.com' },
                 { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/syntaxrahul/' }

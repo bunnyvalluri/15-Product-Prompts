@@ -51,8 +51,8 @@ export function Navbar({ onOpenSearch }) {
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         isScrolled
-          ? 'glass-panel border-b border-slate-200/80 dark:border-slate-800/80 shadow-lg'
-          : 'bg-transparent border-b border-transparent'
+          ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-300 dark:border-slate-800/80 shadow-md'
+          : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm border-b border-slate-200/60 dark:border-slate-800/60'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
@@ -63,32 +63,32 @@ export function Navbar({ onOpenSearch }) {
           </div>
           <div className="flex flex-col">
             <span className="font-extrabold text-sm sm:text-xl tracking-tight text-slate-900 dark:text-white shrink-0">
-              15 Product<span className="text-emerald-400"> Prompts</span>
+              15 Product<span className="text-emerald-600 dark:text-emerald-400"> Prompts</span>
             </span>
-            <span className="hidden sm:block text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-emerald-500 dark:text-emerald-400 -mt-1">
+            <span className="hidden sm:block text-[9px] sm:text-[10px] uppercase tracking-wider font-bold text-emerald-600 dark:text-emerald-400 -mt-1">
               Micro-SaaS & AI Blueprints
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 bg-slate-100/60 dark:bg-slate-900/60 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-800/60">
+        <nav className="hidden lg:flex items-center gap-1 bg-slate-100 dark:bg-slate-900/90 p-1.5 rounded-2xl border border-slate-300 dark:border-slate-800 shadow-xs">
           {navLinks.slice(0, 8).map((link) => {
             const isActive = location.pathname === link.path;
             return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 ${
+                className={`relative px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 ${
                   isActive
-                    ? 'text-cyan-600 dark:text-cyan-400 font-bold'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                    ? 'text-cyan-700 dark:text-cyan-400'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeNavPill"
-                    className="absolute inset-0 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200/80 dark:border-slate-700/80 -z-0"
+                    className="absolute inset-0 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-300 dark:border-slate-700 -z-0"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}

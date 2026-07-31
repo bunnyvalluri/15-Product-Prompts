@@ -215,25 +215,30 @@ export function Home({ onOpenSearch }) {
         </div>
       </section>
 
-      {/* Trusted Models Bar */}
+      {/* Trusted Models Bar — Smooth Rotating Marquee */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel rounded-2xl p-4 sm:p-6 border border-slate-200 dark:border-slate-800 text-center">
+        <div className="glass-panel rounded-2xl p-4 sm:p-6 border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden">
           <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4 sm:mb-6">
             Optimized for Next-Generation AI Engines
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-6 items-center justify-center">
-            {modelsData.map((m) => (
-              <div
-                key={m.id}
-                className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 cursor-pointer transition-colors"
-                onClick={() => navigate('/blog/15vibecodingprompts')}
-              >
-                <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
-                  {m.name}
-                </span>
-                <span className="text-[9px] sm:text-[10px] text-slate-400">{m.badge}</span>
-              </div>
-            ))}
+          <div className="relative overflow-hidden mask-linear-gradient">
+            <div className="animate-marquee flex items-center gap-6 sm:gap-10 py-1">
+              {[...modelsData, ...modelsData, ...modelsData, ...modelsData].map((m, idx) => (
+                <div
+                  key={`${m.id}-${idx}`}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 hover:bg-cyan-500/10 border border-slate-200/80 dark:border-slate-800/80 cursor-pointer transition-all shrink-0 group"
+                  onClick={() => navigate('/blog/15vibecodingprompts')}
+                >
+                  <Zap className="w-3.5 h-3.5 text-cyan-500 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-cyan-500 transition-colors">
+                    {m.name}
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-200/60 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+                    {m.badge}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -288,7 +293,7 @@ export function Home({ onOpenSearch }) {
         </div>
       </section>
 
-      {/* Featured Categories Grid */}
+      {/* Featured Categories Suite — Continuous Rotating Marquee Ticker */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
@@ -300,29 +305,59 @@ export function Home({ onOpenSearch }) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-          {categoriesData.slice(0, 10).map((cat) => (
-            <Link
-              key={cat.id}
-              to="/blog/15vibecodingprompts"
-              className="glass-panel p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-md transition-all group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500">
-                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </span>
-                <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
-                  {cat.promptCount}
-                </span>
-              </div>
-              <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
-                {cat.name}
-              </h4>
-              <p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-1">
-                {cat.description}
-              </p>
-            </Link>
-          ))}
+        {/* Rotating Marquee Container */}
+        <div className="space-y-4 overflow-hidden relative">
+          {/* Row 1: Left to Right Marquee */}
+          <div className="animate-marquee flex gap-4 py-1">
+            {[...categoriesData, ...categoriesData, ...categoriesData].map((cat, idx) => (
+              <Link
+                key={`cat-r1-${cat.id}-${idx}`}
+                to="/blog/15vibecodingprompts"
+                className="w-56 sm:w-64 glass-panel p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-lg transition-all group shrink-0"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 group-hover:rotate-12 transition-transform">
+                    <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
+                    {cat.promptCount}
+                  </span>
+                </div>
+                <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+                  {cat.name}
+                </h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-1">
+                  {cat.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          {/* Row 2: Right to Left Reverse Marquee */}
+          <div className="animate-marquee-reverse flex gap-4 py-1">
+            {[...categoriesData.slice().reverse(), ...categoriesData.slice().reverse(), ...categoriesData.slice().reverse()].map((cat, idx) => (
+              <Link
+                key={`cat-r2-${cat.id}-${idx}`}
+                to="/blog/15vibecodingprompts"
+                className="w-56 sm:w-64 glass-panel p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-cyan-500/50 hover:shadow-lg transition-all group shrink-0"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 group-hover:-rotate-12 transition-transform">
+                    <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
+                    {cat.promptCount}
+                  </span>
+                </div>
+                <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+                  {cat.name}
+                </h4>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-1">
+                  {cat.description}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

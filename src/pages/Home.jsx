@@ -196,14 +196,14 @@ export function Home({ onOpenSearch }) {
         {/* Hero Stats */}
         <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/60 dark:border-slate-800/60 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
           {[
-            { label: 'Curated Prompts', value: '2,500+', icon: Database },
-            { label: 'Supported Models', value: '12+', icon: Cpu },
-            { label: 'Active Developers', value: '45,000+', icon: Users },
-            { label: 'Client-Side Reliance', value: '100%', icon: Shield }
+            { label: 'Vibe System Prompts', value: '15', icon: Database },
+            { label: 'Supported AI Engines', value: '12+', icon: Cpu },
+            { label: 'Micro-SaaS Blueprints', value: '100%', icon: Users },
+            { label: 'Client-Side Privacy', value: '100%', icon: Shield }
           ].map((stat, idx) => {
             const Icon = stat.icon;
             return (
-              <div key={idx} className="space-y-1 p-2">
+              <div key={idx} className="space-y-1 p-2 text-center">
                 <div className="flex items-center justify-center gap-1.5 text-cyan-500 font-bold text-xl sm:text-3xl">
                   <Icon className="w-4 h-4 sm:w-5 sm:h-5 inline" />
                   {stat.value}
@@ -319,8 +319,8 @@ export function Home({ onOpenSearch }) {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 group-hover:rotate-12 transition-transform">
                     <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </span>
-                  <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
-                    {cat.promptCount}
+                  <span className="text-[9px] sm:text-[10px] font-bold text-cyan-500 bg-cyan-500/10 px-2 py-0.5 rounded-full">
+                    AI Blueprint
                   </span>
                 </div>
                 <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
@@ -345,8 +345,8 @@ export function Home({ onOpenSearch }) {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 group-hover:-rotate-12 transition-transform">
                     <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </span>
-                  <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
-                    {cat.promptCount}
+                  <span className="text-[9px] sm:text-[10px] font-bold text-cyan-500 bg-cyan-500/10 px-2 py-0.5 rounded-full">
+                    AI Blueprint
                   </span>
                 </div>
                 <h4 className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">

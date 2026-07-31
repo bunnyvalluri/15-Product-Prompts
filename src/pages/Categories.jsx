@@ -78,7 +78,7 @@ export function Categories() {
                     <IconComponent className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-bold text-cyan-500 bg-cyan-500/10 px-2.5 py-1 rounded-full">
-                    {cat.promptCount} Prompts
+                    AI Blueprint
                   </span>
                 </div>
 
